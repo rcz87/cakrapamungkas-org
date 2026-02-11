@@ -198,8 +198,9 @@ export default function HomePage() {
                 title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian",
                 excerpt:
                   "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time.",
-                readTime: "8 min",
-                color: "bg-blue-100 text-blue-700"
+                readTime: "25 min",
+                color: "bg-blue-100 text-blue-700",
+                href: "/artikel/revolusi-agritech-4-0"
               },
               {
                 category: "Sejarah",
@@ -266,7 +267,7 @@ export default function HomePage() {
                     {article.excerpt}
                   </p>
                   <Link
-                    href="/pusat-ilmu"
+                    href={article.href || "/pusat-ilmu"}
                     className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
                   >
                     Baca Artikel <ArrowRight className="w-4 h-4" />
