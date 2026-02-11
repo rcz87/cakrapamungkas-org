@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Leaf,
   ArrowRight,
@@ -43,10 +44,17 @@ export default function HomePage() {
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image/Visual Side */}
-              <div className="bg-gradient-to-br from-primary-100 via-primary-50 to-emerald-50 lg:order-1 h-64 lg:h-auto flex items-center justify-center p-12">
-                <div className="text-center">
-                  <Sprout className="w-24 h-24 text-primary-500 mx-auto mb-4" />
-                  <p className="text-sm font-semibold text-primary-700 uppercase tracking-wide">
+              <div className="relative lg:order-1 h-64 lg:h-auto overflow-hidden bg-gray-100">
+                <Image
+                  src="/content/poto/desa petani.png"
+                  alt="Desa Petani Indonesia - Pertanian Tradisional Modern"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                  <p className="text-xs font-semibold text-white uppercase tracking-wide">
                     Artikel Unggulan
                   </p>
                 </div>
