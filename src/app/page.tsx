@@ -200,7 +200,8 @@ export default function HomePage() {
                   "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time.",
                 readTime: "25 min",
                 color: "bg-blue-100 text-blue-700",
-                href: "/artikel/revolusi-agritech-4-0"
+                href: "/artikel/revolusi-agritech-4-0",
+                image: "/images/petani-drone.png"
               },
               {
                 category: "Sejarah",
@@ -247,8 +248,18 @@ export default function HomePage() {
                 key={article.title}
                 className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all"
               >
-                <div className="h-44 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-                  <BookOpen className="w-14 h-14 text-gray-300" />
+                <div className="relative h-44 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
+                  {article.image ? (
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <BookOpen className="w-14 h-14 text-gray-300" />
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">

@@ -109,3 +109,14 @@
 2026-02-11T10:59:29: ✓ Starting...
 2026-02-11T10:59:30: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-11T10:59:30: ✓ Ready in 544ms
+2026-02-11T11:04:22: 
+2026-02-11T11:04:22: > cakrapamungkas-org@1.0.0 start
+2026-02-11T11:04:22: > next start
+2026-02-11T11:04:22: 
+2026-02-11T11:04:23: ▲ Next.js 16.1.6
+2026-02-11T11:04:23: - Local:         http://localhost:3001
+2026-02-11T11:04:23: - Network:       http://212.85.26.253:3001
+2026-02-11T11:04:23: 
+2026-02-11T11:04:23: ✓ Starting...
+2026-02-11T11:04:23: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-11T11:04:23: ✓ Ready in 525ms
