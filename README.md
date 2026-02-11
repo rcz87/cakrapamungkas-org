@@ -29,4 +29,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Related
 
-- [PadiDoc App](https://padidoc.cakrapamungkas.org) — Aplikasi diagnosa tanaman padi
+- [PadiDoc App](https://padidoc.cakrapamungkas.org) — Aplikasi manajemen keuangan penggilingan padi dan jagung
