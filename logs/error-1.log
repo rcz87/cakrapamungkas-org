@@ -5,3 +5,4 @@
 2026-02-11T09:19:31: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-11T10:34:27: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-11T10:34:45: ⨯ The requested resource isn't a valid image for /content/poto/desa petani.png received null
+2026-02-11T10:35:52: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.

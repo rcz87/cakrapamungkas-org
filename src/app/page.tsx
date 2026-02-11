@@ -46,7 +46,7 @@ export default function HomePage() {
               {/* Image/Visual Side */}
               <div className="relative lg:order-1 h-64 lg:h-auto overflow-hidden bg-gray-100">
                 <Image
-                  src="/content/poto/desa petani.png"
+                  src="/images/desa-petani.png"
                   alt="Desa Petani Indonesia - Pertanian Tradisional Modern"
                   fill
                   className="object-cover"
