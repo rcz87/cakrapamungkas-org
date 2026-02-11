@@ -46,16 +46,14 @@ export default function HomePage() {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://padidoc.cakrapamungkas.org"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/padidoc"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary-500 text-white font-semibold rounded-xl hover:bg-primary-400 transition-colors shadow-lg shadow-primary-900/30"
               >
                 <Leaf className="w-5 h-5" />
-                Coba PadiDoc Gratis
+                Lihat Info PadiDoc
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
               <Link
                 href="/layanan"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 border border-white/20 transition-colors"
@@ -127,11 +125,10 @@ export default function HomePage() {
               },
               {
                 icon: Leaf,
-                title: "PadiDoc — Diagnosa Padi",
+                title: "PadiDoc — Manajemen Penggilingan",
                 description:
-                  "Aplikasi web untuk mendiagnosa penyakit dan hama pada tanaman padi. Gratis dan mudah digunakan.",
-                href: "https://padidoc.cakrapamungkas.org",
-                external: true,
+                  "Aplikasi manajemen penggilingan padi untuk operasional, keuangan, dan produksi. Coming soon!",
+                href: "/padidoc",
               },
               {
                 icon: Download,
@@ -197,16 +194,14 @@ export default function HomePage() {
             Gunakan aplikasi PadiDoc untuk mengelola operasional penggilingan padi Anda. 
             Pantau produksi, keuangan, dan performa bisnis secara real-time. Gratis, mudah, dan akurat.
           </p>
-          <a
-            href="https://padidoc.cakrapamungkas.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/padidoc"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
           >
             <Leaf className="w-5 h-5" />
-            Coba PadiDoc Gratis Sekarang
+            Lihat Info PadiDoc
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </section>
 

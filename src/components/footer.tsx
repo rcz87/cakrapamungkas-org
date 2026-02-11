@@ -13,7 +13,7 @@ const layananLinks = [
   { href: "/layanan#maklon", label: "Jasa Maklon" },
   { href: "/layanan#gabah", label: "Jual Beli Gabah" },
   { href: "/layanan#saprotan", label: "Saprotan" },
-  { href: "https://padidoc.cakrapamungkas.org", label: "PadiDoc App", external: true },
+  { href: "/padidoc", label: "PadiDoc App" },
 ];
 
 export function Footer() {
@@ -119,14 +119,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} CV. Cakra Pamungkas Mandiri. All
             rights reserved.
           </p>
-          <a
-            href="https://padidoc.cakrapamungkas.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/padidoc"
             className="text-xs text-primary-400 hover:text-primary-300 font-medium transition-colors"
           >
-            Coba PadiDoc — Diagnosa Tanaman Padi &rarr;
-          </a>
+            Info PadiDoc — Manajemen Penggilingan Padi →
+          </Link>
         </div>
       </div>
     </footer>

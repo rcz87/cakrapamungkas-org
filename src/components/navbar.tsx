@@ -50,15 +50,13 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href="https://padidoc.cakrapamungkas.org"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/padidoc"
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-xl hover:bg-primary-700 transition-colors shadow-md shadow-primary-600/20"
             >
               <Leaf className="w-4 h-4" />
-              Coba PadiDoc
-            </a>
+              Info PadiDoc
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -85,15 +83,14 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="https://padidoc.cakrapamungkas.org"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/padidoc"
+                onClick={() => setIsOpen(false)}
                 className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-600 text-white text-sm font-semibold rounded-xl hover:bg-primary-700 transition-colors"
               >
                 <Leaf className="w-4 h-4" />
-                Coba PadiDoc
-              </a>
+                Info PadiDoc
+              </Link>
             </div>
           </div>
         )}
