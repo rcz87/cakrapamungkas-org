@@ -191,11 +191,11 @@ export default function HomePage() {
             <Leaf className="w-8 h-8 text-primary-200" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Tanaman Padi Bermasalah?
+            Manajemen Penggilingan Padi Anda Kurang Maksimal?
           </h2>
           <p className="text-lg text-primary-100/80 mb-8 max-w-2xl mx-auto">
-            Gunakan aplikasi PadiDoc untuk mendiagnosa penyakit dan hama pada
-            tanaman padi Anda. Gratis, cepat, dan akurat.
+            Gunakan aplikasi PadiDoc untuk mengelola operasional penggilingan padi Anda. 
+            Pantau produksi, keuangan, dan performa bisnis secara real-time. Gratis, mudah, dan akurat.
           </p>
           <a
             href="https://padidoc.cakrapamungkas.org"
