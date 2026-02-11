@@ -175,22 +175,19 @@ export default function PusatIlmuPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Leaf className="w-10 h-10 text-primary-200 mx-auto mb-4" />
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Butuh Bantuan Hitung Pupuk?
+            Butuh Solusi Manajemen Penggilingan Padi?
           </h2>
           <p className="text-primary-100/80 mb-8">
-            Coba Aplikasi PadiDoc gratis untuk diagnosa tanaman padi dan
-            rekomendasi penanganan yang tepat.
+            Aplikasi PadiDoc untuk mengelola operasional, keuangan, dan produksi penggilingan padi Anda. Coming soon!
           </p>
-          <a
-            href="https://padidoc.cakrapamungkas.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/padidoc"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
           >
             <Leaf className="w-5 h-5" />
-            Coba PadiDoc Gratis
+            Lihat Info PadiDoc
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </section>
     </>

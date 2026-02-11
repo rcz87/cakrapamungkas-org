@@ -162,15 +162,13 @@ export default function LayananPage() {
               Hubungi Kami
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href="https://padidoc.cakrapamungkas.org"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/padidoc"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-primary-700 font-semibold rounded-xl hover:bg-gray-50 border border-primary-200 transition-colors"
             >
               <Leaf className="w-4 h-4" />
-              Coba PadiDoc Gratis
-            </a>
+              Info PadiDoc
+            </Link>
           </div>
         </div>
       </section>
