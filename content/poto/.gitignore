@@ -1,0 +1,11 @@
+# Ignore large files
+*.psd
+*.ai
+*.sketch
+
+# Ignore temporary files
+.DS_Store
+Thumbs.db
+
+# Keep folders
+!.gitkeep
