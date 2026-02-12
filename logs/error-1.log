@@ -16,3 +16,9 @@
 2026-02-12T05:30:43: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-12T05:33:46: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-12T05:38:38: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T06:06:23: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T06:10:02: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T06:11:15: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:12:04: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:13:53: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:20:05: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.

@@ -38,6 +38,16 @@ const categories = [
 
 const articles = [
   {
+    category: "Agribisnis",
+    categoryColor: "bg-indigo-100 text-indigo-700",
+    title: "Revolusi Cangkul Digital: 300 Ribu Petani Milenial Omzet Miliaran",
+    excerpt:
+      "Bagaimana petani milenial mengubah stigma 'kerja di sawah' menjadi bisnis miliaran rupiah. Profil sukses agropreneur muda yang memanfaatkan smart farming dan pasar digital untuk menciptakan kekayaan di pedesaan.",
+    readTime: "20 min",
+    link: "/artikel/petani-milenial",
+    featured: true,
+  },
+  {
     category: "Sejarah & Ekonomi",
     categoryColor: "bg-purple-100 text-purple-700",
     title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan",
