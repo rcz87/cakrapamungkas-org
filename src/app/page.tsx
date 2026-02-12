@@ -211,7 +211,7 @@ export default function HomePage() {
                 readTime: "12 min",
                 color: "bg-amber-100 text-amber-700",
                 href: "/artikel/subak-hingga-smart-farming",
-                image: "/images/subak-sawah.jpg"
+                image: "/images/subak-gemini.png"
               },
               {
                 category: "Ekonomi",
