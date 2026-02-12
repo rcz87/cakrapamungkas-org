@@ -51,7 +51,6 @@ const files = [
   
   // Auto Project - Digital automation
   { name: "!Link Google DATABASE KARYAWAN.pdf", category: "autoproject", desc: "Template database karyawan online" },
-  { name: "PANDUAN EDIT FILE .pdf", category: "autoproject", desc: "Tutorial edit template digital" },
 ];
 
 export default function DownloadPage() {
