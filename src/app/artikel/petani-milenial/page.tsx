@@ -63,7 +63,7 @@ export default function PetaniMilenialArtikelPage() {
           src="/images/petani milenial 300ribu.png"
           alt="Petani Milenial Modern Indonesia - Agribisnis Miliaran Rupiah"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>

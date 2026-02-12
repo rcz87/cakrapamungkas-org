@@ -60,7 +60,7 @@ export default function AgritechArtikelPage() {
           src="/images/petani-drone.png"
           alt="Petani Modern Menggunakan Drone untuk Monitoring Pertanian"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>

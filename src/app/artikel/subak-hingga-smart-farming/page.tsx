@@ -64,7 +64,7 @@ export default function SubakSmartFarmingPage() {
           src="/images/subak-gemini.png"
           alt="Sistem Irigasi Subak Bali - Kearifan Lokal Pertanian Nusantara"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
@@ -221,7 +221,7 @@ export default function SubakSmartFarmingPage() {
               src="/images/Gemini_Generated_Image_cswilvcswilvcswi.png"
               alt="Ilustrasi Smart Farming dan Teknologi Pertanian Digital Modern"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
 

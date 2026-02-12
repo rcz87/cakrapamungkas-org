@@ -63,7 +63,7 @@ export default function AdaptasiPerubahanIklimArtikelPage() {
           src="/images/adaptasi perubahan iklim.png"
           alt="Adaptasi Perubahan Iklim - Varietas Padi Tahan Cuaca Ekstrem"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>

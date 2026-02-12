@@ -63,7 +63,7 @@ export default function EksporKopiIndonesiaArtikelPage() {
           src="/images/kopi.png"
           alt="Ekspor Kopi Indonesia - Kopi Spesialti Premium"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>

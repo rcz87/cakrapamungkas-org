@@ -50,3 +50,4 @@
 2026-02-12T07:58:05: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-12T08:10:18: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
 2026-02-12T08:13:46: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T08:17:42: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.

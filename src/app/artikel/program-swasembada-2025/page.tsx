@@ -63,7 +63,7 @@ export default function SwasembadaArtikelPage() {
           src="/images/program swasembada.png"
           alt="Program Swasembada Pangan 2025 Indonesia"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>

@@ -61,7 +61,7 @@ export default function ArtikelPage() {
           src="/images/desa-petani.png"
           alt="Desa Petani Indonesia - Pertanian Tradisional Modern"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
