@@ -77,35 +77,35 @@ export default function HomePage() {
                 </div>
 
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                  Transformasi Agraria 2026: Strategi Besar Menuju Kedaulatan Pangan
+                  Analisis Strategis Kementan 2026: Transformasi Struktural Kedaulatan Pangan
                 </h2>
 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Analisis strategis kebijakan Kementerian Pertanian 2026 melalui 5 Pilar (Poin A-E): Ekstansifikasi lahan, 
-                  reformasi subsidi pupuk Rp46,87 T, KUR berbunga 6%, modernisasi Agritech 4.0, dan asuransi AUTP. 
-                  Manifesto kemajuan menuju Indonesia sebagai Lumbung Pangan Dunia.
+                  Analisis mendalam program kerja Kementerian Pertanian 2026 dengan pagu anggaran Rp40,14 T. 
+                  Membahas arsitektur fiskal, Brigade Pangan 100.000 milenial, target produksi 34,77 juta ton beras, 
+                  dan strategi Smart Farming 4.0 menuju kedaulatan pangan berkelanjutan.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Kebijakan 2026
+                    Kementan 2026
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    5 Pilar Strategis
+                    Brigade Pangan
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    KUR 6%
+                    Rp40,14 T
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Swasembada Pangan
+                    Smart Farming 4.0
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Agritech 4.0
+                    Analisis Strategis
                   </span>
                 </div>
 
                 <Link
-                  href="/artikel/transformasi-agraria-2026"
+                  href="/artikel/analisis-strategis-kementan-2026"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors"
                 >
                   Baca Artikel Lengkap
