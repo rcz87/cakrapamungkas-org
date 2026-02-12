@@ -61,8 +61,8 @@ export default function SubakSmartFarmingPage() {
       {/* Featured Image */}
       <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
         <Image
-          src="/images/desa-petani.png"
-          alt="Petani di Sawah dengan Sistem Irigasi Tradisional - Subak Bali"
+          src="/images/subak-gemini.png"
+          alt="Sistem Irigasi Subak Bali - Kearifan Lokal Pertanian Nusantara"
           fill
           className="object-cover"
           priority

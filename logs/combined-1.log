@@ -267,3 +267,95 @@
 2026-02-12T06:51:58: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
 2026-02-12T06:52:26: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
 2026-02-12T06:56:57: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T07:12:57: 
+2026-02-12T07:12:57: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:12:57: > next start
+2026-02-12T07:12:57: 
+2026-02-12T07:12:57: ▲ Next.js 16.1.6
+2026-02-12T07:12:57: - Local:         http://localhost:3001
+2026-02-12T07:12:57: - Network:       http://212.85.26.253:3001
+2026-02-12T07:12:57: 
+2026-02-12T07:12:57: ✓ Starting...
+2026-02-12T07:12:57: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:12:57: ✓ Ready in 487ms
+2026-02-12T07:13:46: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T07:15:20: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T07:34:18: 
+2026-02-12T07:34:18: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:34:18: > next start
+2026-02-12T07:34:18: 
+2026-02-12T07:34:18: ▲ Next.js 16.1.6
+2026-02-12T07:34:18: - Local:         http://localhost:3001
+2026-02-12T07:34:18: - Network:       http://212.85.26.253:3001
+2026-02-12T07:34:18: 
+2026-02-12T07:34:18: ✓ Starting...
+2026-02-12T07:34:19: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:34:19: ✓ Ready in 492ms
+2026-02-12T07:36:05: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T07:38:03: 
+2026-02-12T07:38:03: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:38:03: > next start
+2026-02-12T07:38:03: 
+2026-02-12T07:38:03: ▲ Next.js 16.1.6
+2026-02-12T07:38:03: - Local:         http://localhost:3001
+2026-02-12T07:38:03: - Network:       http://212.85.26.253:3001
+2026-02-12T07:38:03: 
+2026-02-12T07:38:03: ✓ Starting...
+2026-02-12T07:38:04: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:38:04: ✓ Ready in 529ms
+2026-02-12T07:41:22: 
+2026-02-12T07:41:22: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:41:22: > next start
+2026-02-12T07:41:22: 
+2026-02-12T07:41:22: ▲ Next.js 16.1.6
+2026-02-12T07:41:22: - Local:         http://localhost:3001
+2026-02-12T07:41:22: - Network:       http://212.85.26.253:3001
+2026-02-12T07:41:22: 
+2026-02-12T07:41:22: ✓ Starting...
+2026-02-12T07:41:22: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:41:22: ✓ Ready in 469ms
+2026-02-12T07:41:51: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T07:46:06: 
+2026-02-12T07:46:06: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:46:06: > next start
+2026-02-12T07:46:06: 
+2026-02-12T07:46:06: ▲ Next.js 16.1.6
+2026-02-12T07:46:06: - Local:         http://localhost:3001
+2026-02-12T07:46:06: - Network:       http://212.85.26.253:3001
+2026-02-12T07:46:06: 
+2026-02-12T07:46:06: ✓ Starting...
+2026-02-12T07:46:06: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:46:06: ✓ Ready in 507ms
+2026-02-12T07:54:27: 
+2026-02-12T07:54:27: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:54:27: > next start
+2026-02-12T07:54:27: 
+2026-02-12T07:54:27: ▲ Next.js 16.1.6
+2026-02-12T07:54:27: - Local:         http://localhost:3001
+2026-02-12T07:54:27: - Network:       http://212.85.26.253:3001
+2026-02-12T07:54:27: 
+2026-02-12T07:54:27: ✓ Starting...
+2026-02-12T07:54:28: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:54:28: ✓ Ready in 537ms
+2026-02-12T07:58:05: 
+2026-02-12T07:58:05: > cakrapamungkas-org@1.0.0 start
+2026-02-12T07:58:05: > next start
+2026-02-12T07:58:05: 
+2026-02-12T07:58:05: ▲ Next.js 16.1.6
+2026-02-12T07:58:05: - Local:         http://localhost:3001
+2026-02-12T07:58:05: - Network:       http://212.85.26.253:3001
+2026-02-12T07:58:05: 
+2026-02-12T07:58:05: ✓ Starting...
+2026-02-12T07:58:05: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T07:58:05: ✓ Ready in 486ms
+2026-02-12T08:10:17: 
+2026-02-12T08:10:17: > cakrapamungkas-org@1.0.0 start
+2026-02-12T08:10:17: > next start
+2026-02-12T08:10:17: 
+2026-02-12T08:10:17: ▲ Next.js 16.1.6
+2026-02-12T08:10:17: - Local:         http://localhost:3001
+2026-02-12T08:10:17: - Network:       http://212.85.26.253:3001
+2026-02-12T08:10:17: 
+2026-02-12T08:10:17: ✓ Starting...
+2026-02-12T08:10:18: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T08:10:18: ✓ Ready in 452ms
