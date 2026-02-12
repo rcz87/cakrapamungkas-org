@@ -280,7 +280,8 @@ export default function HomePage() {
                   "Panduan lengkap Good Agricultural Practices untuk budidaya padi modern dan berkelanjutan.",
                 readTime: "12 min",
                 color: "bg-green-100 text-green-700",
-                href: "/artikel/budidaya-gap-padi"
+                href: "/artikel/budidaya-gap-padi",
+                image: "/images/cek-ph-tanah.png"
               },
             ].map((article) => (
               <article
