@@ -44,12 +44,12 @@ export default function HomePage() {
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image/Visual Side */}
-              <div className="relative lg:order-1 h-64 lg:h-auto overflow-hidden bg-gray-100">
+              <div className="relative lg:order-1 h-64 lg:h-auto overflow-hidden bg-gradient-to-br from-slate-100 to-white">
                 <Image
                   src="/images/presiden.png"
                   alt="Presiden RI - Dukungan Kebijakan Pertanian 2026"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />

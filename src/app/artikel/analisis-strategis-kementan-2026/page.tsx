@@ -66,29 +66,28 @@ export default function TransformasiPangan2026Page() {
 
       {/* Presidential Authority Section */}
       <section className="max-w-6xl mx-auto px-4 -mt-16 relative z-20 mb-8">
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] shadow-2xl overflow-hidden border border-slate-700">
+        <div className="bg-gradient-to-br from-slate-100 to-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-200">
           <div className="relative h-[400px] md:h-[500px]">
             <Image
               src="/images/presiden.png"
               alt="Presiden RI - Dukungan Kebijakan Pertanian 2026"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <div className="max-w-3xl">
-                <span className="inline-block px-4 py-1.5 bg-red-600 text-white text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">
-                  Arahan Presiden RI
-                </span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-3 leading-tight">
-                  "Kedaulatan Pangan adalah Prioritas Tertinggi Bangsa"
-                </h3>
-                <p className="text-emerald-200 text-sm md:text-base leading-relaxed">
-                  Dukungan penuh pemerintah dalam transformasi sektor pertanian melalui alokasi anggaran Rp40,14 Triliun 
-                  untuk mewujudkan swasembada pangan berkelanjutan.
-                </p>
-              </div>
+          </div>
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:p-12">
+            <div className="max-w-3xl">
+              <span className="inline-block px-4 py-1.5 bg-red-600 text-white text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">
+                Arahan Presiden RI
+              </span>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-3 leading-tight">
+                "Kedaulatan Pangan adalah Prioritas Tertinggi Bangsa"
+              </h3>
+              <p className="text-emerald-200 text-sm md:text-base leading-relaxed">
+                Dukungan penuh pemerintah dalam transformasi sektor pertanian melalui alokasi anggaran Rp40,14 Triliun 
+                untuk mewujudkan swasembada pangan berkelanjutan.
+              </p>
             </div>
           </div>
         </div>
