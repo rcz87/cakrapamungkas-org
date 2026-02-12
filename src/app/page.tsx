@@ -219,7 +219,8 @@ export default function HomePage() {
                 excerpt:
                   "Profil sukses 300 ribu petani muda yang mengubah paradigma bertani di Indonesia.",
                 readTime: "10 min",
-                color: "bg-green-100 text-green-700"
+                color: "bg-green-100 text-green-700",
+                href: "/artikel/petani-milenial"
               },
               {
                 category: "Kebijakan",
@@ -227,7 +228,8 @@ export default function HomePage() {
                 excerpt:
                   "Analisis anggaran Rp139,4 triliun untuk cetak sawah 3 juta hektar dan hilirisasi komoditas.",
                 readTime: "15 min",
-                color: "bg-purple-100 text-purple-700"
+                color: "bg-purple-100 text-purple-700",
+                href: "/artikel/program-swasembada-2025"
               },
               {
                 category: "Komoditas",
@@ -235,7 +237,8 @@ export default function HomePage() {
                 excerpt:
                   "Kopi spesialti Indonesia menjadi primadona pasar Eropa dan Amerika dengan harga premium.",
                 readTime: "7 min",
-                color: "bg-orange-100 text-orange-700"
+                color: "bg-orange-100 text-orange-700",
+                href: "/artikel/ekspor-kopi-indonesia"
               },
               {
                 category: "Lingkungan",
@@ -243,7 +246,8 @@ export default function HomePage() {
                 excerpt:
                   "Strategi mitigasi risiko gagal panen dengan bibit unggul dan teknologi prediksi berbasis satelit.",
                 readTime: "9 min",
-                color: "bg-teal-100 text-teal-700"
+                color: "bg-teal-100 text-teal-700",
+                href: "/artikel/adaptasi-perubahan-iklim"
               },
             ].map((article) => (
               <article
@@ -279,18 +283,12 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
                     {article.excerpt}
                   </p>
-                  {article.href ? (
-                    <Link
-                      href={article.href}
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
-                    >
-                      Baca Artikel <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-gray-400">
-                      Segera Hadir <Clock className="w-4 h-4" />
-                    </span>
-                  )}
+                  <Link
+                    href={article.href}
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                  >
+                    Baca Artikel <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </article>
             ))}

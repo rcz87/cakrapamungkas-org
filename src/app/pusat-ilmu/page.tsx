@@ -6,7 +6,6 @@ import {
   Landmark,
   ArrowRight,
   Leaf,
-  Clock,
 } from "lucide-react";
 
 export const metadata = {
@@ -84,6 +83,7 @@ const articles = [
     excerpt:
       "Panduan praktis menerapkan Good Agricultural Practices (GAP) dalam budidaya padi. Mulai dari pemilihan varietas unggul, pengolahan lahan, sistem tanam, hingga pasca panen yang optimal.",
     readTime: "8 min",
+    link: "/artikel/budidaya-gap-padi",
   },
   {
     category: "Budidaya",
@@ -92,6 +92,7 @@ const articles = [
     excerpt:
       "Pelajari tanda-tanda kekurangan unsur hara pada tanaman padi dan cara mengatasinya dengan pemupukan yang tepat dan berimbang.",
     readTime: "6 min",
+    link: "/artikel/defisiensi-nutrisi-padi",
   },
   {
     category: "Manajemen",
@@ -100,6 +101,7 @@ const articles = [
     excerpt:
       "Strategi komprehensif mengelola risiko gagal panen, fluktuasi harga pasar, dan tantangan perubahan iklim dalam bisnis pertanian.",
     readTime: "10 min",
+    link: "/artikel/manajemen-risiko-agribisnis",
   },
   {
     category: "Manajemen",
@@ -108,6 +110,7 @@ const articles = [
     excerpt:
       "Cara menghitung titik impas usaha tani padi untuk membantu petani mengambil keputusan bisnis yang tepat dan menguntungkan.",
     readTime: "7 min",
+    link: "/artikel/break-even-point-usaha-tani",
   },
   {
     category: "Regulasi",
@@ -116,6 +119,7 @@ const articles = [
     excerpt:
       "Rangkuman kebijakan dan program terbaru pemerintah yang mendukung sektor pertanian Indonesia: subsidi pupuk, asuransi pertanian, dan lainnya.",
     readTime: "5 min",
+    link: "/artikel/program-pemerintah-2026",
   },
   {
     category: "Regulasi",
@@ -124,6 +128,7 @@ const articles = [
     excerpt:
       "Semua yang perlu Anda ketahui tentang AUTP: syarat pendaftaran, premi, klaim, dan manfaat perlindungan bagi petani padi.",
     readTime: "6 min",
+    link: "/artikel/asuransi-usaha-tani-padi",
   },
 ];
 
@@ -180,44 +185,32 @@ export default function PusatIlmuPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article) => {
-              const ArticleCard = (
-                <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all h-full">
-                  <div className="relative h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                    <Sprout className="w-14 h-14 text-primary-400" />
-                    {!article.link && (
-                      <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 bg-gray-800/70 text-white text-xs font-semibold rounded-full">
-                        <Clock className="w-3 h-3" />
-                        Segera Hadir
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span
-                        className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-lg ${article.categoryColor}`}
-                      >
-                        {article.category}
-                      </span>
-                      <span className="text-xs text-gray-400">
-                        {article.readTime}
-                      </span>
-                    </div>
-                    <h3 className={`text-lg font-bold leading-snug ${article.link ? "text-gray-900 group-hover:text-primary-700 transition-colors" : "text-gray-500"}`}>
-                      {article.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                  </div>
-                </article>
-              );
-
-              return article.link ? (
+              return (
                 <Link key={article.title} href={article.link} className="block cursor-pointer">
-                  {ArticleCard}
+                  <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all h-full">
+                    <div className="h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                      <Sprout className="w-14 h-14 text-primary-400" />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span
+                          className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-lg ${article.categoryColor}`}
+                        >
+                          {article.category}
+                        </span>
+                        <span className="text-xs text-gray-400">
+                          {article.readTime}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold leading-snug text-gray-900 group-hover:text-primary-700 transition-colors">
+                        {article.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                    </div>
+                  </article>
                 </Link>
-              ) : (
-                <div key={article.title} className="opacity-75">{ArticleCard}</div>
               );
             })}
           </div>
