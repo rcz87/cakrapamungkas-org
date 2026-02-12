@@ -6,6 +6,7 @@ import {
   Landmark,
   ArrowRight,
   Leaf,
+  Clock,
 } from "lucide-react";
 
 export const metadata = {
@@ -36,6 +37,26 @@ const categories = [
 ];
 
 const articles = [
+  {
+    category: "Sejarah & Ekonomi",
+    categoryColor: "bg-purple-100 text-purple-700",
+    title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan",
+    excerpt:
+      "Analisis mendalam tentang evolusi sektor pertanian Indonesia dari era Neolitikum hingga adopsi teknologi Agritech 4.0. Membahas signifikansi makroekonomi, produktivitas tenaga kerja, kearifan lokal seperti sistem Subak Bali, hingga kebijakan swasembada pangan.",
+    readTime: "45 min",
+    link: "/artikel/arsitektur-pertanian-indonesia",
+    featured: true,
+  },
+  {
+    category: "Teknologi",
+    categoryColor: "bg-blue-100 text-blue-700",
+    title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian Indonesia",
+    excerpt:
+      "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time. Membahas drone, IoT, AI, dan pemantauan satelit untuk pertanian modern.",
+    readTime: "25 min",
+    link: "/artikel/revolusi-agritech-4-0",
+    featured: true,
+  },
   {
     category: "Kearifan Lokal",
     categoryColor: "bg-emerald-100 text-emerald-700",
@@ -151,8 +172,14 @@ export default function PusatIlmuPage() {
             {articles.map((article) => {
               const ArticleCard = (
                 <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all h-full">
-                  <div className="h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                  <div className="relative h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
                     <Sprout className="w-14 h-14 text-primary-400" />
+                    {!article.link && (
+                      <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 bg-gray-800/70 text-white text-xs font-semibold rounded-full">
+                        <Clock className="w-3 h-3" />
+                        Segera Hadir
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
@@ -165,7 +192,7 @@ export default function PusatIlmuPage() {
                         {article.readTime}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug">
+                    <h3 className={`text-lg font-bold leading-snug ${article.link ? "text-gray-900 group-hover:text-primary-700 transition-colors" : "text-gray-500"}`}>
                       {article.title}
                     </h3>
                     <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
@@ -180,7 +207,7 @@ export default function PusatIlmuPage() {
                   {ArticleCard}
                 </Link>
               ) : (
-                <div key={article.title}>{ArticleCard}</div>
+                <div key={article.title} className="opacity-75">{ArticleCard}</div>
               );
             })}
           </div>

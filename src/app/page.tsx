@@ -209,7 +209,9 @@ export default function HomePage() {
                 excerpt:
                   "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital.",
                 readTime: "12 min",
-                color: "bg-amber-100 text-amber-700"
+                color: "bg-amber-100 text-amber-700",
+                href: "/artikel/subak-hingga-smart-farming",
+                image: "/images/subak-sawah.jpg"
               },
               {
                 category: "Ekonomi",
@@ -277,12 +279,18 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
                     {article.excerpt}
                   </p>
-                  <Link
-                    href={article.href || "/pusat-ilmu"}
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
-                  >
-                    Baca Artikel <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  {article.href ? (
+                    <Link
+                      href={article.href}
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                    >
+                      Baca Artikel <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-gray-400">
+                      Segera Hadir <Clock className="w-4 h-4" />
+                    </span>
+                  )}
                 </div>
               </article>
             ))}
