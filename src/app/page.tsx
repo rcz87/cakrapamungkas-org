@@ -194,6 +194,26 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                category: "Kebijakan",
+                title: "Transformasi Agraria 2026: Strategi Besar Kedaulatan Pangan",
+                excerpt:
+                  "5 Pilar strategis: Ekstansifikasi lahan, subsidi pupuk Rp46,87 T, KUR 6%, Agritech 4.0, dan AUTP.",
+                readTime: "35 min",
+                color: "bg-emerald-100 text-emerald-700",
+                href: "/artikel/transformasi-agraria-2026",
+                image: "/images/desa-petani.png"
+              },
+              {
+                category: "Sejarah",
+                title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan",
+                excerpt:
+                  "Evolusi sektor pertanian dari era Neolitikum hingga Agritech 4.0, sistem Subak Bali, dan kebijakan swasembada.",
+                readTime: "45 min",
+                color: "bg-slate-100 text-slate-700",
+                href: "/artikel/arsitektur-pertanian-indonesia",
+                image: "/images/desa-petani.png"
+              },
+              {
                 category: "Teknologi",
                 title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian",
                 excerpt:
@@ -208,7 +228,7 @@ export default function HomePage() {
                 title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara",
                 excerpt:
                   "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital.",
-                readTime: "12 min",
+                readTime: "30 min",
                 color: "bg-amber-100 text-amber-700",
                 href: "/artikel/subak-hingga-smart-farming",
                 image: "/images/subak-gemini.png"
@@ -252,6 +272,60 @@ export default function HomePage() {
                 color: "bg-teal-100 text-teal-700",
                 href: "/artikel/adaptasi-perubahan-iklim",
                 image: "/images/adaptasi perubahan iklim.png"
+              },
+              {
+                category: "Teknis",
+                title: "Budidaya GAP Padi: Standar Praktik Pertanian yang Baik",
+                excerpt:
+                  "Panduan lengkap Good Agricultural Practices untuk budidaya padi modern dan berkelanjutan.",
+                readTime: "12 min",
+                color: "bg-green-100 text-green-700",
+                href: "/artikel/budidaya-gap-padi"
+              },
+              {
+                category: "Teknis",
+                title: "Defisiensi Nutrisi Padi: Diagnosis dan Solusi",
+                excerpt:
+                  "Mengenali gejala kekurangan nutrisi pada tanaman padi dan cara mengatasinya secara efektif.",
+                readTime: "8 min",
+                color: "bg-yellow-100 text-yellow-700",
+                href: "/artikel/defisiensi-nutrisi-padi"
+              },
+              {
+                category: "Manajemen",
+                title: "Manajemen Risiko Agribisnis: Strategi Mitigasi",
+                excerpt:
+                  "Framework komprehensif untuk mengidentifikasi dan mengelola risiko dalam usaha pertanian.",
+                readTime: "14 min",
+                color: "bg-red-100 text-red-700",
+                href: "/artikel/manajemen-risiko-agribisnis"
+              },
+              {
+                category: "Ekonomi",
+                title: "Break Even Point Usaha Tani: Analisis Titik Impas",
+                excerpt:
+                  "Cara menghitung BEP untuk menentukan volume produksi minimal agar usaha tani menguntungkan.",
+                readTime: "10 min",
+                color: "bg-indigo-100 text-indigo-700",
+                href: "/artikel/break-even-point-usaha-tani"
+              },
+              {
+                category: "Kebijakan",
+                title: "Program Pemerintah 2026: Dukungan Sektor Pertanian",
+                excerpt:
+                  "Rangkuman lengkap program dan bantuan pemerintah untuk petani di tahun 2026.",
+                readTime: "11 min",
+                color: "bg-blue-100 text-blue-700",
+                href: "/artikel/program-pemerintah-2026"
+              },
+              {
+                category: "Asuransi",
+                title: "Asuransi Usaha Tani Padi (AUTP): Proteksi Gagal Panen",
+                excerpt:
+                  "Panduan lengkap AUTP dengan premi bersubsidi 80% untuk melindungi petani dari risiko kerugian.",
+                readTime: "9 min",
+                color: "bg-rose-100 text-rose-700",
+                href: "/artikel/asuransi-usaha-tani-padi"
               },
             ].map((article) => (
               <article
