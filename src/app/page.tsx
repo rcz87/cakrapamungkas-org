@@ -238,7 +238,8 @@ export default function HomePage() {
                   "Kopi spesialti Indonesia menjadi primadona pasar Eropa dan Amerika dengan harga premium.",
                 readTime: "7 min",
                 color: "bg-orange-100 text-orange-700",
-                href: "/artikel/ekspor-kopi-indonesia"
+                href: "/artikel/ekspor-kopi-indonesia",
+                image: "/images/kopi.png"
               },
               {
                 category: "Lingkungan",
