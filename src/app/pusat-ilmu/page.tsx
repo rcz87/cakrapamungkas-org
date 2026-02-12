@@ -37,6 +37,16 @@ const categories = [
 
 const articles = [
   {
+    category: "Kearifan Lokal",
+    categoryColor: "bg-emerald-100 text-emerald-700",
+    title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara",
+    excerpt:
+      "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital. Eksplorasi mendalam perjalanan pertanian Indonesia dari kearifan kuno menuju inovasi masa depan.",
+    readTime: "30 min",
+    link: "/artikel/subak-hingga-smart-farming",
+    featured: true,
+  },
+  {
     category: "Budidaya",
     categoryColor: "bg-green-100 text-green-700",
     title: "Teknologi Budidaya GAP untuk Padi Berkualitas",
@@ -138,34 +148,41 @@ export default function PusatIlmuPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
-              <article
-                key={article.title}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all"
-              >
-                <div className="h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <Sprout className="w-14 h-14 text-primary-400" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span
-                      className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-lg ${article.categoryColor}`}
-                    >
-                      {article.category}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {article.readTime}
-                    </span>
+            {articles.map((article) => {
+              const ArticleCard = (
+                <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all h-full">
+                  <div className="h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                    <Sprout className="w-14 h-14 text-primary-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug">
-                    {article.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                </div>
-              </article>
-            ))}
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span
+                        className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-lg ${article.categoryColor}`}
+                      >
+                        {article.category}
+                      </span>
+                      <span className="text-xs text-gray-400">
+                        {article.readTime}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
+                      {article.excerpt}
+                    </p>
+                  </div>
+                </article>
+              );
+
+              return article.link ? (
+                <Link key={article.title} href={article.link} className="block cursor-pointer">
+                  {ArticleCard}
+                </Link>
+              ) : (
+                <div key={article.title}>{ArticleCard}</div>
+              );
+            })}
           </div>
         </div>
       </section>
