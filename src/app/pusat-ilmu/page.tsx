@@ -67,31 +67,43 @@ const quickGuides = [
     title: "Checklist Irigasi & Manajemen Air",
     category: "Operasional",
     type: "Checklist",
+    file: "Checklist Irigasi dan Manajemen Air.docx",
+    folder: "dasar",
   },
   {
     title: "SOP Pemupukan Susulan 4R",
     category: "Budidaya",
     type: "SOP",
+    file: "SOP 12 Pemupukan Susulan 4R.docx",
+    folder: "dasar",
   },
   {
     title: "Template RAB Per Blok",
     category: "Keuangan",
     type: "Template",
+    file: "SOP 03 RAB dan Pencatatan Biaya Per Siklus Per Blok.docx",
+    folder: "dasar",
   },
   {
     title: "Checklist Panen & Serah Terima",
     category: "Operasional",
     type: "Checklist",
+    file: "Checklist Panen dan SerahTerima.docx",
+    folder: "dasar",
   },
   {
     title: "SOP QC & Release Pengiriman",
     category: "Quality Control",
     type: "SOP",
+    file: "SOP 20 QC Batch dan Release Pengiriman.docx",
+    folder: "dasar",
   },
   {
     title: "Dashboard Operasional Harian",
     category: "Manajemen",
     type: "Dashboard",
+    file: "SOP 34 Sistem Data dan Dashboard Operasional.docx",
+    folder: "pengembangan",
   },
 ];
 
@@ -199,9 +211,11 @@ export default function PusatIlmuPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {quickGuides.map((guide, idx) => (
-              <div
+              <a
                 key={idx}
-                className="bg-white rounded-xl p-6 border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all group cursor-pointer"
+                href={`/downloads/${guide.folder}/${guide.file}`}
+                download
+                className="bg-white rounded-xl p-6 border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all group cursor-pointer block"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
@@ -212,10 +226,13 @@ export default function PusatIlmuPage() {
                       {guide.title}
                     </h3>
                   </div>
-                  <FileText className="w-5 h-5 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                  <Download className="w-5 h-5 text-gray-400 group-hover:text-primary-600 transition-colors" />
                 </div>
-                <p className="text-sm text-gray-500">{guide.category}</p>
-              </div>
+                <p className="text-sm text-gray-500 mb-3">{guide.category}</p>
+                <div className="text-xs text-primary-600 font-semibold">
+                  Klik untuk download →
+                </div>
+              </a>
             ))}
           </div>
 
