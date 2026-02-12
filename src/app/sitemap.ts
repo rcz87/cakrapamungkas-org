@@ -15,6 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/artikel/arsitektur-pertanian-indonesia',
     '/artikel/revolusi-agritech-4-0',
     '/artikel/subak-hingga-smart-farming',
+    '/artikel/petani-milenial',
+    '/artikel/program-swasembada-2025',
+    '/artikel/ekspor-kopi-indonesia',
+    '/artikel/adaptasi-perubahan-iklim',
+    '/artikel/budidaya-gap-padi',
+    '/artikel/defisiensi-nutrisi-padi',
+    '/artikel/manajemen-risiko-agribisnis',
+    '/artikel/break-even-point-usaha-tani',
+    '/artikel/program-pemerintah-2026',
+    '/artikel/asuransi-usaha-tani-padi',
   ]
 
   return routes.map((route) => ({
