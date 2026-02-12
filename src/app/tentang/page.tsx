@@ -116,12 +116,12 @@ export default function TentangPage() {
                 desc: "Pendiri CV. Cakra Pamungkas Mandiri dengan visi memajukan pertanian Indonesia melalui teknologi dan edukasi. Berpengalaman dalam pengelolaan agribisnis dan pengembangan usaha pertanian.",
               },
               {
-                name: "Tim Operasional",
+                name: "Sapto",
                 role: "Manajer Operasional",
                 desc: "Mengawasi operasional harian termasuk jasa maklon penggilingan gabah dan distribusi sarana produksi pertanian.",
               },
               {
-                name: "Tim Konten",
+                name: "Stalyyna",
                 role: "Edukasi & Konten",
                 desc: "Bertanggung jawab atas konten edukasi pertanian, riset artikel, dan pengembangan platform PadiDoc.",
               },
