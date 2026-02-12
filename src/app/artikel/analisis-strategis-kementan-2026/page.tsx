@@ -69,8 +69,8 @@ export default function TransformasiPangan2026Page() {
         <div className="bg-gradient-to-br from-slate-100 to-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-200">
           <div className="relative h-[400px] md:h-[500px]">
             <Image
-              src="/images/presiden.png"
-              alt="Presiden RI - Dukungan Kebijakan Pertanian 2026"
+              src="/images/presiden-dan-mentan.jpg"
+              alt="Presiden RI dan Menteri Pertanian - Dukungan Kebijakan Pertanian 2026"
               fill
               className="object-contain"
               priority
@@ -79,7 +79,7 @@ export default function TransformasiPangan2026Page() {
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:p-12">
             <div className="max-w-3xl">
               <span className="inline-block px-4 py-1.5 bg-red-600 text-white text-[10px] font-black rounded-full mb-4 uppercase tracking-widest">
-                Arahan Presiden RI
+                Arahan Presiden RI & Menteri Pertanian
               </span>
               <h3 className="text-2xl md:text-3xl font-black text-white mb-3 leading-tight">
                 "Kedaulatan Pangan adalah Prioritas Tertinggi Bangsa"

@@ -46,8 +46,8 @@ export default function HomePage() {
               {/* Image/Visual Side */}
               <div className="relative lg:order-1 h-64 lg:h-auto overflow-hidden bg-gradient-to-br from-slate-100 to-white">
                 <Image
-                  src="/images/presiden.png"
-                  alt="Presiden RI - Dukungan Kebijakan Pertanian 2026"
+                  src="/images/presiden-dan-mentan.jpg"
+                  alt="Presiden RI dan Mentan - Dukungan Kebijakan Pertanian 2026"
                   fill
                   className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
