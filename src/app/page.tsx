@@ -209,7 +209,9 @@ export default function HomePage() {
                 excerpt:
                   "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital.",
                 readTime: "12 min",
-                color: "bg-amber-100 text-amber-700"
+                color: "bg-amber-100 text-amber-700",
+                href: "/artikel/subak-hingga-smart-farming",
+                image: "/images/subak-sawah.jpg"
               },
               {
                 category: "Ekonomi",

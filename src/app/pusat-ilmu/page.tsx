@@ -37,6 +37,26 @@ const categories = [
 
 const articles = [
   {
+    category: "Sejarah & Ekonomi",
+    categoryColor: "bg-purple-100 text-purple-700",
+    title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan",
+    excerpt:
+      "Analisis mendalam tentang evolusi sektor pertanian Indonesia dari era Neolitikum hingga adopsi teknologi Agritech 4.0. Membahas signifikansi makroekonomi, produktivitas tenaga kerja, kearifan lokal seperti sistem Subak Bali, hingga kebijakan swasembada pangan.",
+    readTime: "45 min",
+    link: "/artikel/arsitektur-pertanian-indonesia",
+    featured: true,
+  },
+  {
+    category: "Teknologi",
+    categoryColor: "bg-blue-100 text-blue-700",
+    title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian Indonesia",
+    excerpt:
+      "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time. Membahas drone, IoT, AI, dan pemantauan satelit untuk pertanian modern.",
+    readTime: "25 min",
+    link: "/artikel/revolusi-agritech-4-0",
+    featured: true,
+  },
+  {
     category: "Kearifan Lokal",
     categoryColor: "bg-emerald-100 text-emerald-700",
     title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara",
