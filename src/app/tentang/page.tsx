@@ -111,19 +111,19 @@ export default function TentangPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               {
-                name: "Nama Pendiri",
-                role: "Direktur Utama",
-                desc: "Berpengalaman dalam pengelolaan agribisnis dan pengembangan usaha pertanian.",
+                name: "RCZ",
+                role: "Founder & CEO",
+                desc: "Pendiri CV. Cakra Pamungkas Mandiri dengan visi memajukan pertanian Indonesia melalui teknologi dan edukasi. Berpengalaman dalam pengelolaan agribisnis dan pengembangan usaha pertanian.",
               },
               {
-                name: "Nama Anggota",
+                name: "Tim Operasional",
                 role: "Manajer Operasional",
-                desc: "Mengawasi operasional harian termasuk jasa maklon dan distribusi saprotan.",
+                desc: "Mengawasi operasional harian termasuk jasa maklon penggilingan gabah dan distribusi sarana produksi pertanian.",
               },
               {
-                name: "Nama Anggota",
+                name: "Tim Konten",
                 role: "Edukasi & Konten",
-                desc: "Bertanggung jawab atas konten edukasi pertanian dan pengembangan PadiDoc.",
+                desc: "Bertanggung jawab atas konten edukasi pertanian, riset artikel, dan pengembangan platform PadiDoc.",
               },
             ].map((member) => (
               <div
