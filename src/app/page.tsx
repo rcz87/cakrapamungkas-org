@@ -220,7 +220,8 @@ export default function HomePage() {
                   "Profil sukses 300 ribu petani muda yang mengubah paradigma bertani di Indonesia.",
                 readTime: "10 min",
                 color: "bg-green-100 text-green-700",
-                href: "/artikel/petani-milenial"
+                href: "/artikel/petani-milenial",
+                image: "/images/petani milenial 300ribu.png"
               },
               {
                 category: "Kebijakan",
@@ -249,7 +250,8 @@ export default function HomePage() {
                   "Strategi mitigasi risiko gagal panen dengan bibit unggul dan teknologi prediksi berbasis satelit.",
                 readTime: "9 min",
                 color: "bg-teal-100 text-teal-700",
-                href: "/artikel/adaptasi-perubahan-iklim"
+                href: "/artikel/adaptasi-perubahan-iklim",
+                image: "/images/adaptasi perubahan iklim.png"
               },
             ].map((article) => (
               <article
