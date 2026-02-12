@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 export const metadata = {
@@ -315,6 +316,22 @@ export default function BudidayaGapPadiArtikelPage() {
                 Toleransi beda tinggi maksimal 2-3 cm dalam satu petakan.
               </p>
             </div>
+          </div>
+
+          {/* pH Testing Image Section */}
+          <div className="my-12">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/cek-ph-tanah.png"
+                alt="Pengujian pH Tanah Sawah dengan Perangkat Uji"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
+              />
+            </div>
+            <p className="text-sm text-gray-500 text-center mt-3 italic">
+              Pengujian pH dan kesuburan tanah menggunakan Perangkat Uji Tanah Sawah (PUTS) untuk menentukan rekomendasi pemupukan yang tepat
+            </p>
           </div>
 
           <div className="bg-gradient-to-r from-green-50 to-lime-50 rounded-xl p-8 my-8">
