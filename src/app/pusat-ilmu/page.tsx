@@ -17,7 +17,7 @@ export const metadata = {
 
 const resourceCategories = [
   {
-    title: "Basic Pertanian",
+    title: "Dasar Pertanian",
     icon: Leaf,
     description: "Panduan dasar pertanian untuk pemula",
     color: "bg-green-100 text-green-700 border-green-200",
@@ -27,13 +27,13 @@ const resourceCategories = [
       "10 Panduan lokasi, tanah, air, dan iklim",
       "46 SOP lengkap dari tanam hingga panen",
     ],
-    link: "/download?category=basic",
+    link: "/download?category=dasar",
     downloadCount: "150+ Files",
   },
   {
-    title: "Scale Pertanian",
+    title: "Pengembangan Bisnis",
     icon: FileText,
-    description: "Resources untuk scaling agribisnis",
+    description: "Resources untuk pengembangan agribisnis",
     color: "bg-blue-100 text-blue-700 border-blue-200",
     items: [
       "Template surat & perjanjian bisnis",
@@ -42,11 +42,11 @@ const resourceCategories = [
       "Business planning & strategi",
       "Chart analisis dan dashboard",
     ],
-    link: "/download?category=scale",
+    link: "/download?category=pengembangan",
     downloadCount: "200+ Files",
   },
   {
-    title: "Auto-Pilot Pertanian",
+    title: "Auto Project",
     icon: Folder,
     description: "Sistem otomasi dan digitalisasi",
     color: "bg-purple-100 text-purple-700 border-purple-200",
@@ -57,7 +57,7 @@ const resourceCategories = [
       "Template HR dan kepegawaian",
       "Sistem keuangan terintegrasi",
     ],
-    link: "/download?category=autopilot",
+    link: "/download?category=autoproject",
     downloadCount: "100+ Files",
   },
 ];

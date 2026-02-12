@@ -251,3 +251,19 @@
 2026-02-12T06:32:35: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
 2026-02-12T06:32:47: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
 2026-02-12T06:37:01: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:49:21: 
+2026-02-12T06:49:21: > cakrapamungkas-org@1.0.0 start
+2026-02-12T06:49:21: > next start
+2026-02-12T06:49:21: 
+2026-02-12T06:49:21: ▲ Next.js 16.1.6
+2026-02-12T06:49:21: - Local:         http://localhost:3001
+2026-02-12T06:49:21: - Network:       http://212.85.26.253:3001
+2026-02-12T06:49:21: 
+2026-02-12T06:49:21: ✓ Starting...
+2026-02-12T06:49:21: ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+2026-02-12T06:49:21: ✓ Ready in 545ms
+2026-02-12T06:49:44: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:50:05: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:51:58: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:52:26: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
+2026-02-12T06:56:57: ⨯ The requested resource isn't a valid image for /images/subak-sawah.jpg received null
