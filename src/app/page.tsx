@@ -229,7 +229,8 @@ export default function HomePage() {
                   "Analisis anggaran Rp139,4 triliun untuk cetak sawah 3 juta hektar dan hilirisasi komoditas.",
                 readTime: "15 min",
                 color: "bg-purple-100 text-purple-700",
-                href: "/artikel/program-swasembada-2025"
+                href: "/artikel/program-swasembada-2025",
+                image: "/images/program swasembada.png"
               },
               {
                 category: "Komoditas",
