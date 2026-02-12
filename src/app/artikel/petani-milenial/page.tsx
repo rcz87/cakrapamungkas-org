@@ -57,6 +57,17 @@ export default function PetaniMilenialArtikelPage() {
         </div>
       </header>
 
+      {/* Featured Image */}
+      <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
+        <Image
+          src="/images/petani milenial 300ribu.png"
+          alt="Petani Milenial Modern Indonesia - Agribisnis Miliaran Rupiah"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="prose prose-lg max-w-none">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 export const metadata = {
@@ -55,6 +56,17 @@ export default function AdaptasiPerubahanIklimArtikelPage() {
           </div>
         </div>
       </header>
+
+      {/* Featured Image */}
+      <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
+        <Image
+          src="/images/adaptasi perubahan iklim.png"
+          alt="Adaptasi Perubahan Iklim - Varietas Padi Tahan Cuaca Ekstrem"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
