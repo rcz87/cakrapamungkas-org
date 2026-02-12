@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kontak',
     '/download',
     '/padidoc',
+    '/artikel/transformasi-agraria-2026',
     '/artikel/arsitektur-pertanian-indonesia',
     '/artikel/revolusi-agritech-4-0',
     '/artikel/subak-hingga-smart-farming',

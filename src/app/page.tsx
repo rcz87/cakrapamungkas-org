@@ -77,35 +77,35 @@ export default function HomePage() {
                 </div>
 
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                  Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan
+                  Transformasi Agraria 2026: Strategi Besar Menuju Kedaulatan Pangan
                 </h2>
 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Analisis mendalam tentang evolusi sektor pertanian Indonesia dari era Neolitikum hingga
-                  adopsi teknologi Agritech 4.0. Membahas signifikansi makroekonomi, produktivitas tenaga kerja,
-                  kearifan lokal seperti sistem Subak Bali, hingga kebijakan swasembada pangan 2024-2025.
+                  Analisis strategis kebijakan Kementerian Pertanian 2026 melalui 5 Pilar (Poin A-E): Ekstansifikasi lahan, 
+                  reformasi subsidi pupuk Rp46,87 T, KUR berbunga 6%, modernisasi Agritech 4.0, dan asuransi AUTP. 
+                  Manifesto kemajuan menuju Indonesia sebagai Lumbung Pangan Dunia.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Sejarah Pertanian
+                    Kebijakan 2026
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Agritech 4.0
+                    5 Pilar Strategis
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Petani Milenial
+                    KUR 6%
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
                     Swasembada Pangan
                   </span>
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg">
-                    Kebijakan 2025
+                    Agritech 4.0
                   </span>
                 </div>
 
                 <Link
-                  href="/artikel/arsitektur-pertanian-indonesia"
+                  href="/artikel/transformasi-agraria-2026"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors"
                 >
                   Baca Artikel Lengkap
