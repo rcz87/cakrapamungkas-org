@@ -282,51 +282,6 @@ export default function HomePage() {
                 color: "bg-green-100 text-green-700",
                 href: "/artikel/budidaya-gap-padi"
               },
-              {
-                category: "Teknis",
-                title: "Defisiensi Nutrisi Padi: Diagnosis dan Solusi",
-                excerpt:
-                  "Mengenali gejala kekurangan nutrisi pada tanaman padi dan cara mengatasinya secara efektif.",
-                readTime: "8 min",
-                color: "bg-yellow-100 text-yellow-700",
-                href: "/artikel/defisiensi-nutrisi-padi"
-              },
-              {
-                category: "Manajemen",
-                title: "Manajemen Risiko Agribisnis: Strategi Mitigasi",
-                excerpt:
-                  "Framework komprehensif untuk mengidentifikasi dan mengelola risiko dalam usaha pertanian.",
-                readTime: "14 min",
-                color: "bg-red-100 text-red-700",
-                href: "/artikel/manajemen-risiko-agribisnis"
-              },
-              {
-                category: "Ekonomi",
-                title: "Break Even Point Usaha Tani: Analisis Titik Impas",
-                excerpt:
-                  "Cara menghitung BEP untuk menentukan volume produksi minimal agar usaha tani menguntungkan.",
-                readTime: "10 min",
-                color: "bg-indigo-100 text-indigo-700",
-                href: "/artikel/break-even-point-usaha-tani"
-              },
-              {
-                category: "Kebijakan",
-                title: "Program Pemerintah 2026: Dukungan Sektor Pertanian",
-                excerpt:
-                  "Rangkuman lengkap program dan bantuan pemerintah untuk petani di tahun 2026.",
-                readTime: "11 min",
-                color: "bg-blue-100 text-blue-700",
-                href: "/artikel/program-pemerintah-2026"
-              },
-              {
-                category: "Asuransi",
-                title: "Asuransi Usaha Tani Padi (AUTP): Proteksi Gagal Panen",
-                excerpt:
-                  "Panduan lengkap AUTP dengan premi bersubsidi 80% untuk melindungi petani dari risiko kerugian.",
-                readTime: "9 min",
-                color: "bg-rose-100 text-rose-700",
-                href: "/artikel/asuransi-usaha-tani-padi"
-              },
             ].map((article) => (
               <article
                 key={article.title}
