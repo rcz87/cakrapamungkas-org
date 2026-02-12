@@ -1,134 +1,97 @@
 import Link from "next/link";
 import {
   BookOpen,
-  Sprout,
-  BarChart3,
-  Landmark,
+  FileText,
+  Folder,
+  Download,
   ArrowRight,
   Leaf,
+  CheckCircle2,
 } from "lucide-react";
 
 export const metadata = {
-  title: "Pusat Ilmu | CV. Cakra Pamungkas Mandiri",
+  title: "Pusat Ilmu - Resources Pertanian | CV. Cakra Pamungkas Mandiri",
   description:
-    "Artikel edukasi pertanian: budidaya, manajemen risiko, dan regulasi terkini.",
+    "Akses ratusan SOP, template, panduan praktis, dan resources lengkap untuk meningkatkan produktivitas agribisnis Anda.",
 };
 
-const categories = [
+const resourceCategories = [
   {
-    name: "Budidaya",
-    icon: Sprout,
-    color: "bg-green-100 text-green-700",
-    description: "Teknik budidaya dan Good Agricultural Practices (GAP)",
+    title: "Basic Pertanian",
+    icon: Leaf,
+    description: "Panduan dasar pertanian untuk pemula",
+    color: "bg-green-100 text-green-700 border-green-200",
+    items: [
+      "50+ Checklist operasional harian",
+      "Roadmap memulai pertanian dari nol",
+      "10 Panduan lokasi, tanah, air, dan iklim",
+      "46 SOP lengkap dari tanam hingga panen",
+    ],
+    link: "/download?category=basic",
+    downloadCount: "150+ Files",
   },
   {
-    name: "Manajemen",
-    icon: BarChart3,
-    color: "bg-blue-100 text-blue-700",
-    description: "Manajemen risiko dan strategi agribisnis",
+    title: "Scale Pertanian",
+    icon: FileText,
+    description: "Resources untuk scaling agribisnis",
+    color: "bg-blue-100 text-blue-700 border-blue-200",
+    items: [
+      "Template surat & perjanjian bisnis",
+      "Form HR dan operasional",
+      "Template keuangan dan RAB",
+      "Business planning & strategi",
+      "Chart analisis dan dashboard",
+    ],
+    link: "/download?category=scale",
+    downloadCount: "200+ Files",
   },
   {
-    name: "Regulasi",
-    icon: Landmark,
-    color: "bg-amber-100 text-amber-700",
-    description: "Update kebijakan dan program pemerintah",
+    title: "Auto-Pilot Pertanian",
+    icon: Folder,
+    description: "Sistem otomasi dan digitalisasi",
+    color: "bg-purple-100 text-purple-700 border-purple-200",
+    items: [
+      "Link Google Sheet database",
+      "Template marketing dan iklan",
+      "Invoice dan laporan sales",
+      "Template HR dan kepegawaian",
+      "Sistem keuangan terintegrasi",
+    ],
+    link: "/download?category=autopilot",
+    downloadCount: "100+ Files",
   },
 ];
 
-const articles = [
+const quickGuides = [
   {
-    category: "Agribisnis",
-    categoryColor: "bg-indigo-100 text-indigo-700",
-    title: "Revolusi Cangkul Digital: 300 Ribu Petani Milenial Omzet Miliaran",
-    excerpt:
-      "Bagaimana petani milenial mengubah stigma 'kerja di sawah' menjadi bisnis miliaran rupiah. Profil sukses agropreneur muda yang memanfaatkan smart farming dan pasar digital untuk menciptakan kekayaan di pedesaan.",
-    readTime: "20 min",
-    link: "/artikel/petani-milenial",
-    featured: true,
+    title: "Checklist Irigasi & Manajemen Air",
+    category: "Operasional",
+    type: "Checklist",
   },
   {
-    category: "Sejarah & Ekonomi",
-    categoryColor: "bg-purple-100 text-purple-700",
-    title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan",
-    excerpt:
-      "Analisis mendalam tentang evolusi sektor pertanian Indonesia dari era Neolitikum hingga adopsi teknologi Agritech 4.0. Membahas signifikansi makroekonomi, produktivitas tenaga kerja, kearifan lokal seperti sistem Subak Bali, hingga kebijakan swasembada pangan.",
-    readTime: "45 min",
-    link: "/artikel/arsitektur-pertanian-indonesia",
-    featured: true,
-  },
-  {
-    category: "Teknologi",
-    categoryColor: "bg-blue-100 text-blue-700",
-    title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian Indonesia",
-    excerpt:
-      "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time. Membahas drone, IoT, AI, dan pemantauan satelit untuk pertanian modern.",
-    readTime: "25 min",
-    link: "/artikel/revolusi-agritech-4-0",
-    featured: true,
-  },
-  {
-    category: "Kearifan Lokal",
-    categoryColor: "bg-emerald-100 text-emerald-700",
-    title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara",
-    excerpt:
-      "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital. Eksplorasi mendalam perjalanan pertanian Indonesia dari kearifan kuno menuju inovasi masa depan.",
-    readTime: "30 min",
-    link: "/artikel/subak-hingga-smart-farming",
-    featured: true,
-  },
-  {
+    title: "SOP Pemupukan Susulan 4R",
     category: "Budidaya",
-    categoryColor: "bg-green-100 text-green-700",
-    title: "Teknologi Budidaya GAP untuk Padi Berkualitas",
-    excerpt:
-      "Panduan praktis menerapkan Good Agricultural Practices (GAP) dalam budidaya padi. Mulai dari pemilihan varietas unggul, pengolahan lahan, sistem tanam, hingga pasca panen yang optimal.",
-    readTime: "8 min",
-    link: "/artikel/budidaya-gap-padi",
+    type: "SOP",
   },
   {
-    category: "Budidaya",
-    categoryColor: "bg-green-100 text-green-700",
-    title: "Cara Mengenali Gejala Defisiensi Nutrisi pada Padi",
-    excerpt:
-      "Pelajari tanda-tanda kekurangan unsur hara pada tanaman padi dan cara mengatasinya dengan pemupukan yang tepat dan berimbang.",
-    readTime: "6 min",
-    link: "/artikel/defisiensi-nutrisi-padi",
+    title: "Template RAB Per Blok",
+    category: "Keuangan",
+    type: "Template",
   },
   {
+    title: "Checklist Panen & Serah Terima",
+    category: "Operasional",
+    type: "Checklist",
+  },
+  {
+    title: "SOP QC & Release Pengiriman",
+    category: "Quality Control",
+    type: "SOP",
+  },
+  {
+    title: "Dashboard Operasional Harian",
     category: "Manajemen",
-    categoryColor: "bg-blue-100 text-blue-700",
-    title: "Manajemen Risiko dalam Agribisnis Modern",
-    excerpt:
-      "Strategi komprehensif mengelola risiko gagal panen, fluktuasi harga pasar, dan tantangan perubahan iklim dalam bisnis pertanian.",
-    readTime: "10 min",
-    link: "/artikel/manajemen-risiko-agribisnis",
-  },
-  {
-    category: "Manajemen",
-    categoryColor: "bg-blue-100 text-blue-700",
-    title: "Perhitungan Break Even Point Usaha Tani Padi",
-    excerpt:
-      "Cara menghitung titik impas usaha tani padi untuk membantu petani mengambil keputusan bisnis yang tepat dan menguntungkan.",
-    readTime: "7 min",
-    link: "/artikel/break-even-point-usaha-tani",
-  },
-  {
-    category: "Regulasi",
-    categoryColor: "bg-amber-100 text-amber-700",
-    title: "Update Program Pemerintah 2026 untuk Pertanian",
-    excerpt:
-      "Rangkuman kebijakan dan program terbaru pemerintah yang mendukung sektor pertanian Indonesia: subsidi pupuk, asuransi pertanian, dan lainnya.",
-    readTime: "5 min",
-    link: "/artikel/program-pemerintah-2026",
-  },
-  {
-    category: "Regulasi",
-    categoryColor: "bg-amber-100 text-amber-700",
-    title: "Panduan Lengkap Asuransi Usaha Tani Padi (AUTP)",
-    excerpt:
-      "Semua yang perlu Anda ketahui tentang AUTP: syarat pendaftaran, premi, klaim, dan manfaat perlindungan bagi petani padi.",
-    readTime: "6 min",
-    link: "/artikel/asuransi-usaha-tani-padi",
+    type: "Dashboard",
   },
 ];
 
@@ -142,37 +105,79 @@ export default function PusatIlmuPage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-800/60 border border-primary-700/50 rounded-full mb-6">
               <BookOpen className="w-4 h-4 text-primary-400" />
               <span className="text-sm text-primary-200 font-medium">
-                Blog & Edukasi
+                Resources Center
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
               Pusat Ilmu Pertanian
             </h1>
             <p className="mt-4 text-lg text-primary-100/80 leading-relaxed">
-              Artikel, panduan, dan informasi terkini seputar budidaya,
-              manajemen, dan regulasi dunia pertanian Indonesia.
+              Akses ratusan SOP, checklist, template, dan panduan praktis untuk 
+              meningkatkan produktivitas dan efisiensi agribisnis Anda.
             </p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm text-primary-200">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span>400+ Resources Tersedia</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-green-400" />
+                <span>Gratis & Siap Pakai</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid sm:grid-cols-3 gap-6">
-            {categories.map((cat) => (
+      {/* Resource Categories */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Kategori Resources
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Pilih kategori sesuai kebutuhan bisnis pertanian Anda
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {resourceCategories.map((category) => (
               <div
-                key={cat.name}
-                className="flex items-center gap-4 bg-gray-50 rounded-xl p-4 border border-gray-100"
+                key={category.title}
+                className="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-primary-200 hover:shadow-lg transition-all"
               >
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center ${cat.color}`}
-                >
-                  <cat.icon className="w-6 h-6" />
+                <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${category.color} mb-6`}>
+                  <category.icon className="w-8 h-8" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-gray-900">{cat.name}</h3>
-                  <p className="text-xs text-gray-500">{cat.description}</p>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  {category.title}
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  {category.description}
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  {category.items.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                  <span className="text-sm font-semibold text-gray-500">
+                    {category.downloadCount}
+                  </span>
+                  <Link
+                    href={category.link}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    Akses
+                  </Link>
                 </div>
               </div>
             ))}
@@ -180,59 +185,68 @@ export default function PusatIlmuPage() {
         </div>
       </section>
 
-      {/* Articles */}
+      {/* Quick Access Guides */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => {
-              return (
-                <Link key={article.title} href={article.link} className="block cursor-pointer">
-                  <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all h-full">
-                    <div className="h-44 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                      <Sprout className="w-14 h-14 text-primary-400" />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <span
-                          className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-lg ${article.categoryColor}`}
-                        >
-                          {article.category}
-                        </span>
-                        <span className="text-xs text-gray-400">
-                          {article.readTime}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-bold leading-snug text-gray-900 group-hover:text-primary-700 transition-colors">
-                        {article.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-3">
-                        {article.excerpt}
-                      </p>
-                    </div>
-                  </article>
-                </Link>
-              );
-            })}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Panduan Populer
+            </h2>
+            <p className="text-lg text-gray-600">
+              Akses cepat ke panduan yang paling sering digunakan
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {quickGuides.map((guide, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl p-6 border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all group cursor-pointer"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <span className="inline-block px-2.5 py-1 bg-primary-50 text-primary-700 text-xs font-semibold rounded-lg mb-2">
+                      {guide.type}
+                    </span>
+                    <h3 className="font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+                      {guide.title}
+                    </h3>
+                  </div>
+                  <FileText className="w-5 h-5 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                </div>
+                <p className="text-sm text-gray-500">{guide.category}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/download"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-bold rounded-xl hover:bg-primary-700 transition-colors shadow-lg"
+            >
+              Lihat Semua Panduan
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA to PadiDoc */}
+      {/* CTA to Articles */}
       <section className="bg-gradient-to-r from-primary-700 to-primary-800 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Leaf className="w-10 h-10 text-primary-200 mx-auto mb-4" />
+          <BookOpen className="w-10 h-10 text-primary-200 mx-auto mb-4" />
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Butuh Solusi Manajemen Penggilingan Padi?
+            Cari Insight & Analisis Mendalam?
           </h2>
           <p className="text-primary-100/80 mb-8">
-            Aplikasi PadiDoc untuk mengelola operasional, keuangan, dan produksi penggilingan padi Anda. Coming soon!
+            Baca artikel kami tentang tren pertanian, teknologi, dan strategi agribisnis modern.
           </p>
           <Link
-            href="/padidoc"
+            href="/artikel"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
           >
-            <Leaf className="w-5 h-5" />
-            Lihat Info PadiDoc
+            <BookOpen className="w-5 h-5" />
+            Baca Artikel
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

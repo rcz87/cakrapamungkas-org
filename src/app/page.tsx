@@ -177,17 +177,17 @@ export default function HomePage() {
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2 className="text-3xl font-bold text-gray-900">
-                Artikel & Panduan Terbaru
+                Artikel Terbaru
               </h2>
               <p className="mt-2 text-gray-600">
-                Pengetahuan praktis untuk pelaku agribisnis
+                Insight dan analisis mendalam sektor pertanian Indonesia
               </p>
             </div>
             <Link
-              href="/pusat-ilmu"
+              href="/artikel"
               className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
             >
-              Lihat Semua <ArrowRight className="w-4 h-4" />
+              Lihat Semua Artikel <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -296,7 +296,7 @@ export default function HomePage() {
 
           <div className="mt-8 text-center sm:hidden">
             <Link
-              href="/pusat-ilmu"
+              href="/artikel"
               className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
             >
               Lihat Semua Artikel <ArrowRight className="w-4 h-4" />
