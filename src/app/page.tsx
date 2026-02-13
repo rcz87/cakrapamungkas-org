@@ -9,6 +9,10 @@ import {
   TrendingUp,
   Calendar,
 } from "lucide-react";
+import { articles, getArticleHref } from "@/data/articles";
+
+const featuredArticle = articles[0];
+const latestArticles = articles.slice(1, 10);
 
 export default function HomePage() {
   return (
@@ -46,8 +50,8 @@ export default function HomePage() {
               {/* Image/Visual Side */}
               <div className="relative lg:order-1 h-64 lg:h-auto overflow-hidden bg-gradient-to-br from-slate-100 to-white">
                 <Image
-                  src="/images/presiden-dan-mentan.jpg"
-                  alt="Presiden RI dan Mentan - Dukungan Kebijakan Pertanian 2026"
+                  src={featuredArticle.image}
+                  alt={featuredArticle.title}
                   fill
                   className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -72,18 +76,16 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Clock className="w-4 h-4" />
-                    <span>45 min baca</span>
+                    <span>{featuredArticle.readTime} baca</span>
                   </div>
                 </div>
 
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                  Analisis Strategis Kementan 2026: Transformasi Struktural Kedaulatan Pangan
+                  {featuredArticle.title}
                 </h2>
 
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Analisis mendalam program kerja Kementerian Pertanian 2026 dengan pagu anggaran Rp40,14 T. 
-                  Membahas arsitektur fiskal, Brigade Pangan 100.000 milenial, target produksi 34,77 juta ton beras, 
-                  dan strategi Smart Farming 4.0 menuju kedaulatan pangan berkelanjutan.
+                  {featuredArticle.excerpt}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -105,7 +107,7 @@ export default function HomePage() {
                 </div>
 
                 <Link
-                  href="/artikel/analisis-strategis-kementan-2026"
+                  href={getArticleHref(featuredArticle.slug)}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors"
                 >
                   Baca Artikel Lengkap
@@ -192,118 +194,23 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                category: "Kebijakan",
-                title: "Transformasi Agraria 2026: Strategi Besar Kedaulatan Pangan",
-                excerpt:
-                  "5 Pilar strategis: Ekstansifikasi lahan, subsidi pupuk Rp46,87 T, KUR 6%, Agritech 4.0, dan AUTP.",
-                readTime: "35 min",
-                color: "bg-emerald-100 text-emerald-700",
-                href: "/artikel/transformasi-agraria-2026",
-                image: "/images/desa-petani.png"
-              },
-              {
-                category: "Sejarah",
-                title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan",
-                excerpt:
-                  "Evolusi sektor pertanian dari era Neolitikum hingga Agritech 4.0, sistem Subak Bali, dan kebijakan swasembada.",
-                readTime: "45 min",
-                color: "bg-slate-100 text-slate-700",
-                href: "/artikel/arsitektur-pertanian-indonesia",
-                image: "/images/desa-petani.png"
-              },
-              {
-                category: "Teknologi",
-                title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian",
-                excerpt:
-                  "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time.",
-                readTime: "25 min",
-                color: "bg-blue-100 text-blue-700",
-                href: "/artikel/revolusi-agritech-4-0",
-                image: "/images/petani-drone.png"
-              },
-              {
-                category: "Sejarah",
-                title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara",
-                excerpt:
-                  "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital.",
-                readTime: "30 min",
-                color: "bg-amber-100 text-amber-700",
-                href: "/artikel/subak-hingga-smart-farming",
-                image: "/images/subak-gemini.png"
-              },
-              {
-                category: "Ekonomi",
-                title: "Petani Milenial: Omzet Miliaran dari Agribisnis Modern",
-                excerpt:
-                  "Profil sukses 300 ribu petani muda yang mengubah paradigma bertani di Indonesia.",
-                readTime: "10 min",
-                color: "bg-green-100 text-green-700",
-                href: "/artikel/petani-milenial",
-                image: "/images/petani milenial 300ribu.png"
-              },
-              {
-                category: "Kebijakan",
-                title: "Program Swasembada 2025: Target & Strategi Pemerintah",
-                excerpt:
-                  "Analisis anggaran Rp139,4 triliun untuk cetak sawah 3 juta hektar dan hilirisasi komoditas.",
-                readTime: "15 min",
-                color: "bg-purple-100 text-purple-700",
-                href: "/artikel/program-swasembada-2025",
-                image: "/images/program swasembada.png"
-              },
-              {
-                category: "Komoditas",
-                title: "Ekspor Kopi Indonesia: US$1,62 Miliar di Pasar Global",
-                excerpt:
-                  "Kopi spesialti Indonesia menjadi primadona pasar Eropa dan Amerika dengan harga premium.",
-                readTime: "7 min",
-                color: "bg-orange-100 text-orange-700",
-                href: "/artikel/ekspor-kopi-indonesia",
-                image: "/images/kopi.png"
-              },
-              {
-                category: "Lingkungan",
-                title: "Adaptasi Perubahan Iklim: Varietas Tahan Cuaca Ekstrem",
-                excerpt:
-                  "Strategi mitigasi risiko gagal panen dengan bibit unggul dan teknologi prediksi berbasis satelit.",
-                readTime: "9 min",
-                color: "bg-teal-100 text-teal-700",
-                href: "/artikel/adaptasi-perubahan-iklim",
-                image: "/images/adaptasi perubahan iklim.png"
-              },
-              {
-                category: "Teknis",
-                title: "Budidaya GAP Padi: Standar Praktik Pertanian yang Baik",
-                excerpt:
-                  "Panduan lengkap Good Agricultural Practices untuk budidaya padi modern dan berkelanjutan.",
-                readTime: "12 min",
-                color: "bg-green-100 text-green-700",
-                href: "/artikel/budidaya-gap-padi",
-                image: "/images/cek-ph-tanah.png"
-              },
-            ].map((article) => (
+            {latestArticles.map((article) => (
               <article
-                key={article.title}
+                key={article.slug}
                 className="group bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all"
               >
                 <div className="relative h-44 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
-                  {article.image ? (
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <BookOpen className="w-14 h-14 text-gray-300" />
-                  )}
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-lg ${article.color}`}>
+                    <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-lg ${article.categoryColor}`}>
                       {article.category}
                     </span>
                     <span className="text-xs text-gray-400 flex items-center gap-1">
@@ -318,7 +225,7 @@ export default function HomePage() {
                     {article.excerpt}
                   </p>
                   <Link
-                    href={article.href}
+                    href={getArticleHref(article.slug)}
                     className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
                   >
                     Baca Artikel <ArrowRight className="w-4 h-4" />

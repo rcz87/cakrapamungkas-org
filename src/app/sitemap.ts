@@ -1,10 +1,10 @@
 import { MetadataRoute } from 'next'
+import { articles, getArticleHref } from '@/data/articles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cakrapamungkas.org'
-  
-  // Define all your pages here
-  const routes = [
+
+  const staticRoutes = [
     '',
     '/tentang',
     '/layanan',
@@ -12,27 +12,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kontak',
     '/download',
     '/padidoc',
-    '/artikel/analisis-strategis-kementan-2026',
-    '/artikel/transformasi-agraria-2026',
-    '/artikel/arsitektur-pertanian-indonesia',
-    '/artikel/revolusi-agritech-4-0',
-    '/artikel/subak-hingga-smart-farming',
-    '/artikel/petani-milenial',
-    '/artikel/program-swasembada-2025',
-    '/artikel/ekspor-kopi-indonesia',
-    '/artikel/adaptasi-perubahan-iklim',
-    '/artikel/budidaya-gap-padi',
-    '/artikel/defisiensi-nutrisi-padi',
-    '/artikel/manajemen-risiko-agribisnis',
-    '/artikel/break-even-point-usaha-tani',
-    '/artikel/program-pemerintah-2026',
-    '/artikel/asuransi-usaha-tani-padi',
+    '/artikel',
   ]
 
-  return routes.map((route) => ({
+  const articleRoutes = articles.map((article) => getArticleHref(article.slug))
+
+  const allRoutes = [...staticRoutes, ...articleRoutes]
+
+  return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/artikel' ? 0.9 : 0.8,
   }))
 }

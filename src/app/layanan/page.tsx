@@ -97,9 +97,7 @@ export default function LayananPage() {
                 className="scroll-mt-24"
               >
                 <div
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+                  className="grid lg:grid-cols-2 gap-12 items-center"
                 >
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-50 rounded-full mb-4">

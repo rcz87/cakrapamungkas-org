@@ -60,7 +60,7 @@ export default function SwasembadaArtikelPage() {
       {/* Featured Image */}
       <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
         <Image
-          src="/images/program swasembada.png"
+          src="/images/program-swasembada.png"
           alt="Program Swasembada Pangan 2025 Indonesia"
           fill
           className="object-contain"

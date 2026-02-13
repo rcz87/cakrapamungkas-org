@@ -65,23 +65,12 @@ export function Footer() {
             <ul className="space-y-2.5">
               {layananLinks.map((link) => (
                 <li key={link.href}>
-                  {"external" in link ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

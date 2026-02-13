@@ -107,7 +107,7 @@ export default function DownloadPage() {
       </section>
 
       {/* Category Filter & Search */}
-      <section className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
+      <section className="bg-white border-b border-gray-200 sticky top-16 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
             {/* Category Tabs */}
@@ -184,7 +184,7 @@ export default function DownloadPage() {
                   </p>
 
                   <a
-                    href={`/downloads/${file.category}/${file.name}`}
+                    href={`/downloads/${file.category}/${encodeURIComponent(file.name)}`}
                     download
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-lg hover:bg-primary-700 transition-colors"
                   >

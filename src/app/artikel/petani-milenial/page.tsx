@@ -60,7 +60,7 @@ export default function PetaniMilenialArtikelPage() {
       {/* Featured Image */}
       <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
         <Image
-          src="/images/petani milenial 300ribu.png"
+          src="/images/petani-milenial-300ribu.png"
           alt="Petani Milenial Modern Indonesia - Agribisnis Miliaran Rupiah"
           fill
           className="object-contain"
