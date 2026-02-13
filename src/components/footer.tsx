@@ -4,6 +4,7 @@ import { Leaf, Mail, Phone, MapPin } from "lucide-react";
 const quickLinks = [
   { href: "/tentang", label: "Tentang Kami" },
   { href: "/layanan", label: "Layanan" },
+  { href: "/artikel", label: "Artikel" },
   { href: "/pusat-ilmu", label: "Pusat Ilmu" },
   { href: "/download", label: "Download Area" },
   { href: "/kontak", label: "Kontak" },
