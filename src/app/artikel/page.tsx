@@ -7,6 +7,7 @@ import {
   Clock,
 } from "lucide-react";
 import { articles, getArticleHref } from "@/data/articles";
+import { getDynamicArticles } from "@/lib/articles-db";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata = {
@@ -16,6 +17,9 @@ export const metadata = {
 };
 
 export default function ArtikelPage() {
+  const dynamicArticles = getDynamicArticles();
+  const allArticles = [...dynamicArticles, ...articles];
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -49,7 +53,7 @@ export default function ArtikelPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
+            {allArticles.map((article) => (
               <Link
                 key={article.slug}
                 href={getArticleHref(article.slug)}
