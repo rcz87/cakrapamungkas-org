@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import AiArticleHelper from "@/components/ai-article-helper";
 
 const categories = [
   { value: "Kebijakan", color: "bg-red-100 text-red-700" },
@@ -272,6 +273,12 @@ export default function TulisArtikelPage() {
               placeholder="Ringkasan singkat artikel (opsional)..."
             />
           </div>
+
+          {/* AI Helper */}
+          <AiArticleHelper
+            category={category}
+            onApply={(generated) => setContent(generated)}
+          />
 
           {/* Content */}
           <div>

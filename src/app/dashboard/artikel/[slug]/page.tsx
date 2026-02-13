@@ -9,10 +9,10 @@ import {
   CheckCircle,
   Upload,
   X,
-  Image as ImageIcon,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import AiArticleHelper from "@/components/ai-article-helper";
 
 const categories = [
   { value: "Kebijakan", color: "bg-red-100 text-red-700" },
@@ -299,6 +299,12 @@ export default function EditArtikelPage({
               placeholder="Ringkasan singkat artikel..."
             />
           </div>
+
+          {/* AI Helper */}
+          <AiArticleHelper
+            category={category}
+            onApply={(generated) => setContent(generated)}
+          />
 
           {/* Content */}
           <div>
