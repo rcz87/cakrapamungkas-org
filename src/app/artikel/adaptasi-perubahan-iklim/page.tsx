@@ -60,7 +60,7 @@ export default function AdaptasiPerubahanIklimArtikelPage() {
       {/* Featured Image */}
       <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
         <Image
-          src="/images/adaptasi perubahan iklim.png"
+          src="/images/adaptasi-perubahan-iklim.png"
           alt="Adaptasi Perubahan Iklim - Varietas Padi Tahan Cuaca Ekstrem"
           fill
           className="object-contain"

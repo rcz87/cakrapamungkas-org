@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
 import {
   Mail,
   Phone,
@@ -5,15 +8,51 @@ import {
   Clock,
   Send,
   MessageCircle,
+  CheckCircle2,
 } from "lucide-react";
 
-export const metadata = {
-  title: "Kontak | CV. Cakra Pamungkas Mandiri",
-  description:
-    "Hubungi CV. Cakra Pamungkas Mandiri untuk konsultasi, kerjasama, dan informasi layanan pertanian.",
-};
+const subjectOptions = [
+  { value: "", label: "Pilih subjek..." },
+  { value: "maklon", label: "Kerjasama Jasa Maklon" },
+  { value: "gabah", label: "Jual Beli Gabah" },
+  { value: "saprotan", label: "Saprotan" },
+  { value: "padidoc", label: "PadiDoc" },
+  { value: "lainnya", label: "Lainnya" },
+];
 
 export default function KontakPage() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const nama = data.get("nama") as string;
+    const email = data.get("email") as string;
+    const wa = data.get("wa") as string;
+    const subjek = data.get("subjek") as string;
+    const pesan = data.get("pesan") as string;
+
+    const subjectText = subjectOptions.find((o) => o.value === subjek)?.label || subjek;
+
+    const mailtoBody = [
+      `Nama: ${nama}`,
+      `Email: ${email}`,
+      `WhatsApp: ${wa}`,
+      `Subjek: ${subjectText}`,
+      "",
+      `Pesan:`,
+      pesan,
+    ].join("\n");
+
+    window.location.href = `mailto:info@cakrapamungkas.org?subject=${encodeURIComponent(
+      `[Website] ${subjectText}`
+    )}&body=${encodeURIComponent(mailtoBody)}`;
+
+    setSubmitted(true);
+  }
+
   return (
     <>
       {/* Header */}
@@ -54,10 +93,6 @@ export default function KontakPage() {
                     <h3 className="font-semibold text-gray-900">Alamat</h3>
                     <p className="text-sm text-gray-600 mt-1">
                       Indonesia
-                      <br />
-                      <span className="text-xs text-gray-400">
-                        (Alamat lengkap akan diperbarui)
-                      </span>
                     </p>
                   </div>
                 </div>
@@ -70,10 +105,6 @@ export default function KontakPage() {
                     <h3 className="font-semibold text-gray-900">Telepon / WA</h3>
                     <p className="text-sm text-gray-600 mt-1">
                       Hubungi Kami
-                      <br />
-                      <span className="text-xs text-gray-400">
-                        (Nomor akan diperbarui)
-                      </span>
                     </p>
                   </div>
                 </div>
@@ -116,74 +147,102 @@ export default function KontakPage() {
                   Isi formulir di bawah dan kami akan segera merespons.
                 </p>
 
-                <form className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
+                {submitted ? (
+                  <div className="text-center py-12">
+                    <CheckCircle2 className="w-16 h-16 text-primary-500 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Terima kasih!
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      Aplikasi email Anda akan terbuka. Silakan kirim email tersebut untuk menghubungi kami.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                    >
+                      Kirim pesan lagi
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                          Nama Lengkap
+                        </label>
+                        <input
+                          type="text"
+                          name="nama"
+                          required
+                          placeholder="Nama Anda"
+                          className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          placeholder="email@contoh.com"
+                          className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
+                        />
+                      </div>
+                    </div>
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Nama Lengkap
+                        Nomor WhatsApp
                       </label>
                       <input
-                        type="text"
-                        placeholder="Nama Anda"
+                        type="tel"
+                        name="wa"
+                        placeholder="08xxxxxxxxxx"
                         className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
                       />
                     </div>
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Email
+                        Subjek
                       </label>
-                      <input
-                        type="email"
-                        placeholder="email@contoh.com"
-                        className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
+                      <select
+                        name="subjek"
+                        required
+                        className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-600"
+                      >
+                        {subjectOptions.map((opt) => (
+                          <option key={opt.value} value={opt.value}>
+                            {opt.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                        Pesan
+                      </label>
+                      <textarea
+                        name="pesan"
+                        required
+                        rows={5}
+                        placeholder="Tulis pesan Anda di sini..."
+                        className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white resize-none"
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Nomor WhatsApp
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="08xxxxxxxxxx"
-                      className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Subjek
-                    </label>
-                    <select className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-gray-600">
-                      <option value="">Pilih subjek...</option>
-                      <option value="maklon">Kerjasama Jasa Maklon</option>
-                      <option value="gabah">Jual Beli Gabah</option>
-                      <option value="saprotan">Saprotan</option>
-                      <option value="padidoc">PadiDoc</option>
-                      <option value="lainnya">Lainnya</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Pesan
-                    </label>
-                    <textarea
-                      rows={5}
-                      placeholder="Tulis pesan Anda di sini..."
-                      className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors w-full sm:w-auto"
-                  >
-                    <Send className="w-4 h-4" />
-                    Kirim Pesan
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors w-full sm:w-auto"
+                    >
+                      <Send className="w-4 h-4" />
+                      Kirim Pesan
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
