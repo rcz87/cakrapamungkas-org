@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Manajemen Risiko dalam Agribisnis Modern | Cakra Pamungkas",
@@ -24,6 +25,7 @@ export default function ManajemenRisikoAgribisnisPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["manajemen-risiko-agribisnis"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-800 py-12 lg:py-20">

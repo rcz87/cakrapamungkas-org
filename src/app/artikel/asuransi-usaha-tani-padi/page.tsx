@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Panduan Lengkap Asuransi Usaha Tani Padi (AUTP) | Cakra Pamungkas",
@@ -24,6 +25,7 @@ export default function AUTPArtikelPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["asuransi-usaha-tani-padi"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-amber-950 via-amber-900 to-orange-800 py-12 lg:py-20">

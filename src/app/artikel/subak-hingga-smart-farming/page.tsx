@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara | Cakra Pamungkas",
@@ -25,6 +26,7 @@ export default function SubakSmartFarmingPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["subak-hingga-smart-farming"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-emerald-950 via-green-900 to-teal-800 py-12 lg:py-20">

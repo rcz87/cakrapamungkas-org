@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Program Swasembada 2025: Target & Strategi Pemerintah | Cakra Pamungkas",
@@ -25,6 +26,7 @@ export default function SwasembadaArtikelPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["program-swasembada-2025"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-800 py-12 lg:py-20">

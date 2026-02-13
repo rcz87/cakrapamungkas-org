@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Ekspor Kopi Indonesia: US$1,62 Miliar di Pasar Global | Cakra Pamungkas",
@@ -25,6 +26,7 @@ export default function EksporKopiIndonesiaArtikelPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["ekspor-kopi-indonesia"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-orange-950 via-orange-900 to-amber-800 py-12 lg:py-20">

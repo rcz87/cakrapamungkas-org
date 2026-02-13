@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian Indonesia | Cakra Pamungkas",
@@ -25,6 +26,7 @@ export default function AgritechArtikelPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["revolusi-agritech-4-0"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-800 py-12 lg:py-20">
