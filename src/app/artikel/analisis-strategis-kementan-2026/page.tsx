@@ -1,25 +1,40 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  ArrowLeft, 
-  Calendar, 
-  Clock, 
-  TrendingUp, 
-  BarChart3, 
-  Layers, 
-  Zap, 
-  Target, 
-  ShieldCheck, 
-  Cpu, 
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  TrendingUp,
+  BarChart3,
+  Layers,
+  Zap,
+  Target,
+  ShieldCheck,
+  Cpu,
   Wallet,
   Globe,
   Users
 } from 'lucide-react';
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export default function TransformasiPangan2026Page() {
+  const article = getArticleBySlug("analisis-strategis-kementan-2026");
+
   return (
-    <article className="bg-white min-h-screen selection:bg-emerald-100 selection:text-emerald-900">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/analisis-strategis-kementan-2026` },
+          ]}
+        />
+      )}
+      <article className="bg-white min-h-screen selection:bg-emerald-100 selection:text-emerald-900">
       {/* Header Strategis dengan Gaya Institusional */}
       <header className="bg-gradient-to-br from-slate-950 via-teal-950 to-emerald-900 py-16 lg:py-24 relative overflow-hidden text-white">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
@@ -321,5 +336,6 @@ export default function TransformasiPangan2026Page() {
         </div>
       </div>
     </article>
+    </>
   );
 }

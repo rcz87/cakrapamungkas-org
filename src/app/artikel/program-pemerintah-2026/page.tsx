@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export const metadata = {
   title: "Update Program Pemerintah 2026 untuk Pertanian | Cakra Pamungkas",
@@ -8,8 +10,21 @@ export const metadata = {
 };
 
 export default function ProgramPemerintah2026ArtikelPage() {
+  const article = getArticleBySlug("program-pemerintah-2026");
+
   return (
-    <article className="bg-white">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/program-pemerintah-2026` },
+          ]}
+        />
+      )}
+      <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-amber-950 via-amber-900 to-yellow-800 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -979,5 +994,6 @@ export default function ProgramPemerintah2026ArtikelPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

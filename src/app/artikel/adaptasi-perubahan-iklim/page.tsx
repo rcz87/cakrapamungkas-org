@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export const metadata = {
   title: "Adaptasi Perubahan Iklim: Varietas Tahan Cuaca Ekstrem | Cakra Pamungkas",
@@ -9,8 +11,21 @@ export const metadata = {
 };
 
 export default function AdaptasiPerubahanIklimArtikelPage() {
+  const article = getArticleBySlug("adaptasi-perubahan-iklim");
+
   return (
-    <article className="bg-white">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/adaptasi-perubahan-iklim` },
+          ]}
+        />
+      )}
+      <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-teal-950 via-teal-900 to-cyan-800 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -940,5 +955,6 @@ export default function AdaptasiPerubahanIklimArtikelPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }
