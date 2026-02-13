@@ -1,4 +1,5 @@
 import type { Article } from "@/data/articles";
+import type { FaqItem } from "@/data/article-faqs";
 
 const BASE_URL = "https://cakrapamungkas.org";
 
@@ -79,6 +80,31 @@ export function ArticleJsonLd({ article }: { article: Article }) {
     },
     articleSection: article.category,
     inLanguage: "id",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/** FAQPage JSON-LD */
+export function FaqJsonLd({ faqs }: { faqs: FaqItem[] }) {
+  if (faqs.length === 0) return null;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 
   return (

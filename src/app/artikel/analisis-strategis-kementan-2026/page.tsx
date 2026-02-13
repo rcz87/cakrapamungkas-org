@@ -16,8 +16,9 @@ import {
   Globe,
   Users
 } from 'lucide-react';
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export default function TransformasiPangan2026Page() {
   const article = getArticleBySlug("analisis-strategis-kementan-2026");
@@ -34,6 +35,7 @@ export default function TransformasiPangan2026Page() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["analisis-strategis-kementan-2026"] || []} />
       <article className="bg-white min-h-screen selection:bg-emerald-100 selection:text-emerald-900">
       {/* Header Strategis dengan Gaya Institusional */}
       <header className="bg-gradient-to-br from-slate-950 via-teal-950 to-emerald-900 py-16 lg:py-24 relative overflow-hidden text-white">

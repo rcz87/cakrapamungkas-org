@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Cara Mengenali Gejala Defisiensi Nutrisi pada Padi | Cakra Pamungkas",
@@ -24,6 +25,7 @@ export default function DefisiensiNutrisiPadiPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["defisiensi-nutrisi-padi"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-green-950 via-green-900 to-emerald-800 py-12 lg:py-20">

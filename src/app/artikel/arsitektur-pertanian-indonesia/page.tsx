@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan | Cakra Pamungkas",
@@ -25,6 +26,7 @@ export default function ArtikelPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["arsitektur-pertanian-indonesia"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 py-12 lg:py-20">

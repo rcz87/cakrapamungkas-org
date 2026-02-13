@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title: "Petani Milenial: Omzet Miliaran dari Agribisnis Modern | Cakra Pamungkas",
@@ -25,6 +26,7 @@ export default function PetaniMilenialArtikelPage() {
           ]}
         />
       )}
+      <FaqJsonLd faqs={articleFaqs["petani-milenial"] || []} />
       <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-green-950 via-green-900 to-emerald-800 py-12 lg:py-20">
