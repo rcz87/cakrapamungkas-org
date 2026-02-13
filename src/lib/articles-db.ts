@@ -36,6 +36,18 @@ export function saveDynamicArticle(article: DynamicArticle): void {
   fs.writeFileSync(DB_PATH, JSON.stringify(articles, null, 2), "utf-8");
 }
 
+export function updateDynamicArticle(
+  slug: string,
+  updates: Partial<DynamicArticle>
+): DynamicArticle | null {
+  const articles = getDynamicArticles();
+  const index = articles.findIndex((a) => a.slug === slug);
+  if (index === -1) return null;
+  articles[index] = { ...articles[index], ...updates };
+  fs.writeFileSync(DB_PATH, JSON.stringify(articles, null, 2), "utf-8");
+  return articles[index];
+}
+
 export function deleteDynamicArticle(slug: string): boolean {
   const articles = getDynamicArticles();
   const filtered = articles.filter((a) => a.slug !== slug);

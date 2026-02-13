@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
+  FileText,
   PlusCircle,
   LogOut,
   Menu,
@@ -15,6 +16,7 @@ import {
 
 const sidebarLinks = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard/artikel", label: "Kelola Artikel", icon: FileText },
   { href: "/dashboard/artikel/baru", label: "Tulis Artikel", icon: PlusCircle },
 ];
 

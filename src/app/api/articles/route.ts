@@ -9,7 +9,8 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { title, category, categoryColor, content, excerpt, readTime } = body;
+    const { title, category, categoryColor, content, excerpt, readTime, image } =
+      body;
 
     if (!title || !content) {
       return NextResponse.json(
@@ -41,7 +42,7 @@ export async function POST(request: NextRequest) {
       categoryColor: categoryColor || "bg-gray-100 text-gray-700",
       excerpt: excerpt || content.substring(0, 200) + "...",
       readTime: readTime || "5 min",
-      image: "/images/desa-petani.png",
+      image: image || "/images/desa-petani.png",
       datePublished: new Date().toISOString().split("T")[0],
       content,
       createdAt: new Date().toISOString(),

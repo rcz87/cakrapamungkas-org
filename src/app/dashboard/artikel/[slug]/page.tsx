@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import {
   Save,
@@ -9,6 +9,7 @@ import {
   CheckCircle,
   Upload,
   X,
+  Image as ImageIcon,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -26,27 +27,59 @@ const categories = [
   { value: "Sejarah & Ekonomi", color: "bg-purple-100 text-purple-700" },
 ];
 
-export default function TulisArtikelPage() {
+interface ArticleData {
+  slug: string;
+  title: string;
+  category: string;
+  categoryColor: string;
+  content: string;
+  excerpt: string;
+  readTime: string;
+  image: string;
+  datePublished: string;
+}
+
+export default function EditArtikelPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const router = useRouter();
+  const [slug, setSlug] = useState("");
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState(categories[0].value);
   const [content, setContent] = useState("");
   const [excerpt, setExcerpt] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
+  const [fetching, setFetching] = useState(true);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  function generateSlug(text: string) {
-    return text
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .trim();
-  }
+  useEffect(() => {
+    params.then(({ slug }) => {
+      setSlug(slug);
+      fetch(`/api/articles/${slug}`)
+        .then((res) => {
+          if (!res.ok) throw new Error("Not found");
+          return res.json();
+        })
+        .then((data: ArticleData) => {
+          setTitle(data.title);
+          setCategory(data.category);
+          setContent(data.content);
+          setExcerpt(data.excerpt);
+          setImageUrl(data.image);
+          setFetching(false);
+        })
+        .catch(() => {
+          setError("Artikel tidak ditemukan");
+          setFetching(false);
+        });
+    });
+  }, [params]);
 
   function estimateReadTime(text: string) {
     const words = text.trim().split(/\s+/).length;
@@ -100,8 +133,8 @@ export default function TulisArtikelPage() {
     const selectedCategory = categories.find((c) => c.value === category);
 
     try {
-      const res = await fetch("/api/articles", {
-        method: "POST",
+      const res = await fetch(`/api/articles/${slug}`, {
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           title: title.trim(),
@@ -111,18 +144,18 @@ export default function TulisArtikelPage() {
           content: content.trim(),
           excerpt: excerpt.trim() || content.trim().substring(0, 200) + "...",
           readTime: estimateReadTime(content),
-          image: imageUrl || undefined,
+          image: imageUrl,
         }),
       });
 
       if (res.ok) {
-        setSuccess("Artikel berhasil dipublish!");
+        setSuccess("Artikel berhasil diperbarui!");
         setTimeout(() => {
           router.push("/dashboard/artikel");
         }, 1500);
       } else {
         const data = await res.json();
-        setError(data.error || "Gagal menyimpan artikel");
+        setError(data.error || "Gagal menyimpan perubahan");
       }
     } catch {
       setError("Terjadi kesalahan. Coba lagi.");
@@ -131,22 +164,26 @@ export default function TulisArtikelPage() {
     }
   }
 
+  if (fetching) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="text-gray-400">Memuat artikel...</div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="mb-6">
         <Link
-          href="/dashboard"
+          href="/dashboard/artikel"
           className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-primary-600 mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Kembali ke Dashboard
+          Kembali ke Kelola Artikel
         </Link>
-        <h1 className="text-2xl font-bold text-gray-900">
-          Tulis Artikel Baru
-        </h1>
-        <p className="text-gray-500 mt-1">
-          Tulis konten dalam format Markdown
-        </p>
+        <h1 className="text-2xl font-bold text-gray-900">Edit Artikel</h1>
+        <p className="text-gray-500 mt-1">Perbarui konten artikel</p>
       </div>
 
       <form onSubmit={handleSubmit} className="max-w-4xl">
@@ -175,14 +212,8 @@ export default function TulisArtikelPage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors text-lg"
-              placeholder="Masukkan judul artikel..."
               required
             />
-            {title && (
-              <p className="mt-1 text-xs text-gray-400">
-                Slug: {generateSlug(title)}
-              </p>
-            )}
           </div>
 
           {/* Category */}
@@ -206,8 +237,7 @@ export default function TulisArtikelPage() {
           {/* Cover Image */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Gambar Cover{" "}
-              <span className="text-gray-400 font-normal">(opsional)</span>
+              Gambar Cover
             </label>
             {imageUrl && (
               <div className="relative w-full h-48 rounded-xl overflow-hidden mb-3 bg-gray-100">
@@ -259,17 +289,14 @@ export default function TulisArtikelPage() {
           {/* Excerpt */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Ringkasan{" "}
-              <span className="text-gray-400 font-normal">
-                (opsional, auto-generate dari konten)
-              </span>
+              Ringkasan
             </label>
             <textarea
               value={excerpt}
               onChange={(e) => setExcerpt(e.target.value)}
               rows={2}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors resize-none"
-              placeholder="Ringkasan singkat artikel (opsional)..."
+              placeholder="Ringkasan singkat artikel..."
             />
           </div>
 
@@ -284,7 +311,6 @@ export default function TulisArtikelPage() {
               onChange={(e) => setContent(e.target.value)}
               rows={20}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors font-mono text-sm resize-y"
-              placeholder={`Tulis artikel di sini menggunakan format Markdown...\n\n## Judul Bagian\n\nParagraf teks...\n\n### Sub Bagian\n\n- Item list 1\n- Item list 2\n\n> Kutipan penting\n\n**Teks tebal** dan *teks miring*`}
               required
             />
             {content && (
@@ -304,7 +330,7 @@ export default function TulisArtikelPage() {
             className="flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-md"
           >
             <Save className="w-5 h-5" />
-            {loading ? "Menyimpan..." : "Publish Artikel"}
+            {loading ? "Menyimpan..." : "Simpan Perubahan"}
           </button>
         </div>
       </form>
