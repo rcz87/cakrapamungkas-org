@@ -6,6 +6,7 @@ export interface Article {
   excerpt: string;
   readTime: string;
   image: string;
+  datePublished: string;
   featured?: boolean;
 }
 
@@ -20,6 +21,7 @@ export const articles: Article[] = [
       "Analisis mendalam program kerja Kementerian Pertanian 2026 dengan pagu anggaran Rp40,14 T. Membahas arsitektur fiskal, Brigade Pangan 100.000 milenial, target produksi 34,77 juta ton beras.",
     readTime: "45 min",
     image: "/images/presiden-dan-mentan.jpg",
+    datePublished: "2026-02-12",
     featured: true,
   },
   {
@@ -31,6 +33,7 @@ export const articles: Article[] = [
       "5 Pilar strategis: Ekstensifikasi lahan, subsidi pupuk Rp46,87 T, KUR 6%, Agritech 4.0, dan AUTP.",
     readTime: "35 min",
     image: "/images/desa-petani.png",
+    datePublished: "2026-02-12",
     featured: true,
   },
   {
@@ -43,6 +46,7 @@ export const articles: Article[] = [
       "Analisis mendalam tentang evolusi sektor pertanian Indonesia dari era Neolitikum hingga adopsi teknologi Agritech 4.0. Membahas signifikansi makroekonomi, produktivitas tenaga kerja, kearifan lokal seperti sistem Subak Bali.",
     readTime: "45 min",
     image: "/images/desa-petani.png",
+    datePublished: "2026-02-11",
     featured: true,
   },
   {
@@ -54,6 +58,7 @@ export const articles: Article[] = [
       "Implementasi teknologi pintar untuk meningkatkan efisiensi produksi hingga 30% dengan monitoring real-time.",
     readTime: "25 min",
     image: "/images/petani-drone.png",
+    datePublished: "2026-02-11",
     featured: true,
   },
   {
@@ -65,6 +70,7 @@ export const articles: Article[] = [
       "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital.",
     readTime: "30 min",
     image: "/images/subak-gemini.png",
+    datePublished: "2026-02-12",
     featured: true,
   },
   {
@@ -76,6 +82,7 @@ export const articles: Article[] = [
       "Profil sukses 300 ribu petani muda yang mengubah paradigma bertani di Indonesia.",
     readTime: "20 min",
     image: "/images/petani-milenial-300ribu.png",
+    datePublished: "2026-02-12",
     featured: true,
   },
   {
@@ -87,6 +94,7 @@ export const articles: Article[] = [
       "Analisis anggaran Rp139,4 triliun untuk cetak sawah 3 juta hektar dan hilirisasi komoditas.",
     readTime: "8 min",
     image: "/images/program-swasembada.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "ekspor-kopi-indonesia",
@@ -97,6 +105,7 @@ export const articles: Article[] = [
       "Kopi spesialti Indonesia menjadi primadona pasar Eropa dan Amerika dengan harga premium.",
     readTime: "15 min",
     image: "/images/kopi.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "adaptasi-perubahan-iklim",
@@ -107,6 +116,7 @@ export const articles: Article[] = [
       "Strategi mitigasi risiko gagal panen dengan bibit unggul dan teknologi prediksi berbasis satelit.",
     readTime: "12 min",
     image: "/images/adaptasi-perubahan-iklim.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "budidaya-gap-padi",
@@ -117,6 +127,7 @@ export const articles: Article[] = [
       "Panduan lengkap Good Agricultural Practices untuk budidaya padi modern dan berkelanjutan.",
     readTime: "8 min",
     image: "/images/cek-ph-tanah.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "defisiensi-nutrisi-padi",
@@ -127,6 +138,7 @@ export const articles: Article[] = [
       "Pelajari tanda-tanda kekurangan unsur hara pada tanaman padi dan cara mengatasinya dengan pemupukan yang tepat.",
     readTime: "6 min",
     image: "/images/cek-ph-tanah.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "manajemen-risiko-agribisnis",
@@ -137,6 +149,7 @@ export const articles: Article[] = [
       "Strategi komprehensif mengelola risiko gagal panen, fluktuasi harga pasar, dan tantangan perubahan iklim.",
     readTime: "10 min",
     image: "/images/desa-petani.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "break-even-point-usaha-tani",
@@ -147,6 +160,7 @@ export const articles: Article[] = [
       "Cara menghitung titik impas usaha tani padi untuk membantu petani mengambil keputusan bisnis yang tepat.",
     readTime: "7 min",
     image: "/images/desa-petani.png",
+    datePublished: "2026-02-12",
   },
   {
     slug: "program-pemerintah-2026",
@@ -157,6 +171,7 @@ export const articles: Article[] = [
       "Rangkuman kebijakan dan program terbaru pemerintah yang mendukung sektor pertanian Indonesia.",
     readTime: "5 min",
     image: "/images/presiden-dan-mentan.jpg",
+    datePublished: "2026-02-12",
   },
   {
     slug: "asuransi-usaha-tani-padi",
@@ -167,10 +182,16 @@ export const articles: Article[] = [
       "Semua yang perlu Anda ketahui tentang AUTP: syarat pendaftaran, premi, klaim, dan manfaat perlindungan.",
     readTime: "6 min",
     image: "/images/desa-petani.png",
+    datePublished: "2026-02-12",
   },
 ];
 
 /** Get article URL path */
 export function getArticleHref(slug: string): string {
   return `/artikel/${slug}`;
+}
+
+/** Find article by slug */
+export function getArticleBySlug(slug: string): Article | undefined {
+  return articles.find((a) => a.slug === slug);
 }

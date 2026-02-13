@@ -7,6 +7,7 @@ import {
   Clock,
 } from "lucide-react";
 import { articles, getArticleHref } from "@/data/articles";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata = {
   title: "Artikel Pertanian | CV. Cakra Pamungkas Mandiri",
@@ -17,6 +18,12 @@ export const metadata = {
 export default function ArtikelPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Beranda", href: "/" },
+          { name: "Artikel", href: "/artikel" },
+        ]}
+      />
       {/* Header */}
       <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

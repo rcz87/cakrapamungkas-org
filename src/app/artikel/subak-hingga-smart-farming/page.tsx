@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export const metadata = {
   title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara | Cakra Pamungkas",
@@ -9,8 +11,21 @@ export const metadata = {
 };
 
 export default function SubakSmartFarmingPage() {
+  const article = getArticleBySlug("subak-hingga-smart-farming");
+
   return (
-    <article className="bg-white">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/subak-hingga-smart-farming` },
+          ]}
+        />
+      )}
+      <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-emerald-950 via-green-900 to-teal-800 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -404,5 +419,6 @@ export default function SubakSmartFarmingPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

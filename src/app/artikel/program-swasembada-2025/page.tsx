@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export const metadata = {
   title: "Program Swasembada 2025: Target & Strategi Pemerintah | Cakra Pamungkas",
@@ -9,8 +11,21 @@ export const metadata = {
 };
 
 export default function SwasembadaArtikelPage() {
+  const article = getArticleBySlug("program-swasembada-2025");
+
   return (
-    <article className="bg-white">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/program-swasembada-2025` },
+          ]}
+        />
+      )}
+      <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-800 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1172,5 +1187,6 @@ export default function SwasembadaArtikelPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

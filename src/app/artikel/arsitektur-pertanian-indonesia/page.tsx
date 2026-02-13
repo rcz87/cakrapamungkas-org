@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export const metadata = {
   title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan | Cakra Pamungkas",
@@ -9,8 +11,21 @@ export const metadata = {
 };
 
 export default function ArtikelPage() {
+  const article = getArticleBySlug("arsitektur-pertanian-indonesia");
+
   return (
-    <article className="bg-white">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/arsitektur-pertanian-indonesia` },
+          ]}
+        />
+      )}
+      <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -325,5 +340,6 @@ export default function ArtikelPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

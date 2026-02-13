@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { getArticleBySlug } from "@/data/articles";
 
 export const metadata = {
   title: "Teknologi Budidaya GAP untuk Padi Berkualitas | Cakra Pamungkas",
@@ -9,8 +11,21 @@ export const metadata = {
 };
 
 export default function BudidayaGapPadiArtikelPage() {
+  const article = getArticleBySlug("budidaya-gap-padi");
+
   return (
-    <article className="bg-white">
+    <>
+      {article && <ArticleJsonLd article={article} />}
+      {article && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Beranda", href: "/" },
+            { name: "Artikel", href: "/artikel" },
+            { name: article.title, href: `/artikel/budidaya-gap-padi` },
+          ]}
+        />
+      )}
+      <article className="bg-white">
       {/* Header */}
       <header className="bg-gradient-to-br from-green-950 via-green-900 to-lime-800 py-12 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1199,5 +1214,6 @@ export default function BudidayaGapPadiArtikelPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }
