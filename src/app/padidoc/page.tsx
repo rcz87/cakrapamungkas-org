@@ -13,6 +13,7 @@ import {
   Mail,
 } from "lucide-react";
 import Link from "next/link";
+import { PadiDocFadeIn } from "@/components/padidoc-animations";
 
 export const metadata = {
   title: "PadiDoc - Sistem Manajemen Penggilingan Padi | CV. Cakra Pamungkas Mandiri",
@@ -189,38 +190,39 @@ export default function PadiDocPage() {
       {/* Features Section */}
       <section id="fitur" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 rounded-full mb-4">
-              <Zap className="w-4 h-4 text-primary-600" />
-              <span className="text-sm text-primary-700 font-medium">
-                Fitur Unggulan
-              </span>
+          <PadiDocFadeIn direction="up">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 rounded-full mb-4">
+                <Zap className="w-4 h-4 text-primary-600" />
+                <span className="text-sm text-primary-700 font-medium">
+                  Fitur Unggulan
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Semua yang Anda Butuhkan dalam Satu Aplikasi
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                PadiDoc dirancang khusus untuk kebutuhan penggilingan padi di Indonesia,
+                dengan fitur lengkap yang mudah digunakan.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Semua yang Anda Butuhkan dalam Satu Aplikasi
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              PadiDoc dirancang khusus untuk kebutuhan penggilingan padi di Indonesia,
-              dengan fitur lengkap yang mudah digunakan.
-            </p>
-          </div>
+          </PadiDocFadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary-600" />
+            {features.map((feature, index) => (
+              <PadiDocFadeIn key={feature.title} delay={index * 100} direction="up">
+                <div className="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow border border-gray-100">
+                  <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-primary-600" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              </PadiDocFadeIn>
             ))}
           </div>
         </div>
@@ -231,7 +233,7 @@ export default function PadiDocPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Info */}
-            <div>
+            <PadiDocFadeIn direction="left"><div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-100 rounded-full mb-4">
                 <Play className="w-4 h-4 text-primary-600" />
                 <span className="text-sm text-primary-700 font-medium">
@@ -274,10 +276,10 @@ export default function PadiDocPage() {
                 <span className="w-1 h-1 bg-gray-300 rounded-full" />
                 <span>1 jam akses</span>
               </div>
-            </div>
+            </div></PadiDocFadeIn>
 
             {/* Right - How it works */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <PadiDocFadeIn direction="right" delay={200}><div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6">
                 Cara Menggunakan Demo
               </h3>
@@ -321,7 +323,7 @@ export default function PadiDocPage() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div></PadiDocFadeIn>
           </div>
         </div>
       </section>
