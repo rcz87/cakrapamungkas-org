@@ -31,6 +31,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Typewriter cursor blink animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.8s infinite;
+  font-weight: 100;
+}
+
 /* Markdown article content styles */
 .article-content h2 {
   font-size: 1.5rem;
