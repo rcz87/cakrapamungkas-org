@@ -49,15 +49,23 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-2">
             <Link
               href="/padidoc"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-xl hover:bg-primary-700 transition-colors shadow-md shadow-primary-600/20"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-50 rounded-xl transition-colors"
             >
               <Leaf className="w-4 h-4" />
-              Info PadiDoc
+              PadiDoc
             </Link>
+            <a
+              href="https://demo.cakrapamungkas.digital"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-xl hover:bg-primary-700 transition-colors shadow-md shadow-primary-600/20"
+            >
+              Demo Gratis
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -87,11 +95,20 @@ export function Navbar() {
               <Link
                 href="/padidoc"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-600 text-white text-sm font-semibold rounded-xl hover:bg-primary-700 transition-colors"
+                className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-primary-700 bg-primary-50 text-sm font-semibold rounded-xl hover:bg-primary-100 transition-colors"
               >
                 <Leaf className="w-4 h-4" />
-                Info PadiDoc
+                PadiDoc
               </Link>
+              <a
+                href="https://demo.cakrapamungkas.digital"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-600 text-white text-sm font-semibold rounded-xl hover:bg-primary-700 transition-colors"
+              >
+                Demo Gratis
+              </a>
             </div>
           </div>
         )}

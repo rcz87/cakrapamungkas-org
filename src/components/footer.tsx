@@ -15,6 +15,7 @@ const layananLinks = [
   { href: "/layanan#gabah", label: "Jual Beli Gabah" },
   { href: "/layanan#saprotan", label: "Saprotan" },
   { href: "/padidoc", label: "PadiDoc App" },
+  { href: "https://demo.cakrapamungkas.digital", label: "Demo PadiDoc", external: true },
 ];
 
 export function Footer() {
@@ -66,12 +67,23 @@ export function Footer() {
             <ul className="space-y-2.5">
               {layananLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -109,12 +121,14 @@ export function Footer() {
             &copy; {new Date().getFullYear()} CV. Cakra Pamungkas Mandiri. All
             rights reserved.
           </p>
-          <Link
-            href="/padidoc"
+          <a
+            href="https://demo.cakrapamungkas.digital"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-xs text-primary-400 hover:text-primary-300 font-medium transition-colors"
           >
-            Info PadiDoc — Manajemen Penggilingan Padi →
-          </Link>
+            Coba Demo PadiDoc Gratis →
+          </a>
         </div>
       </div>
     </footer>
