@@ -13,19 +13,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import AiArticleHelper from "@/components/ai-article-helper";
-
-const categories = [
-  { value: "Kebijakan", color: "bg-red-100 text-red-700" },
-  { value: "Teknologi", color: "bg-blue-100 text-blue-700" },
-  { value: "Budidaya", color: "bg-green-100 text-green-700" },
-  { value: "Agribisnis", color: "bg-indigo-100 text-indigo-700" },
-  { value: "Kearifan Lokal", color: "bg-emerald-100 text-emerald-700" },
-  { value: "Regulasi", color: "bg-amber-100 text-amber-700" },
-  { value: "Ekspor", color: "bg-rose-100 text-rose-700" },
-  { value: "Lingkungan", color: "bg-teal-100 text-teal-700" },
-  { value: "Manajemen", color: "bg-blue-100 text-blue-700" },
-  { value: "Sejarah & Ekonomi", color: "bg-purple-100 text-purple-700" },
-];
+import { categories } from "@/data/categories";
 
 interface ArticleData {
   slug: string;
@@ -47,7 +35,7 @@ export default function EditArtikelPage({
   const router = useRouter();
   const [slug, setSlug] = useState("");
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState(categories[0].value);
+  const [category, setCategory] = useState<string>(categories[0].value);
   const [content, setContent] = useState("");
   const [excerpt, setExcerpt] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -59,26 +47,33 @@ export default function EditArtikelPage({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     params.then(({ slug }) => {
+      if (controller.signal.aborted) return;
       setSlug(slug);
-      fetch(`/api/articles/${slug}`)
+      fetch(`/api/articles/${slug}`, { signal: controller.signal })
         .then((res) => {
           if (!res.ok) throw new Error("Not found");
           return res.json();
         })
         .then((data: ArticleData) => {
-          setTitle(data.title);
-          setCategory(data.category);
-          setContent(data.content);
-          setExcerpt(data.excerpt);
-          setImageUrl(data.image);
+          if (controller.signal.aborted) return;
+          setTitle(data.title || "");
+          setCategory(data.category || categories[0].value);
+          setContent(data.content || "");
+          setExcerpt(data.excerpt || "");
+          setImageUrl(data.image || "");
           setFetching(false);
         })
-        .catch(() => {
+        .catch((err) => {
+          if (err instanceof DOMException && err.name === "AbortError") return;
           setError("Artikel tidak ditemukan");
           setFetching(false);
         });
     });
+
+    return () => controller.abort();
   }, [params]);
 
   function estimateReadTime(text: string) {

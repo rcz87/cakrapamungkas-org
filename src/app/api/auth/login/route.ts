@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validateCredentials, createToken } from "@/lib/auth";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: NextRequest) {
+  // Rate limit by IP
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const { allowed, retryAfterSeconds } = checkRateLimit(`login:${ip}`);
+
+  if (!allowed) {
+    return NextResponse.json(
+      { error: `Terlalu banyak percobaan login. Coba lagi dalam ${Math.ceil(retryAfterSeconds / 60)} menit.` },
+      { status: 429 }
+    );
+  }
+
   try {
     const { username, password } = await request.json();
 
@@ -25,7 +37,7 @@ export async function POST(request: NextRequest) {
     const response = NextResponse.json({ success: true });
     response.cookies.set("admin-token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       sameSite: "lax",
       maxAge: 60 * 60 * 24 * 7, // 7 days
       path: "/",

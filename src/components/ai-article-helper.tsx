@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Sparkles, Loader2, Copy, Check, RotateCcw } from "lucide-react";
 
 const toneOptions = [
@@ -26,9 +26,22 @@ export default function AiArticleHelper({
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+  const copiedTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const abortRef = useRef<AbortController>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current);
+      abortRef.current?.abort();
+    };
+  }, []);
 
   async function handleGenerate() {
     if (!topic.trim()) return;
+
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     setLoading(true);
     setError("");
@@ -39,6 +52,7 @@ export default function AiArticleHelper({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic: topic.trim(), category, tone }),
+        signal: controller.signal,
       });
 
       const data = await res.json();
@@ -48,7 +62,8 @@ export default function AiArticleHelper({
       } else {
         setError(data.error || "Gagal generate artikel");
       }
-    } catch {
+    } catch (err) {
+      if (err instanceof DOMException && err.name === "AbortError") return;
       setError("Gagal menghubungi server. Coba lagi.");
     } finally {
       setLoading(false);
@@ -58,7 +73,8 @@ export default function AiArticleHelper({
   function handleCopy() {
     navigator.clipboard.writeText(result);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current);
+    copiedTimerRef.current = setTimeout(() => setCopied(false), 2000);
   }
 
   function handleApply() {

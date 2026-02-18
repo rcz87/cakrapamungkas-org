@@ -3,8 +3,8 @@ import { FileText, PlusCircle, Eye, TrendingUp } from "lucide-react";
 import { articles } from "@/data/articles";
 import { getDynamicArticles } from "@/lib/articles-db";
 
-export default function DashboardPage() {
-  const dynamicArticles = getDynamicArticles();
+export default async function DashboardPage() {
+  const dynamicArticles = await getDynamicArticles();
   const totalArticles = articles.length + dynamicArticles.length;
 
   return (

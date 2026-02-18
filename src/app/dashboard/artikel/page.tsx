@@ -9,8 +9,8 @@ import {
 import { getDynamicArticles } from "@/lib/articles-db";
 import { DeleteButton } from "./delete-button";
 
-export default function KelolaArtikelPage() {
-  const articles = getDynamicArticles();
+export default async function KelolaArtikelPage() {
+  const articles = await getDynamicArticles();
 
   return (
     <>

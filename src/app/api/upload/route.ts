@@ -1,11 +1,46 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { authenticateRequest } from "@/lib/auth";
 
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
 
+const MAGIC_BYTES: Record<string, { bytes: number[]; ext: string }> = {
+  jpeg: { bytes: [0xff, 0xd8, 0xff], ext: ".jpg" },
+  png: { bytes: [0x89, 0x50, 0x4e, 0x47], ext: ".png" },
+  gif: { bytes: [0x47, 0x49, 0x46], ext: ".gif" },
+  webp_riff: { bytes: [0x52, 0x49, 0x46, 0x46], ext: ".webp" },
+};
+
+function detectImageType(buffer: Buffer): string | null {
+  for (const [key, { bytes, ext }] of Object.entries(MAGIC_BYTES)) {
+    if (bytes.every((b, i) => buffer[i] === b)) {
+      // WebP: RIFF header + "WEBP" at offset 8
+      if (key === "webp_riff") {
+        if (
+          buffer.length >= 12 &&
+          buffer[8] === 0x57 &&
+          buffer[9] === 0x45 &&
+          buffer[10] === 0x42 &&
+          buffer[11] === 0x50
+        ) {
+          return ext;
+        }
+        return null;
+      }
+      return ext;
+    }
+  }
+  return null;
+}
+
 export async function POST(request: NextRequest) {
+  const isAuth = await authenticateRequest();
+  if (!isAuth) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
@@ -13,20 +48,6 @@ export async function POST(request: NextRequest) {
     if (!file) {
       return NextResponse.json(
         { error: "File wajib dikirim" },
-        { status: 400 }
-      );
-    }
-
-    // Validate file type
-    const allowedTypes = [
-      "image/jpeg",
-      "image/png",
-      "image/webp",
-      "image/gif",
-    ];
-    if (!allowedTypes.includes(file.type)) {
-      return NextResponse.json(
-        { error: "Format file tidak didukung. Gunakan JPG, PNG, WebP, atau GIF." },
         { status: 400 }
       );
     }
@@ -40,19 +61,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Ensure upload directory exists
-    if (!fs.existsSync(UPLOAD_DIR)) {
-      fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+    const buffer = Buffer.from(await file.arrayBuffer());
+
+    // Validate actual file content via magic bytes
+    const detectedExt = detectImageType(buffer);
+    if (!detectedExt) {
+      return NextResponse.json(
+        { error: "Format file tidak didukung. Gunakan JPG, PNG, WebP, atau GIF." },
+        { status: 400 }
+      );
     }
 
-    // Generate unique filename
-    const ext = path.extname(file.name) || `.${file.type.split("/")[1]}`;
-    const uniqueName = `${Date.now()}-${crypto.randomBytes(6).toString("hex")}${ext}`;
+    // Ensure upload directory exists
+    await fs.mkdir(UPLOAD_DIR, { recursive: true });
+
+    // Generate unique filename with validated extension
+    const uniqueName = `${Date.now()}-${crypto.randomBytes(6).toString("hex")}${detectedExt}`;
     const filePath = path.join(UPLOAD_DIR, uniqueName);
 
-    // Write file
-    const buffer = Buffer.from(await file.arrayBuffer());
-    fs.writeFileSync(filePath, buffer);
+    await fs.writeFile(filePath, buffer);
 
     const publicUrl = `/uploads/${uniqueName}`;
 

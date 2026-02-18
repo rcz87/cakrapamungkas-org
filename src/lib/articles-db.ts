@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import type { Article } from "@/data/articles";
 
@@ -14,44 +14,68 @@ const DB_PATH = path.join(
   "dynamic-articles.json"
 );
 
-export function getDynamicArticles(): DynamicArticle[] {
+let cachedArticles: DynamicArticle[] | null = null;
+let cacheTime = 0;
+const CACHE_TTL = 5000; // 5 seconds
+
+function invalidateCache() {
+  cachedArticles = null;
+  cacheTime = 0;
+}
+
+export async function getDynamicArticles(): Promise<DynamicArticle[]> {
+  if (cachedArticles && Date.now() - cacheTime < CACHE_TTL) {
+    return cachedArticles;
+  }
+
   try {
-    const data = fs.readFileSync(DB_PATH, "utf-8");
-    return JSON.parse(data);
-  } catch {
+    const data = await fs.readFile(DB_PATH, "utf-8");
+    cachedArticles = JSON.parse(data);
+    cacheTime = Date.now();
+    return cachedArticles!;
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+    console.error("Failed to read articles database:", err);
     return [];
   }
 }
 
-export function getDynamicArticleBySlug(
+export async function getDynamicArticleBySlug(
   slug: string
-): DynamicArticle | undefined {
-  const articles = getDynamicArticles();
+): Promise<DynamicArticle | undefined> {
+  const articles = await getDynamicArticles();
   return articles.find((a) => a.slug === slug);
 }
 
-export function saveDynamicArticle(article: DynamicArticle): void {
-  const articles = getDynamicArticles();
+export async function saveDynamicArticle(
+  article: DynamicArticle
+): Promise<void> {
+  const articles = await getDynamicArticles();
   articles.unshift(article);
-  fs.writeFileSync(DB_PATH, JSON.stringify(articles, null, 2), "utf-8");
+  await fs.writeFile(DB_PATH, JSON.stringify(articles, null, 2), "utf-8");
+  invalidateCache();
 }
 
-export function updateDynamicArticle(
+export async function updateDynamicArticle(
   slug: string,
   updates: Partial<DynamicArticle>
-): DynamicArticle | null {
-  const articles = getDynamicArticles();
+): Promise<DynamicArticle | null> {
+  const articles = await getDynamicArticles();
   const index = articles.findIndex((a) => a.slug === slug);
   if (index === -1) return null;
   articles[index] = { ...articles[index], ...updates };
-  fs.writeFileSync(DB_PATH, JSON.stringify(articles, null, 2), "utf-8");
+  await fs.writeFile(DB_PATH, JSON.stringify(articles, null, 2), "utf-8");
+  invalidateCache();
   return articles[index];
 }
 
-export function deleteDynamicArticle(slug: string): boolean {
-  const articles = getDynamicArticles();
+export async function deleteDynamicArticle(slug: string): Promise<boolean> {
+  const articles = await getDynamicArticles();
   const filtered = articles.filter((a) => a.slug !== slug);
   if (filtered.length === articles.length) return false;
-  fs.writeFileSync(DB_PATH, JSON.stringify(filtered, null, 2), "utf-8");
+  await fs.writeFile(DB_PATH, JSON.stringify(filtered, null, 2), "utf-8");
+  invalidateCache();
   return true;
 }

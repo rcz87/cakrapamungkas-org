@@ -16,8 +16,8 @@ export const metadata = {
     "Kumpulan artikel seputar pertanian modern, agribisnis, teknologi, dan kearifan lokal Indonesia.",
 };
 
-export default function ArtikelPage() {
-  const dynamicArticles = getDynamicArticles();
+export default async function ArtikelPage() {
+  const dynamicArticles = await getDynamicArticles();
   const allArticles = [...dynamicArticles, ...articles];
 
   return (

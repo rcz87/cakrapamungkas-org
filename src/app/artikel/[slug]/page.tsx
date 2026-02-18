@@ -12,7 +12,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const article = getDynamicArticleBySlug(slug);
+  const article = await getDynamicArticleBySlug(slug);
   if (!article) return {};
 
   return {
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function DynamicArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = getDynamicArticleBySlug(slug);
+  const article = await getDynamicArticleBySlug(slug);
 
   if (!article) {
     notFound();

@@ -14,19 +14,25 @@ export function DeleteButton({
   const router = useRouter();
   const [confirming, setConfirming] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleDelete() {
     setLoading(true);
+    setError("");
     try {
       const res = await fetch(`/api/articles/${slug}`, { method: "DELETE" });
       if (res.ok) {
         router.refresh();
+      } else {
+        const data = await res.json().catch(() => null);
+        setError(data?.error || "Gagal menghapus artikel");
+        setConfirming(false);
       }
     } catch {
-      // silently fail
+      setError("Koneksi gagal, coba lagi");
+      setConfirming(false);
     } finally {
       setLoading(false);
-      setConfirming(false);
     }
   }
 
@@ -51,12 +57,17 @@ export function DeleteButton({
   }
 
   return (
-    <button
-      onClick={() => setConfirming(true)}
-      className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-      title={`Hapus "${title}"`}
-    >
-      <Trash2 className="w-4 h-4" />
-    </button>
+    <div className="flex items-center gap-1">
+      {error && (
+        <span className="text-xs text-red-600 mr-1">{error}</span>
+      )}
+      <button
+        onClick={() => { setConfirming(true); setError(""); }}
+        className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+        title={`Hapus "${title}"`}
+      >
+        <Trash2 className="w-4 h-4" />
+      </button>
+    </div>
   );
 }
