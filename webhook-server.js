@@ -148,6 +148,6 @@ server.listen(PORT, () => {
   log(`Webhook server berjalan di port ${PORT}`);
   log(`Endpoint: POST /webhook`);
   log(`Health check: GET /health`);
-  log(`Branch target: master`);
+  log(`Branch target: ${ALLOWED_BRANCH}`);
   log(`Secret configured: ${WEBHOOK_SECRET ? 'Ya' : 'Tidak (WARNING!)'}`);
 });
