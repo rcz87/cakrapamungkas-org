@@ -32,9 +32,9 @@ log "=========================================="
 cd "$APP_DIR"
 
 # 1. Pull perubahan terbaru
-log "Step 1: Git pull dari origin master..."
-git fetch origin master
-git reset --hard origin/master
+log "Step 1: Git pull dari origin main..."
+git fetch origin main
+git reset --hard origin/main
 log "Git pull selesai."
 
 # 2. Install dependencies (jika ada perubahan)

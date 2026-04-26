@@ -15,7 +15,7 @@ const PORT = 9000;
 const DEPLOY_SCRIPT = '/root/cakrapamungkas-org/deploy.sh';
 const LOG_DIR = '/root/cakrapamungkas-org/logs';
 const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || '';
-const ALLOWED_BRANCH = 'refs/heads/master';
+const ALLOWED_BRANCH = 'refs/heads/main';
 
 // Pastikan folder logs ada
 if (!fs.existsSync(LOG_DIR)) {
@@ -32,8 +32,8 @@ function log(message) {
 // Verifikasi signature dari GitHub
 function verifySignature(payload, signature) {
   if (!WEBHOOK_SECRET) {
-    log('WARNING: WEBHOOK_SECRET tidak diset, skip verifikasi signature.');
-    return true;
+    log('ERROR: WEBHOOK_SECRET tidak diset — semua request ditolak.');
+    return false;
   }
   if (!signature) {
     log('ERROR: Tidak ada signature di request.');
@@ -41,7 +41,10 @@ function verifySignature(payload, signature) {
   }
   const hmac = crypto.createHmac('sha256', WEBHOOK_SECRET);
   const digest = 'sha256=' + hmac.update(payload).digest('hex');
-  return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(digest));
+  const sigBuf = Buffer.from(signature);
+  const digBuf = Buffer.from(digest);
+  if (sigBuf.length !== digBuf.length) return false;
+  return crypto.timingSafeEqual(sigBuf, digBuf);
 }
 
 // Jalankan deploy script
