@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { articles, getArticleHref } from '@/data/articles'
+import { commodities } from '@/data/commodities'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cakrapamungkas.org'
@@ -17,8 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   const articleRoutes = articles.map((article) => getArticleHref(article.slug))
+  const commodityRoutes = commodities.map((c) => `/komoditas/${c.slug}`)
 
-  const allRoutes = [...staticRoutes, ...articleRoutes]
+  const allRoutes = [...staticRoutes, ...articleRoutes, ...commodityRoutes]
 
   return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,

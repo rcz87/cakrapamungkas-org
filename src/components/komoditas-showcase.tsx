@@ -2,255 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, MessageCircle, FileText, Globe2 } from "lucide-react";
+import {
+  ArrowRight,
+  MessageCircle,
+  FileText,
+  Globe2,
+  BookOpen,
+} from "lucide-react";
+import { commodities as komods } from "@/data/commodities";
 
-interface Spec {
-  label: string;
-  value: string;
-  note: string;
-}
-
-interface Commodity {
-  name: string;
-  en: string;
-  icon: string;
-  bg: string;
-  border: string;
-  tc: string;
-  tag: string;
-  desc: string;
-  descEn: string;
-  specs: Spec[];
-  variants: string[];
-  markets: string[];
-  exportReady: boolean;
-}
-
-const komods: Commodity[] = [
-  {
-    name: "Jahe & Rempah",
-    en: "Ginger & Spices",
-    icon: "🫚",
-    bg: "#fff7ed",
-    border: "#fed7aa",
-    tc: "#9a3412",
-    tag: "#ea580c",
-    desc: "Jahe merah, jahe gajah, jahe emprit — segar maupun kering. Diproses dengan standar ekspor: sortasi, pengeringan, grading, dan pengemasan vacuum. Cocok untuk buyer farmasi, F&B, dan herbal internasional.",
-    descEn:
-      "Red ginger, elephant ginger, emprit ginger — fresh or dried. Processed to export standards: sorting, drying, grading, and vacuum packaging. Ideal for pharmaceutical, F&B, and international herbal buyers.",
-    specs: [
-      { label: "Moisture (Dry)", value: "≤12%", note: "Export standard" },
-      { label: "Gingerol Content", value: "High", note: "Red ginger premium" },
-      { label: "Packaging", value: "Vacuum / PP Bag", note: "Custom available" },
-      { label: "MOQ", value: "500 kg", note: "Minimum order" },
-    ],
-    variants: [
-      "Jahe Merah Segar",
-      "Jahe Merah Kering (Slice)",
-      "Jahe Gajah Segar",
-      "Jahe Emprit",
-      "Serbuk Jahe (Powder)",
-      "Jahe Sortasi Export Grade",
-    ],
-    markets: [
-      "Industri farmasi & jamu",
-      "Ekspor ke Malaysia, Timur Tengah",
-      "F&B & minuman kesehatan",
-      "Buyer Eropa & Asia",
-    ],
-    exportReady: true,
-  },
-  {
-    name: "Kunyit & Temulawak",
-    en: "Turmeric & Curcuma",
-    icon: "🟡",
-    bg: "#fefce8",
-    border: "#fef08a",
-    tc: "#713f12",
-    tag: "#ca8a04",
-    desc: "Kunyit dan temulawak segar maupun kering dengan kandungan kurkumin tinggi. Produk unggulan untuk pasar herbal, farmasi, food coloring, dan suplemen kesehatan global.",
-    descEn:
-      "Fresh and dried turmeric and curcuma with high curcumin content. Premium products for herbal, pharmaceutical, food coloring, and global health supplement markets.",
-    specs: [
-      { label: "Curcumin Content", value: ">3%", note: "Premium dried turmeric" },
-      { label: "Moisture (Dry)", value: "≤12%", note: "Export standard" },
-      { label: "Color", value: "Deep Orange", note: "High quality grade" },
-      { label: "MOQ", value: "300 kg", note: "Minimum order" },
-    ],
-    variants: [
-      "Kunyit Segar",
-      "Kunyit Kering (Slice)",
-      "Kunyit Powder",
-      "Temulawak Segar",
-      "Temulawak Kering",
-      "Simplisia Export Grade",
-    ],
-    markets: [
-      "Industri jamu & herbal",
-      "Suplemen kesehatan",
-      "Food coloring industry",
-      "Ekspor Eropa, Jepang, Korea",
-    ],
-    exportReady: true,
-  },
-  {
-    name: "Lada & Cabai",
-    en: "Pepper & Chili",
-    icon: "🌶️",
-    bg: "#fff1f2",
-    border: "#fecdd3",
-    tc: "#be123c",
-    tag: "#e11d48",
-    desc: "Lada hitam, lada putih, cabai kering sortasi. Indonesia adalah produsen lada terbesar ketiga dunia — kami menghubungkan Anda langsung ke sumber.",
-    descEn:
-      "Black pepper, white pepper, and sorted dried chili. Indonesia is the world's 3rd largest pepper producer — we connect you directly to the source.",
-    specs: [
-      { label: "Piperine (Pepper)", value: ">5%", note: "Black pepper grade" },
-      { label: "Moisture", value: "≤12%", note: "Dried & sorted" },
-      { label: "Foreign Matter", value: "<0.5%", note: "Clean sorted grade" },
-      { label: "MOQ", value: "200 kg", note: "Minimum order" },
-    ],
-    variants: [
-      "Lada Hitam (Black Pepper)",
-      "Lada Putih (White Pepper)",
-      "Cabai Merah Kering",
-      "Cabai Rawit Kering",
-      "Paprika Kering",
-    ],
-    markets: [
-      "Industri bumbu & rempah",
-      "Restoran & F&B global",
-      "Ekspor ke Eropa, Amerika",
-      "Pasar Asia & Timur Tengah",
-    ],
-    exportReady: true,
-  },
-  {
-    name: "Kopi & Kakao",
-    en: "Coffee & Cacao",
-    icon: "☕",
-    bg: "#fdf4ff",
-    border: "#e9d5ff",
-    tc: "#581c87",
-    tag: "#7c3aed",
-    desc: "Biji kopi robusta dan arabika dari petani pegunungan Jawa Tengah. Kakao fermentasi dan non-fermentasi untuk industri coklat premium. Tersedia green bean maupun roasted.",
-    descEn:
-      "Robusta and arabica coffee beans from Central Java highland farmers. Fermented and non-fermented cacao beans for premium chocolate industry. Available as green bean or roasted.",
-    specs: [
-      { label: "Grade", value: "Grade 1–4", note: "Specialty to commercial" },
-      { label: "Moisture", value: "≤12.5%", note: "Green bean standard" },
-      { label: "Defect", value: "<11%", note: "Grade 1 standard" },
-      { label: "MOQ", value: "100 kg", note: "Minimum order" },
-    ],
-    variants: [
-      "Kopi Robusta Green Bean",
-      "Kopi Arabika Green Bean",
-      "Kopi Roasted (Custom)",
-      "Kakao Biji Fermentasi",
-      "Kakao Non-Fermentasi",
-    ],
-    markets: [
-      "Specialty coffee roasters",
-      "Industri coklat premium",
-      "Ekspor ke Eropa & Amerika",
-      "Buyer Jepang & Korea",
-    ],
-    exportReady: true,
-  },
-  {
-    name: "Porang",
-    en: "Porang (Konjac)",
-    icon: "🥔",
-    bg: "#faf5ff",
-    border: "#ddd6fe",
-    tc: "#4c1d95",
-    tag: "#7c3aed",
-    desc: "Porang (Amorphophallus muelleri) adalah umbi bernilai ekspor tinggi dengan kandungan glukomanan tinggi. Sangat diminati Jepang, China, Korea, dan Eropa untuk produksi tepung konjac, shirataki noodles, dan suplemen diet.",
-    descEn:
-      "Porang (Amorphophallus muelleri) is a high-value export crop with high glucomannan content. Highly sought after by Japan, China, Korea, and Europe for konjac flour, shirataki noodles, and dietary supplements.",
-    specs: [
-      { label: "Glucomannan", value: ">45%", note: "Dry flour standard" },
-      { label: "Moisture (Chip)", value: "≤14%", note: "Porang chip kering" },
-      { label: "Export Price", value: "Premium", note: "USD 3–8/kg flour" },
-      { label: "MOQ", value: "1 ton", note: "Minimum order (chips)" },
-    ],
-    variants: [
-      "Porang Segar (Umbi)",
-      "Porang Chip Kering",
-      "Tepung Porang (Konjac Flour)",
-      "Porang Sortasi Export Grade",
-    ],
-    markets: [
-      "Jepang — shirataki & konjac",
-      "China — industri konjac",
-      "Korea & Taiwan",
-      "Eropa — health food & suplemen",
-    ],
-    exportReady: true,
-  },
-  {
-    name: "Jagung",
-    en: "Corn / Maize",
-    icon: "🌽",
-    bg: "#fffbeb",
-    border: "#fde68a",
-    tc: "#78350f",
-    tag: "#b45309",
-    desc: "Jagung pipil kering dan basah untuk kebutuhan pakan ternak, industri pangan, dan ekspor. Kami bermitra langsung dengan petani jagung di Jawa Tengah untuk memastikan pasokan stabil dan berkualitas.",
-    descEn:
-      "Dried and fresh corn kernels for animal feed, food industry, and export. We partner directly with corn farmers in Central Java to ensure stable, quality supply.",
-    specs: [
-      { label: "Moisture Content", value: "≤14%", note: "Jagung kering pipil" },
-      { label: "Aflatoxin", value: "<20 ppb", note: "Food grade standard" },
-      { label: "Purity", value: ">98%", note: "Sorted & cleaned" },
-      { label: "Capacity", value: "200+ ton/bln", note: "Sourcing capacity" },
-    ],
-    variants: [
-      "Jagung Pipil Kering",
-      "Jagung Basah",
-      "Jagung Pakan Ternak",
-      "Jagung Industri Pangan",
-    ],
-    markets: [
-      "Pabrik pakan ternak",
-      "Industri tepung maizena",
-      "Ekspor Asia Tenggara",
-    ],
-    exportReady: true,
-  },
-  {
-    name: "Padi & Beras",
-    en: "Paddy & Rice",
-    icon: "🌾",
-    bg: "#f0fdf4",
-    border: "#bbf7d0",
-    tc: "#15803d",
-    tag: "#16a34a",
-    desc: "Gabah dan beras adalah komoditas kami. Kami menerima gabah basah dan kering dari petani mitra, mengolahnya menjadi beras premium, medium, dan pecah sesuai standar Bulog maupun pasar bebas.",
-    descEn:
-      "Paddy and rice processing. We procure wet and dry paddy from partner farmers and process it into premium, medium, and broken rice grades meeting Bulog and open market standards.",
-    specs: [
-      { label: "Moisture Content", value: "≤14%", note: "Gabah kering giling" },
-      { label: "Whiteness", value: "35–45", note: "Skala whiteness meter" },
-      { label: "Broken Rice", value: "<5%", note: "Premium grade" },
-      { label: "Capacity", value: "500+ ton/bln", note: "Processing capacity" },
-    ],
-    variants: [
-      "Gabah Basah (GKP)",
-      "Gabah Kering (GKG)",
-      "Beras Premium",
-      "Beras Medium",
-      "Beras Pecah (Menir)",
-      "Katul & Dedak",
-    ],
-    markets: [
-      "Pasar lokal Jawa Tengah",
-      "Bulog & distributor nasional",
-      "Industri pakan ternak (katul)",
-    ],
-    exportReady: false,
-  },
-];
 
 const WA_NUMBER = "6285228003820";
 
@@ -500,6 +260,13 @@ export function KomoditasShowcase() {
                   spesifikasi lengkap, dan penawaran kerjasama.
                 </p>
                 <div className="flex flex-col gap-2.5">
+                  <Link
+                    href={`/komoditas/${k.slug}`}
+                    className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white text-sm font-bold rounded-xl border-2 transition-opacity hover:opacity-80"
+                    style={{ color: k.tag, borderColor: k.border }}
+                  >
+                    <BookOpen className="w-4 h-4" /> Pelajari Lebih Lanjut
+                  </Link>
                   <Link
                     href={`/kontak?subject=${encodeURIComponent("Quotation: " + k.name)}`}
                     className="inline-flex items-center justify-center gap-2 px-4 py-3 text-white text-sm font-bold rounded-xl hover:opacity-90 transition-opacity"
