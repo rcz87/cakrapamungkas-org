@@ -4,6 +4,7 @@ import { Leaf, Mail, Phone, MapPin } from "lucide-react";
 const quickLinks = [
   { href: "/tentang", label: "Tentang Kami" },
   { href: "/layanan", label: "Layanan" },
+  { href: "/komoditas", label: "Komoditas" },
   { href: "/artikel", label: "Artikel" },
   { href: "/pusat-ilmu", label: "Pusat Ilmu" },
   { href: "/download", label: "Download Area" },
@@ -12,11 +13,14 @@ const quickLinks = [
 
 const layananLinks = [
   { href: "/layanan#maklon", label: "Jasa Maklon" },
-  { href: "/layanan#gabah", label: "Jual Beli Gabah" },
-  { href: "/layanan#saprotan", label: "Saprotan" },
+  { href: "/layanan#komoditas", label: "Jual Beli Komoditas" },
+  { href: "/layanan#rempah", label: "Pengolahan Rempah" },
+  { href: "/layanan#saprotan", label: "Sarana Produksi" },
   { href: "/padidoc", label: "PadiDoc App" },
   { href: "https://demo.cakrapamungkas.digital", label: "Demo PadiDoc", external: true },
 ];
+
+const commodityChips = ["🌾 Padi", "🌽 Jagung", "🫚 Rempah", "🌶️ Lada", "☕ Kopi", "🥔 Porang"];
 
 export function Footer() {
   return (
@@ -32,14 +36,25 @@ export function Footer() {
               <div>
                 <p className="font-bold text-white text-sm">Cakra Pamungkas</p>
                 <p className="text-[11px] text-primary-400 font-medium">
-                  Mandiri
+                  Agribisnis Multi-Komoditas
                 </p>
               </div>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-400 leading-relaxed mb-4">
               CV. Cakra Pamungkas Mandiri — Mitra terpercaya dalam edukasi
-              pertanian, jasa maklon, dan solusi agribisnis modern di Indonesia.
+              pertanian, jasa maklon, pengolahan rempah, dan solusi agribisnis
+              modern.
             </p>
+            <div className="flex flex-wrap gap-1.5">
+              {commodityChips.map((c) => (
+                <span
+                  key={c}
+                  className="px-2.5 py-0.5 bg-white/[0.06] text-[11px] text-gray-400 rounded-full"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -96,14 +111,17 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary-400 mt-0.5 shrink-0" />
                 <span className="text-sm text-gray-400">
-                  Indonesia
+                  Kebumen, Jawa Tengah
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary-400 shrink-0" />
-                <span className="text-sm text-gray-400">
-                  Hubungi Kami
-                </span>
+                <a
+                  href="https://wa.me/6285228003820"
+                  className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
+                >
+                  +62 852-2800-3820
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary-400 shrink-0" />

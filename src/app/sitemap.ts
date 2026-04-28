@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/tentang',
     '/layanan',
+    '/komoditas',
     '/pusat-ilmu',
     '/kontak',
     '/download',

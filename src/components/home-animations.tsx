@@ -1,24 +1,21 @@
 "use client";
 
 import { TypeWriter, ScrollFadeIn, CountUp } from "./animations";
-import {
-  TrendingUp,
-  Sprout,
-  Leaf,
-} from "lucide-react";
 import type { ReactNode } from "react";
 
 // Hero subtitle with typing effect
 export function HeroTypingSubtitle() {
   return (
     <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 border border-primary-100 rounded-full mb-6">
-      <span className="text-sm text-primary-700 font-medium">
+      <span className="w-1.5 h-1.5 rounded-full bg-primary-600" />
+      <span className="text-xs sm:text-sm text-primary-700 font-semibold">
         <TypeWriter
           words={[
-            "Portal Ilmu & Berita Pertanian Indonesia",
-            "Manajemen Penggilingan Padi Modern",
-            "Edukasi & Solusi Agribisnis",
-            "Informasi Pertanian Terkini",
+            "Multi-Komoditas Agribisnis",
+            "Rempah & Hasil Bumi",
+            "Padi, Jagung & Spices",
+            "Smart Farming 4.0",
+            "Dari Kebun ke Pasar Global",
           ]}
           typingSpeed={60}
           deletingSpeed={30}
@@ -32,59 +29,51 @@ export function HeroTypingSubtitle() {
 // Stats section with counter animation
 const stats = [
   {
-    end: 14,
-    suffix: "%",
-    prefix: "12-",
-    label: "Kontribusi PDB Nasional",
-    Icon: TrendingUp,
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    end: 28,
-    suffix: "%",
+    end: 13,
+    suffix: ",5%",
     prefix: "",
-    label: "Penyerapan Tenaga Kerja",
-    Icon: Sprout,
-    color: "bg-green-50 text-green-600",
-  },
-  {
-    end: 34,
-    suffix: ",71 Jt",
-    prefix: "",
-    label: "Produksi Beras 2025 (Ton)",
-    Icon: Leaf,
-    color: "bg-amber-50 text-amber-600",
+    label: "Kontribusi PDB",
+    sub: "Sektor pertanian nasional",
   },
   {
     end: 300,
-    suffix: " Ribu",
+    suffix: " T+",
+    prefix: "Rp",
+    label: "Nilai Ekspor Rempah",
+    sub: "Target 2026 Indonesia",
+  },
+  {
+    end: 34,
+    suffix: ",77 Jt ton",
     prefix: "",
-    label: "Petani Milenial Aktif",
-    Icon: TrendingUp,
-    color: "bg-primary-50 text-primary-600",
+    label: "Target Produksi Beras",
+    sub: "Program Kementan 2026",
+  },
+  {
+    end: 1,
+    suffix: ",3 M",
+    prefix: "US$",
+    label: "Ekspor Rempah 2025",
+    sub: "Jahe, lada & kunyit",
   },
 ];
 
 export function AnimatedStats() {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {stats.map((stat, index) => (
         <ScrollFadeIn key={stat.label} delay={index * 100} direction="up">
-          <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-            <div
-              className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 ${stat.color}`}
-            >
-              <stat.Icon className="w-6 h-6" />
-            </div>
-            <p className="text-2xl font-bold text-gray-900 mb-1">
+          <div className="text-center px-5 py-9 bg-primary-50 rounded-2xl border border-primary-100 h-full">
+            <div className="text-3xl lg:text-[2.3rem] font-black text-primary-600 mb-2.5 tracking-tight">
               <CountUp
                 end={stat.end}
                 suffix={stat.suffix}
                 prefix={stat.prefix}
                 duration={1800}
               />
-            </p>
-            <p className="text-sm text-gray-600">{stat.label}</p>
+            </div>
+            <p className="text-sm font-bold text-gray-700 mb-1">{stat.label}</p>
+            <p className="text-xs text-gray-400 leading-relaxed">{stat.sub}</p>
           </div>
         </ScrollFadeIn>
       ))}
