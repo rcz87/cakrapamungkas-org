@@ -1,146 +1,380 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import {
-  Building2,
-  Target,
-  Eye,
-  Users,
-  Shield,
-  FileCheck,
-  Sprout,
+  ArrowRight,
+  Check,
+  Download,
+  FileText,
+  Globe2,
+  Landmark,
+  ScrollText,
 } from "lucide-react";
 
-export const metadata = {
-  title: "Tentang Kami | CV. Cakra Pamungkas Mandiri",
+export const metadata: Metadata = {
+  title:
+    "Tentang Kami — CV. Cakra Pamungkas Mandiri | Agribisnis Multi-Komoditas",
   description:
-    "Profil CV. Cakra Pamungkas Mandiri — Visi, Misi, Tim, dan Legalitas perusahaan.",
+    "Perusahaan agribisnis multi-komoditas di Kebumen, Jawa Tengah. Berdiri 2019, menghubungkan petani lokal ke pasar global dengan rempah, padi, jagung, dan hasil bumi.",
+  alternates: { canonical: "/tentang" },
+  openGraph: {
+    title: "About Cakra Pamungkas — Indonesian Multi-Commodity Agribusiness",
+    description:
+      "Multi-commodity agribusiness company based in Central Java, Indonesia — connecting local farmers to domestic and global markets.",
+    type: "website",
+  },
 };
+
+const heroStats = [
+  { v: "2019", label: "Est.", sub: "Founded in Kebumen, Java" },
+  { v: "6+", label: "Commodities", sub: "Padi, jagung, rempah & more" },
+  { v: "100+", label: "Farmer Partners", sub: "Petani mitra aktif" },
+  { v: "3 Prov.", label: "Distribution", sub: "Jawa, Sumatra & beyond" },
+];
+
+const values = [
+  {
+    icon: "🤝",
+    title: "Transparent Partnership",
+    titleId: "Kemitraan Transparan",
+    desc: "We build long-term relationships with farmers and business partners based on fair pricing and clear terms.",
+  },
+  {
+    icon: "🌱",
+    title: "Sustainable Agriculture",
+    titleId: "Pertanian Berkelanjutan",
+    desc: "Promoting eco-friendly farming practices while maximizing yield and quality for domestic and export markets.",
+  },
+  {
+    icon: "⚡",
+    title: "Tech-Driven Operations",
+    titleId: "Operasi Berbasis Teknologi",
+    desc: "From PadiDoc management system to IoT monitoring — we leverage technology to ensure consistent quality.",
+  },
+  {
+    icon: "🌏",
+    title: "Global Market Ready",
+    titleId: "Siap Pasar Global",
+    desc: "Our commodities meet international quality standards. We work with exporters and international buyers.",
+  },
+];
+
+const timeline = [
+  {
+    year: "2019",
+    title: "Pendirian",
+    desc: "CV. Cakra Pamungkas Mandiri berdiri di Kebumen, Jawa Tengah. Fokus awal: jasa maklon penggilingan gabah.",
+  },
+  {
+    year: "2021",
+    title: "Ekspansi Komoditas",
+    desc: "Mulai bergerak di perdagangan jagung dan pengolahan rempah. Jaringan petani mitra berkembang.",
+  },
+  {
+    year: "2023",
+    title: "Digitalisasi",
+    desc: "Peluncuran PadiDoc — sistem manajemen penggilingan berbasis digital dengan integrasi AI & Telegram.",
+  },
+  {
+    year: "2026",
+    title: "Multi-Komoditas & Ekspor",
+    desc: "Menarget pasar ekspor rempah (jahe, lada, kunyit) ke Asia Tenggara, Timur Tengah, dan Eropa.",
+  },
+];
+
+const team = [
+  {
+    name: "RCZ",
+    role: "Founder & CEO",
+    desc: "Visionary behind Cakra Pamungkas. Experienced in agribusiness management, technology integration, and building farmer ecosystems.",
+  },
+  {
+    name: "Sapto",
+    role: "Operations Manager",
+    desc: "Oversees daily milling operations, quality control, and farmer partnership management.",
+  },
+  {
+    name: "Stalyyna",
+    role: "Content & Education",
+    desc: "Leads agricultural education content, research, and PadiDoc platform development.",
+  },
+];
+
+const misiItems = [
+  "Layanan maklon berkualitas dengan standar transparan & profesional",
+  "Perdagangan multi-komoditas: padi, jagung, rempah, & hasil bumi",
+  "Memperluas akses petani ke informasi budidaya & regulasi terkini",
+  "Mengembangkan PadiDoc — teknologi digital untuk manajemen penggilingan",
+  "Membangun kemitraan ekspor ke pasar Asia, Timur Tengah & Eropa",
+];
+
+const legalItems = [
+  {
+    Icon: FileText,
+    title: "Nomor Induk Berusaha (NIB)",
+    desc: "Terdaftar resmi dalam sistem OSS pemerintah Indonesia.",
+  },
+  {
+    Icon: ScrollText,
+    title: "Akta Pendirian CV",
+    desc: "Akta notaris yang sah sesuai hukum Republik Indonesia.",
+  },
+  {
+    Icon: Landmark,
+    title: "NPWP Perusahaan",
+    desc: "Terdaftar sebagai wajib pajak badan yang patuh.",
+  },
+];
+
+const exportPoints = [
+  "Quality-controlled processing",
+  "Competitive FOB pricing",
+  "Multi-commodity sourcing",
+  "Direct farmer-to-buyer supply chain",
+];
 
 export default function TentangPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-800/60 border border-primary-700/50 rounded-full mb-6">
-              <Building2 className="w-4 h-4 text-primary-400" />
-              <span className="text-sm text-primary-200 font-medium">
-                Company Profile
-              </span>
+      {/* Hero — cinematic dark */}
+      <section className="relative overflow-hidden bg-primary-950 px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse at 20% 50%, rgba(22,163,74,0.2) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(22,163,74,0.13) 0%, transparent 50%)",
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="flex items-center gap-2 mb-6">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary-400">
+              Company Profile
+            </span>
+            <span className="text-gray-500 text-xs">/ About Us</span>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-white leading-[1.1] tracking-tight mb-5">
+                Tentang
+                <br />
+                <span className="text-primary-400">Cakra Pamungkas</span>
+              </h1>
+              <p className="text-base text-white/70 leading-relaxed mb-3">
+                CV. Cakra Pamungkas Mandiri adalah perusahaan agribisnis
+                multi-komoditas yang berbasis di Kebumen, Jawa Tengah.
+              </p>
+              <p className="text-sm text-white/50 italic leading-relaxed mb-8">
+                We are a multi-commodity agribusiness company based in Central
+                Java, Indonesia — connecting local farmers to domestic and
+                global markets.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/kontak"
+                  className="px-6 py-3 bg-primary-600 text-white text-sm font-bold rounded-xl hover:bg-primary-700 transition-colors"
+                >
+                  Hubungi Kami
+                </Link>
+                <Link
+                  href="/download"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white text-sm font-semibold rounded-xl border border-white/20 hover:bg-white/15 transition-colors"
+                >
+                  <Download className="w-4 h-4" /> Download Profile
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white">
-              Tentang Kami
-            </h1>
-            <p className="mt-4 text-lg text-primary-100/80 leading-relaxed">
-              CV. Cakra Pamungkas Mandiri adalah badan usaha yang bergerak di
-              bidang agribisnis dan edukasi pertanian di Indonesia.
+
+            <div className="grid grid-cols-2 gap-4">
+              {heroStats.map((s) => (
+                <div
+                  key={s.label}
+                  className="px-6 py-7 bg-white/5 backdrop-blur rounded-2xl border border-white/10"
+                >
+                  <div className="text-2xl lg:text-[2.4rem] font-black text-primary-400 mb-1.5 tracking-tight">
+                    {s.v}
+                  </div>
+                  <p className="text-sm font-bold text-white mb-1">{s.label}</p>
+                  <p className="text-xs text-white/45 leading-relaxed">
+                    {s.sub}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-white px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary-600">
+              Our Values · Nilai Kami
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[2.3rem] font-black text-gray-900 tracking-tight mt-2">
+              Mengapa Memilih Kami?
+            </h2>
+            <p className="text-sm text-gray-400 italic mt-2">
+              Why partner with Cakra Pamungkas Mandiri?
             </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {values.map((v) => (
+              <div
+                key={v.title}
+                className="group p-7 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-primary-50 hover:border-primary-100 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/10 transition-all"
+              >
+                <div className="text-4xl mb-4">{v.icon}</div>
+                <p className="text-[10px] font-bold tracking-widest uppercase text-primary-600 mb-1.5">
+                  EN
+                </p>
+                <h3 className="text-base font-extrabold text-gray-900 mb-1">
+                  {v.title}
+                </h3>
+                <p className="text-xs italic text-gray-400 mb-3">{v.titleId}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Visi Misi */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-primary-50 rounded-2xl p-8 lg:p-10 border border-primary-100">
-              <div className="w-14 h-14 bg-primary-600 rounded-2xl flex items-center justify-center mb-6">
-                <Eye className="w-7 h-7 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Visi</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Menjadi perusahaan agribisnis terdepan yang mendorong modernisasi
-                pertanian Indonesia melalui edukasi, teknologi, dan layanan
-                terintegrasi — sehingga petani dan pelaku usaha tani dapat
-                berkembang secara mandiri dan berkelanjutan.
-              </p>
+      <section className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="relative overflow-hidden bg-primary-50 rounded-3xl p-10 border border-primary-100">
+            <div
+              aria-hidden
+              className="absolute -top-5 -right-5 text-[120px] leading-none opacity-[0.06] select-none"
+            >
+              👁
             </div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-primary-600 rounded-full mb-5">
+              <span className="text-[11px] font-bold tracking-wider uppercase text-white">
+                Vision · Visi
+              </span>
+            </div>
+            <h2 className="text-xl lg:text-[1.7rem] font-extrabold text-primary-900 leading-tight tracking-tight mb-4">
+              Menjadi Pemimpin Agribisnis Multi-Komoditas Indonesia
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Menjadi perusahaan agribisnis terdepan yang mendorong modernisasi
+              pertanian Indonesia melalui edukasi, teknologi, dan layanan
+              terintegrasi.
+            </p>
+            <p className="text-sm text-gray-500 italic leading-relaxed pt-4 border-t border-primary-100">
+              To become Indonesia&apos;s leading multi-commodity agribusiness
+              that empowers farmers and connects Indonesian agricultural
+              products to global markets.
+            </p>
+          </div>
 
-            <div className="bg-earth-50 rounded-2xl p-8 lg:p-10 border border-earth-100">
-              <div className="w-14 h-14 bg-earth-500 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Misi</h2>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <Sprout className="w-5 h-5 text-earth-500 mt-0.5 shrink-0" />
-                  <span>
-                    Menyediakan layanan jasa maklon berkualitas dengan standar
-                    yang transparan dan profesional.
+          <div className="bg-white rounded-3xl p-10 border border-gray-200">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-gray-900 rounded-full mb-5">
+              <span className="text-[11px] font-bold tracking-wider uppercase text-white">
+                Mission · Misi
+              </span>
+            </div>
+            <h2 className="text-xl lg:text-[1.7rem] font-extrabold text-gray-900 leading-tight tracking-tight mb-5">
+              Langkah Nyata Menuju Kedaulatan Pangan
+            </h2>
+            <ul className="flex flex-col gap-3.5">
+              {misiItems.map((m) => (
+                <li key={m} className="flex gap-3 items-start">
+                  <span className="mt-1 w-5 h-5 shrink-0 rounded-full bg-primary-50 border-2 border-primary-600 flex items-center justify-center">
+                    <Check
+                      className="w-2.5 h-2.5 text-primary-600"
+                      strokeWidth={3}
+                    />
+                  </span>
+                  <span className="text-sm text-gray-700 leading-relaxed">
+                    {m}
                   </span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Sprout className="w-5 h-5 text-earth-500 mt-0.5 shrink-0" />
-                  <span>
-                    Memperluas akses petani terhadap informasi budidaya,
-                    manajemen, dan regulasi pertanian terkini.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Sprout className="w-5 h-5 text-earth-500 mt-0.5 shrink-0" />
-                  <span>
-                    Mengembangkan teknologi digital (PadiDoc) untuk membantu
-                    diagnosa masalah tanaman secara cepat dan akurat.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Sprout className="w-5 h-5 text-earth-500 mt-0.5 shrink-0" />
-                  <span>
-                    Membangun kemitraan yang saling menguntungkan dengan petani,
-                    pengusaha, dan pemerintah.
-                  </span>
-                </li>
-              </ul>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="bg-white px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary-600">
+              Our Journey · Perjalanan Kami
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-black text-gray-900 tracking-tight mt-2">
+              Dari Lokal ke Global
+            </h2>
+          </div>
+          <div className="relative">
+            <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600 to-primary-100" />
+            <div className="flex flex-col gap-8">
+              {timeline.map((t, i) => {
+                const isLast = i === timeline.length - 1;
+                return (
+                  <div key={t.year} className="flex gap-6 items-start">
+                    <div
+                      className={`relative z-10 w-14 h-14 shrink-0 rounded-full border-[3px] border-primary-600 flex items-center justify-center ${
+                        isLast ? "bg-primary-600" : "bg-primary-50"
+                      }`}
+                    >
+                      <span
+                        className={`text-xs font-extrabold ${
+                          isLast ? "text-white" : "text-primary-600"
+                        }`}
+                      >
+                        {t.year}
+                      </span>
+                    </div>
+                    <div className="pt-3 flex-1">
+                      <h3 className="text-base font-extrabold text-gray-900 mb-1.5">
+                        {t.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        {t.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tim / Profil */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Tim Kami
+      {/* Team */}
+      <section className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary-600">
+              Our Team · Tim Kami
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-black text-gray-900 tracking-tight mt-2">
+              Orang-Orang di Balik Cakra Pamungkas
             </h2>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              Dijalankan oleh profesional yang berdedikasi dalam memajukan
-              pertanian Indonesia.
+            <p className="text-sm text-gray-400 italic mt-2">
+              The people driving our agribusiness forward
             </p>
           </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                name: "RCZ",
-                role: "Founder & CEO",
-                desc: "Pendiri CV. Cakra Pamungkas Mandiri dengan visi memajukan pertanian Indonesia melalui teknologi dan edukasi. Berpengalaman dalam pengelolaan agribisnis dan pengembangan usaha pertanian.",
-              },
-              {
-                name: "Sapto",
-                role: "Manajer Operasional",
-                desc: "Mengawasi operasional harian termasuk jasa maklon penggilingan gabah dan distribusi sarana produksi pertanian.",
-              },
-              {
-                name: "Stalyyna",
-                role: "Edukasi & Konten",
-                desc: "Bertanggung jawab atas konten edukasi pertanian, riset artikel, dan pengembangan platform PadiDoc.",
-              },
-            ].map((member) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {team.map((m) => (
               <div
-                key={member.role}
-                className="bg-white rounded-2xl p-8 text-center border border-gray-100 shadow-sm"
+                key={m.name}
+                className="bg-white rounded-3xl p-8 border border-gray-100 text-center shadow-sm hover:shadow-lg transition-shadow"
               >
-                <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-10 h-10 text-primary-600" />
+                <div className="w-[72px] h-[72px] mx-auto mb-5 rounded-full bg-gradient-to-br from-primary-600 to-emerald-600 shadow-lg shadow-primary-600/30 flex items-center justify-center text-3xl">
+                  👤
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg">
-                  {member.name}
+                <h3 className="text-lg font-extrabold text-gray-900 mb-1 tracking-tight">
+                  {m.name}
                 </h3>
-                <p className="text-sm text-primary-600 font-medium mt-1">
-                  {member.role}
+                <p className="text-[11px] font-bold tracking-wider uppercase text-primary-600 mb-3.5">
+                  {m.role}
                 </p>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  {member.desc}
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {m.desc}
                 </p>
               </div>
             ))}
@@ -148,45 +382,96 @@ export default function TentangPage() {
         </div>
       </section>
 
-      {/* Legalitas */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Legalitas Perusahaan
+      {/* Legalitas + Export Ready */}
+      <section className="bg-white px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary-600">
+              Legalitas · Legal Standing
+            </span>
+            <h2 className="text-2xl lg:text-[1.9rem] font-black text-gray-900 tracking-tight mt-2 mb-4">
+              Terdaftar Resmi &amp; Terpercaya
             </h2>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              CV. Cakra Pamungkas Mandiri adalah badan usaha resmi dan
-              terdaftar.
+            <p className="text-sm text-gray-500 italic leading-relaxed mb-7">
+              Officially registered business entity in Indonesia&apos;s OSS
+              system.
             </p>
+            <div className="flex flex-col gap-3.5">
+              {legalItems.map(({ Icon, title, desc }) => (
+                <div
+                  key={title}
+                  className="flex gap-4 px-5 py-4 bg-gray-50 rounded-2xl border border-gray-100"
+                >
+                  <Icon className="w-6 h-6 text-primary-600 shrink-0" />
+                  <div>
+                    <p className="text-sm font-bold text-gray-900 mb-1">
+                      {title}
+                    </p>
+                    <p className="text-xs text-gray-500">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {[
-              {
-                icon: FileCheck,
-                title: "Nomor Induk Berusaha (NIB)",
-                desc: "Terdaftar resmi dalam sistem OSS (Online Single Submission) pemerintah.",
-              },
-              {
-                icon: Shield,
-                title: "Akta Pendirian CV",
-                desc: "Akta notaris pendirian CV yang sah sesuai hukum Indonesia.",
-              },
-            ].map((doc) => (
-              <div
-                key={doc.title}
-                className="flex items-start gap-5 bg-gray-50 rounded-2xl p-6 border border-gray-100"
-              >
-                <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center shrink-0">
-                  <doc.icon className="w-6 h-6 text-primary-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900">{doc.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{doc.desc}</p>
-                </div>
-              </div>
-            ))}
+          <div className="bg-gradient-to-br from-primary-600 to-emerald-600 rounded-3xl p-10 text-white">
+            <div className="text-4xl mb-5">🌏</div>
+            <h3 className="text-xl lg:text-[1.7rem] font-black leading-tight tracking-tight mb-4">
+              Ready for International Partnerships
+            </h3>
+            <p className="text-white/80 leading-relaxed text-sm mb-6">
+              We welcome inquiries from international buyers, importers, and
+              distributors interested in Indonesian agricultural commodities —
+              rice, spices, corn, and more.
+            </p>
+            <ul className="flex flex-col gap-3 mb-7">
+              {exportPoints.map((p) => (
+                <li key={p} className="flex gap-2.5 items-center">
+                  <span className="w-[18px] h-[18px] shrink-0 rounded-full bg-white/20 flex items-center justify-center text-[10px]">
+                    ✓
+                  </span>
+                  <span className="text-[13px] text-white/90">{p}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/kontak?subject=export"
+              className="block w-full text-center px-4 py-3.5 bg-white text-primary-700 text-sm font-extrabold rounded-xl hover:opacity-90 transition-opacity"
+            >
+              Contact for Export Inquiry →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-gray-50 border-t border-gray-100 px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight mb-3">
+            Siap Bermitra dengan Kami?
+          </h2>
+          <p className="text-gray-500 italic leading-relaxed mb-8">
+            Ready to partner with us? Let&apos;s grow together.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/kontak"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-primary-600 text-white text-sm font-bold rounded-xl shadow-lg shadow-primary-600/25 hover:bg-primary-700 transition-colors"
+            >
+              Hubungi Kami <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/layanan"
+              className="px-7 py-3 bg-white text-gray-700 text-sm font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              Lihat Layanan
+            </Link>
+            <Link
+              href="/download"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-white text-gray-700 text-sm font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              <Globe2 className="w-4 h-4" /> Download Profile
+            </Link>
           </div>
         </div>
       </section>
