@@ -1,7 +1,7 @@
 #!/bin/bash
 # ==============================================
 # Auto Deploy Script - cakrapamungkas.org
-# Dipanggil otomatis oleh webhook saat push ke master
+# Dipanggil otomatis oleh webhook saat push ke main
 # ==============================================
 
 set -e
@@ -47,8 +47,15 @@ log "Step 3: Build Next.js..."
 npm run build
 log "Build selesai."
 
-# 4. Restart PM2
-log "Step 4: Restart PM2..."
+# 4. Sync standalone assets (Next.js tidak otomatis copy public + static)
+log "Step 4: Sync public + .next/static ke .next/standalone..."
+rm -rf .next/standalone/public .next/standalone/.next/static
+cp -r public .next/standalone/
+cp -r .next/static .next/standalone/.next/
+log "Standalone assets tersinkron."
+
+# 5. Restart PM2
+log "Step 5: Restart PM2..."
 pm2 restart cakrapamungkas-org --update-env
 log "PM2 restart selesai."
 

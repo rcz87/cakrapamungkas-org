@@ -1,6 +1,6 @@
 // ==============================================
 // GitHub Webhook Server - cakrapamungkas.org
-// Auto deploy saat push ke master
+// Auto deploy saat push ke main
 // Port: 9000
 // ==============================================
 
@@ -115,11 +115,11 @@ const server = http.createServer((req, res) => {
       const event = req.headers['x-github-event'];
       log(`Webhook diterima: event=${event}, ref=${payload.ref || 'N/A'}`);
 
-      // Hanya proses push ke master
+      // Hanya proses push ke main
       if (event === 'push' && payload.ref === ALLOWED_BRANCH) {
         const pusher = payload.pusher ? payload.pusher.name : 'unknown';
         const commitMsg = payload.head_commit ? payload.head_commit.message : 'N/A';
-        log(`PUSH ke master oleh ${pusher}: "${commitMsg}"`);
+        log(`PUSH ke main oleh ${pusher}: "${commitMsg}"`);
         log('Memulai auto-deploy...');
 
         res.writeHead(200, { 'Content-Type': 'application/json' });

@@ -11,13 +11,14 @@ module.exports = {
     {
       name: 'cakrapamungkas-org',
       cwd: '/root/cakrapamungkas-org',
-      script: 'npm',
-      args: 'start',
+      script: 'node',
+      args: '.next/standalone/server.js',
       instances: 1,
       exec_mode: 'fork',
       env: {
         NODE_ENV: 'production',
-        PORT: 3001
+        PORT: 3001,
+        HOSTNAME: '127.0.0.1'
       },
       error_file: '/root/cakrapamungkas-org/logs/error.log',
       out_file: '/root/cakrapamungkas-org/logs/out.log',
