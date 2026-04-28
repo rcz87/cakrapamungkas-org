@@ -100,12 +100,22 @@ const server = http.createServer((req, res) => {
         return;
       }
 
-      // Parse payload
+      // Parse payload — GitHub bisa kirim dengan dua content-type:
+      //   application/json           → body = JSON
+      //   application/x-www-form-urlencoded → body = "payload=<urlencoded JSON>"
+      // Signature di atas dihitung pada body mentah, jadi sudah aman diverifikasi.
+      const contentType = req.headers['content-type'] || '';
+      let jsonText = body;
+      if (contentType.includes('application/x-www-form-urlencoded')) {
+        const params = new URLSearchParams(body);
+        jsonText = params.get('payload') || '';
+      }
+
       let payload;
       try {
-        payload = JSON.parse(body);
+        payload = JSON.parse(jsonText);
       } catch (e) {
-        log('ERROR: Gagal parse JSON payload.');
+        log(`ERROR: Gagal parse JSON payload. content-type="${contentType}" body-prefix="${body.slice(0, 80)}"`);
         res.writeHead(400);
         res.end('Invalid JSON');
         return;
