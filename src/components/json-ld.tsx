@@ -21,9 +21,11 @@ export function OrganizationJsonLd() {
       url: BASE_URL,
       logo: `${BASE_URL}/images/logo.png`,
       description:
-        "Mitra terpercaya dalam edukasi pertanian, jasa maklon, dan solusi agribisnis modern di Indonesia.",
+        "Agribisnis multi-komoditas Indonesia — rempah, hasil bumi, jasa maklon penggilingan padi, dan ekspor ke pasar global.",
       address: {
         "@type": "PostalAddress",
+        addressLocality: "Kebumen",
+        addressRegion: "Jawa Tengah",
         addressCountry: "ID",
       },
       contactPoint: {
@@ -40,7 +42,7 @@ export function OrganizationJsonLd() {
       name: "CV. Cakra Pamungkas Mandiri",
       url: BASE_URL,
       description:
-        "Portal Ilmu & Berita Pertanian Indonesia — Edukasi, Jasa Maklon, Jual Beli Gabah, dan Saprotan.",
+        "Portal Agribisnis Multi-Komoditas Indonesia — rempah, padi, jagung, edukasi, jasa maklon, dan ekspor ke pasar global.",
       inLanguage: "id",
       publisher: {
         "@type": "Organization",

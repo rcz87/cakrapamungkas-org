@@ -5,31 +5,36 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cakrapamungkas.org"),
-  title: "CV. Cakra Pamungkas Mandiri | Edukasi & Solusi Pertanian Modern",
+  title: "CV. Cakra Pamungkas Mandiri | Agribisnis Multi-Komoditas Indonesia",
   description:
-    "Company profile CV. Cakra Pamungkas Mandiri — Jasa Maklon, Jual Beli Gabah, Saprotan, dan Edukasi Pertanian. Coba aplikasi PadiDoc untuk diagnosa tanaman padi.",
+    "Pusat agribisnis multi-komoditas — jahe, kunyit, lada, kopi, porang, padi, jagung. Jasa maklon, pengolahan rempah, dan ekspor langsung dari Jawa Tengah ke pasar global.",
   keywords: [
-    "pertanian",
-    "edukasi pertanian",
+    "agribisnis",
+    "rempah indonesia",
+    "ekspor jahe",
+    "ekspor kunyit",
+    "ekspor lada",
+    "porang",
+    "konjac flour",
+    "kopi indonesia",
     "jasa maklon",
-    "gabah",
-    "saprotan",
+    "pengolahan rempah",
     "PadiDoc",
-    "budidaya padi",
+    "edukasi pertanian",
   ],
   openGraph: {
     type: "website",
     locale: "id_ID",
     siteName: "CV. Cakra Pamungkas Mandiri",
-    title: "CV. Cakra Pamungkas Mandiri | Edukasi & Solusi Pertanian Modern",
+    title: "Agribisnis Multi-Komoditas Indonesia | Cakra Pamungkas",
     description:
-      "Mitra terpercaya dalam edukasi pertanian, jasa maklon, dan solusi agribisnis modern di Indonesia.",
+      "Rempah & hasil bumi Indonesia kualitas ekspor — jahe, kunyit, lada, kopi, porang. Direct from Central Java farmers to global buyers.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CV. Cakra Pamungkas Mandiri | Edukasi & Solusi Pertanian Modern",
+    title: "Agribisnis Multi-Komoditas Indonesia | Cakra Pamungkas",
     description:
-      "Mitra terpercaya dalam edukasi pertanian, jasa maklon, dan solusi agribisnis modern di Indonesia.",
+      "Rempah & hasil bumi Indonesia kualitas ekspor — direct from Central Java farmers to global buyers.",
   },
 };
 
