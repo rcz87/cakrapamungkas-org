@@ -58,6 +58,14 @@ const commodities = [
     text: "text-amber-800",
     desc: "Jagung pipil kering, jagung basah, pakan ternak berkualitas",
   },
+  {
+    name: "Kluwek (Kepayang)",
+    icon: "🌰",
+    bg: "bg-slate-100",
+    border: "border-slate-300",
+    text: "text-slate-900",
+    desc: "Black diamond Nusantara — kunci rasa Rawon, Brongkos, Sup Konro, Pindang Kudus",
+  },
 ];
 
 export function CommoditiesSection() {

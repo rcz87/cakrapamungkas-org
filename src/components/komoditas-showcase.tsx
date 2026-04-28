@@ -80,7 +80,7 @@ export function KomoditasShowcase() {
             </div>
 
             {/* Selector */}
-            <div className="grid grid-cols-3 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
               {komods.map((km, i) => {
                 const isActive = active === i;
                 return (
@@ -314,7 +314,7 @@ export function KomoditasShowcase() {
           <p className="text-center text-xs font-bold tracking-[0.2em] uppercase text-gray-500 mb-10">
             Semua Komoditas · All Commodities
           </p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3">
             {komods.map((km, i) => {
               const isActive = active === i;
               return (

@@ -432,6 +432,72 @@ export const commodities: Commodity[] = [
       "Permintaan pakan ternak Indonesia tumbuh 5–7% per tahun mengikuti konsumsi protein hewani. Pemerintah mendorong swasembada jagung dengan target produksi 16+ juta ton. Peluang ekspor terbuka ke negara ASEAN tetangga ketika produksi domestik surplus. Risiko utama: volatilitas harga global (CBOT) dan persaingan dengan jagung impor murah dari Argentina/Brazil pada tahun produksi rendah.",
   },
   {
+    slug: "kluwek",
+    name: "Kluwek (Kepayang)",
+    en: "Kluwek (Black Nut)",
+    icon: "🌰",
+    scientificName: "Pangium edule",
+    bg: "#f4f4f5",
+    border: "#d4d4d8",
+    tc: "#18181b",
+    tag: "#3f3f46",
+    desc: "Biji fermentasi dari pohon Kepayang — 'black diamond' kuliner Nusantara. Kunci rasa hitam pekat & gurih khas Rawon, Brongkos, Sup Konro, dan Pindang Kudus. Dijual sebagai biji utuh pilihan, pasta siap pakai, atau bubuk standar industri.",
+    descEn:
+      "Fermented seeds of the Kepayang tree — the 'black diamond' of Indonesian cuisine. The signature ingredient behind the deep-black, savory broths of Rawon, Brongkos, Konro Soup, and Pindang Kudus. Available as whole selected seeds, ready-to-use paste, or standardized powder.",
+    specs: [
+      { label: "Moisture (Kering)", value: "≤14%", note: "Biji kering pasca-fermentasi" },
+      { label: "Cyanide (HCN)", value: "Aman", note: "Tested safe pasca-fermentasi" },
+      { label: "Fermentasi", value: "40–60 hari", note: "Pemeraman dengan abu" },
+      { label: "MOQ", value: "50 kg", note: "Format biji utuh" },
+    ],
+    variants: [
+      "Kluwek Utuh Pilihan",
+      "Kluwek Pasta Siap Pakai",
+      "Kluwek Bubuk Standar",
+      "Bumbu Rawon Komposisi",
+    ],
+    markets: [
+      "Rumah makan & restoran tradisional",
+      "Diaspora Indonesia (Malaysia, Singapura, Belanda, Australia)",
+      "Industri bumbu siap saji & rawon kemasan",
+    ],
+    exportReady: false,
+    about:
+      "Kluwek (Pangium edule), atau Kepayang, adalah salah satu rempah paling unik dan misterius di Indonesia — sering dijuluki 'black diamond' kuliner Nusantara. Pohon Kepayang adalah tumbuhan asli Asia Tenggara yang tumbuh subur di hutan hujan tropis, tingginya bisa mencapai 40 meter. Buahnya lonjong menyerupai bola rugbi, di dalamnya terdapat belasan biji berlapis daging berlendir — biji inilah yang nantinya diproses menjadi kluwek yang dijual di pasar.\n\nYang membuatnya unik dan berbahaya: seluruh bagian pohon, terutama biji mentahnya, mengandung asam sianida (HCN) dalam kadar tinggi. Istilah populer 'mabuk kepayang' — yang sekarang dipakai untuk menggambarkan orang yang sedang jatuh cinta hingga kehilangan akal sehat — sebenarnya berasal dari efek racun tanaman ini. Karena itu kluwek harus melalui proses fermentasi panjang sebelum aman dikonsumsi.",
+    aboutEn:
+      "Kluwek (Pangium edule), known as Kepayang, is one of Indonesia's most unique and mysterious spices — often called the 'black diamond' of Nusantara cuisine. The Kepayang tree is native to Southeast Asian tropical rainforests, growing up to 40 meters tall. Its rugby-ball-shaped fruit contains over a dozen seeds wrapped in pulpy flesh — these seeds become the kluwek sold in markets.\n\nWhat makes it unique — and dangerous — is that all parts of the tree, especially the raw seeds, contain high levels of hydrocyanic acid (HCN). The Indonesian phrase 'mabuk kepayang' (now used for someone hopelessly in love) originally described the toxic effect of this plant. That is why kluwek must undergo a long fermentation process before being safe to consume.",
+    benefits: [
+      "Bumbu utama Rawon — sup daging khas Jawa Timur (tanpa kluwek, hanya sup biasa)",
+      "Kuah Brongkos Yogyakarta — perpaduan dengan santan & kacang-kacangan",
+      "Sup Konro Makassar — memperdalam kekayaan rasa kuah iga",
+      "Pindang Kudus — pewarna gelap elegan untuk kuah",
+      "Pewarna alami hitam pekat untuk kuah & nasi tradisional",
+      "Memberikan dimensi rasa kompleks: gurih (umami), earthy, jejak kacang lembut",
+    ],
+    cultivation:
+      "Pengolahan kluwek adalah salah satu yang paling rumit di dunia rempah karena harus menetralkan asam sianida. Tahapan utama: (1) Perebusan — biji yang baru dipanen direbus dalam waktu lama; (2) Fermentasi/Pemeraman — biji dibungkus abu lalu dipendam di dalam tanah selama 40–60 hari; (3) Hasil akhir — selama pemendaman, asam sianida luruh menjadi senyawa yang aman, isi biji berubah dari putih menjadi hitam pekat dengan aroma kacang khas. Proses ini bukan sekadar tradisi melainkan prosedur keamanan pangan yang vital — bukti kecerdasan leluhur Nusantara dalam mengolah bahan alam beracun menjadi rempah bernilai tinggi. Tips memilih: kocok biji dan pastikan terdengar 'klik-klak' (isi sudah terlepas dari dinding cangkang). Cicipi sedikit ujung isi sebelum diolah — jika sangat pahit (acrid), buang karena akan merusak masakan. Sebelum dihaluskan, rendam dalam air panas 10–15 menit agar tekstur jadi pasta lembut.",
+    varietyDetails: [
+      {
+        name: "Kluwek Utuh Pilihan",
+        desc: "Biji kering utuh yang sudah disortir — uji kocok klik-klak (isi terlepas dari cangkang) dan pemeriksaan visual (isi hitam pekat, tidak berjamur). Format pasar tradisional & rumah makan.",
+      },
+      {
+        name: "Kluwek Pasta Siap Pakai",
+        desc: "Daging kluwek yang sudah direndam air panas dan dihaluskan menjadi pasta. Praktis untuk industri rumah makan dan ready-to-eat — tidak perlu memecah cangkang manual.",
+      },
+      {
+        name: "Kluwek Bubuk Standar",
+        desc: "Versi bubuk kering, lebih shelf-stable untuk industri bumbu jadi dan ekspor diaspora. Memudahkan dosing dan distribusi skala besar.",
+      },
+      {
+        name: "Bumbu Rawon Komposisi",
+        desc: "Pre-mix kluwek dengan rempah pendamping (kemiri, ketumbar, kunyit, lengkuas) — siap pakai untuk industri rawon kemasan dan Asian specialty store.",
+      },
+    ],
+    marketOutlook:
+      "Kluwek adalah komoditas niche premium dengan permintaan stabil dari rumah makan tradisional, restoran kuliner Nusantara di luar negeri (diaspora Malaysia, Singapura, Belanda, Australia), dan industri bumbu siap saji (rawon kemasan, paste instan). Harga relatif tinggi karena proses fermentasi panjang 40–60 hari dan supply terbatas pada panen pohon dewasa Kepayang yang langka. Peluang nilai tambah terbesar ada di produk olahan — pasta kluwek instan, bumbu rawon kemasan, dan bubuk standardized untuk industri F&B — terutama untuk segmen ekspor ke pasar diaspora dan Asian specialty store global.",
+  },
+  {
     slug: "padi",
     name: "Padi & Beras",
     en: "Paddy & Rice",

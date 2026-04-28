@@ -354,7 +354,7 @@ export default async function CommodityDetailPage({
               Lihat Semua <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
             {others.map((o) => (
               <Link
                 key={o.slug}

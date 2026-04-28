@@ -20,7 +20,7 @@ const layananLinks = [
   { href: "https://demo.cakrapamungkas.digital", label: "Demo PadiDoc", external: true },
 ];
 
-const commodityChips = ["🌾 Padi", "🌽 Jagung", "🫚 Rempah", "🌶️ Lada", "☕ Kopi", "🥔 Porang"];
+const commodityChips = ["🌾 Padi", "🌽 Jagung", "🫚 Rempah", "🌶️ Lada", "☕ Kopi", "🥔 Porang", "🌰 Kluwek"];
 
 export function Footer() {
   return (
