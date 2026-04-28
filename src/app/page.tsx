@@ -90,7 +90,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative aspect-[4/3] lg:aspect-[5/4] rounded-3xl overflow-hidden border border-primary-100 shadow-xl shadow-primary-900/5">
                 <Image
-                  src="/images/petani-manggul-bibit.jpg"
+                  src="/images/gambar-petani-manggul-bibit.jpg"
                   alt="Petani Indonesia membawa bibit"
                   fill
                   className="object-cover"
