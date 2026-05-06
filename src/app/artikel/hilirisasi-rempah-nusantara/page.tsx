@@ -85,7 +85,7 @@ export default function HilirisasiRempahNusantaraArtikelPage() {
             src="/images/hilirisasi-rempah-hero.webp"
             alt="Hilirisasi Rempah Nusantara - Aneka Rempah Indonesia: Kunyit, Jahe, Lada, Kayu Manis, Pala, Cengkeh"
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>
