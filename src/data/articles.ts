@@ -12,6 +12,19 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "hilirisasi-rempah-nusantara",
+    category: "Hilirisasi",
+    categoryColor: "bg-amber-100 text-amber-700",
+    title:
+      "Hilirisasi Rempah Nusantara: Peluang Besar Ekonomi Lokal",
+    excerpt:
+      "Indonesia negeri rempah dengan potensi besar. Strategi naik kelas dari bahan mentah ke produk bubuk, ekstrak, dan minyak atsiri untuk menembus pasar global.",
+    readTime: "12 min",
+    image: "/images/hilirisasi-rempah-hero.webp",
+    datePublished: "2026-05-06",
+    featured: true,
+  },
+  {
     slug: "analisis-strategis-kementan-2026",
     category: "Kebijakan",
     categoryColor: "bg-red-100 text-red-700",

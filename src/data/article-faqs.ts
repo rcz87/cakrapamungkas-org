@@ -5,6 +5,33 @@ export interface FaqItem {
 
 /** FAQ data per article slug */
 export const articleFaqs: Record<string, FaqItem[]> = {
+  "hilirisasi-rempah-nusantara": [
+    {
+      question: "Apa itu hilirisasi rempah dan mengapa penting bagi Indonesia?",
+      answer:
+        "Hilirisasi rempah adalah proses mengolah rempah dari bahan mentah menjadi produk turunan bernilai tambah seperti bubuk, ekstrak, minyak atsiri, dan produk herbal. Penting bagi Indonesia karena nilai ekonomi rempah dapat meningkat 3-10 kali lipat melalui pengolahan, membuka lapangan kerja dari hulu ke hilir, dan menjadikan Indonesia bukan sekadar pemasok bahan mentah ke industri global.",
+    },
+    {
+      question: "Apa saja produk turunan rempah yang bernilai tinggi?",
+      answer:
+        "Produk turunan bernilai tinggi meliputi bubuk rempah (kunyit, jahe, lada, kayu manis), ekstrak (kurkumin, gingerol), minyak atsiri (cengkeh, sereh, pala), produk herbal (kapsul, minuman kesehatan), bahan kosmetik alami, oleoresin, dan bumbu siap pakai. Satu bahan baku bisa melahirkan 5-10 produk turunan yang masuk ke industri pangan, farmasi, kosmetik, dan wellness.",
+    },
+    {
+      question: "Apa standar kualitas rempah ekspor yang harus dipenuhi?",
+      answer:
+        "Standar utama meliputi kadar air terkendali (umumnya di bawah 12%), bebas kontaminasi mikroba dan benda asing, warna stabil, kandungan minyak atsiri sesuai spesifikasi, residu pestisida di bawah ambang batas, serta sertifikasi seperti GMP, HACCP, ISO 22000, atau organik. Pengeringan, sortasi, dan pengemasan harus dilakukan secara higienis dan terdokumentasi.",
+    },
+    {
+      question: "Apa tantangan utama pelaku rempah lokal di Indonesia?",
+      answer:
+        "Tantangan utama meliputi pengeringan belum terstandar sehingga kadar air tidak stabil, penyimpanan kurang baik yang menyebabkan jamur dan kehilangan aroma, sortasi belum rapi sehingga kualitas tidak seragam, penggilingan kurang higienis, kemasan masih sederhana, belum ada uji laboratorium rutin, serta belum memiliki branding kuat sehingga hanya bersaing di harga murah.",
+    },
+    {
+      question: "Bagaimana strategi UMKM rempah agar bisa naik kelas ke pasar global?",
+      answer:
+        "Strategi naik kelas meliputi: perbaikan pascapanen dan pengeringan higienis, sortasi bahan baku yang ketat, pengolahan menjadi bubuk atau ekstrak untuk meningkatkan nilai tambah, kemasan modern yang menarik, uji laboratorium rutin untuk membangun kepercayaan, branding produk dengan storytelling kearifan lokal, serta kemitraan antara petani, koperasi, UMKM, dan industri besar untuk menjaga pasokan dan kualitas konsisten.",
+    },
+  ],
   "defisiensi-nutrisi-padi": [
     {
       question: "Apa gejala kekurangan nitrogen pada tanaman padi?",
