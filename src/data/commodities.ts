@@ -420,6 +420,237 @@ export const commodities: Commodity[] = [
     },
   },
   {
+    slug: "kapulaga",
+    name: "Kapulaga",
+    en: "Java White Cardamom",
+    icon: "🌿",
+    scientificName: "Amomum compactum",
+    bg: "#f7fee7",
+    border: "#d9f99d",
+    tc: "#3f6212",
+    tag: "#65a30d",
+    desc: "Kapulaga Jawa (Amomum compactum) — white cardamom khas Indonesia. Indonesia adalah produsen utama dunia untuk varietas ini, beda dari green cardamom India. Banyak diminati industri jamu, F&B, parfum, dan pasar Timur Tengah.",
+    descEn:
+      "Java White Cardamom (Amomum compactum) — Indonesia's signature cardamom variety. Indonesia is the world's primary producer of this distinct white cardamom (different from Indian green cardamom). Highly sought after for jamu, F&B, perfumery, and Middle Eastern markets.",
+    specs: [
+      { label: "Moisture", value: "≤12%", note: "Dry whole pods" },
+      { label: "Pod Quality", value: "Premium", note: "Sorted, intact pods" },
+      { label: "Essential Oil", value: ">3%", note: "Aromatic compound" },
+      { label: "MOQ", value: "100 kg", note: "Minimum order" },
+    ],
+    variants: [
+      "Kapulaga Pod Utuh Kering",
+      "Biji Kapulaga (Seeds Only)",
+      "Bubuk Kapulaga (Powder)",
+      "Minyak Atsiri Kapulaga",
+    ],
+    markets: [
+      "Industri jamu & herbal Indonesia",
+      "Timur Tengah (UAE, Saudi, Yaman)",
+      "F&B & spice blend industry",
+      "Industri parfum & flavoring",
+    ],
+    marketsEn: [
+      "Indonesian jamu & herbal industry",
+      "Middle East (UAE, Saudi Arabia, Yemen)",
+      "F&B & spice blend industry",
+      "Perfumery & flavoring industry",
+    ],
+    exportReady: true,
+    about:
+      "Kapulaga (Amomum compactum), atau Java White Cardamom, adalah salah satu rempah aromatik paling khas Indonesia. Berbeda dengan green cardamom India (Elettaria cardamomum) yang lebih umum di pasar dunia, kapulaga Jawa punya pod berbentuk bulat-oval dengan warna putih krem dan aroma manis-pedas yang lebih lembut. Indonesia adalah produsen utama dunia untuk varietas ini, dengan sentra produksi di Jawa Barat (Sukabumi, Garut, Cianjur), Jawa Tengah, dan Lampung. Tanaman ini tumbuh di bawah naungan pohon kebun campuran — sebuah model agroforestri yang ramah lingkungan dan mendukung biodiversitas.",
+    aboutEn:
+      "Kapulaga (Amomum compactum), or Java White Cardamom, is one of Indonesia's most distinctive aromatic spices. Unlike the more common Indian green cardamom (Elettaria cardamomum), Java cardamom features round-oval pods with creamy-white color and a softer, sweet-spicy aroma. Indonesia is the world's primary producer of this variety, with production hubs in West Java (Sukabumi, Garut, Cianjur), Central Java, and Lampung. The plant grows under the canopy of mixed gardens — an agroforestry model that is environmentally friendly and supports biodiversity.",
+    benefits: [
+      "Bahan utama jamu tradisional & minuman herbal Nusantara",
+      "Bumbu masakan kari, gulai, dan kuah rendang",
+      "Bahan baku industri parfum & aromaterapi (essential oil)",
+      "Spice blend industri Timur Tengah (kahwa, biryani, tea blend)",
+      "Bahan suplemen herbal — efek karminatif dan digestif",
+    ],
+    benefitsEn: [
+      "Primary ingredient in traditional jamu and Nusantara herbal beverages",
+      "Culinary spice for curry, gulai, and rendang broths",
+      "Raw material for perfumery and aromatherapy (essential oil)",
+      "Middle Eastern spice blends (kahwa coffee, biryani, tea blends)",
+      "Herbal supplement ingredient — carminative and digestive effects",
+    ],
+    cultivation:
+      "Kapulaga adalah tanaman rumpun yang tumbuh subur di bawah naungan (50–70% shade), dataran rendah-menengah (200–700 mdpl), dengan curah hujan 2.500–4.000 mm/tahun. Pohon mulai berbuah 2–3 tahun setelah tanam dan produktif hingga 10–15 tahun. Pod dipanen saat sudah mencapai ukuran maksimal namun belum membuka — kalau terlalu matang, pod akan pecah dan kualitas turun. Pasca panen: pod dijemur ke moisture ≤12% (4–7 hari kering matahari), disortir berdasarkan ukuran dan integritas pod, lalu dikemas vacuum atau dalam karung PP food-grade.",
+    cultivationEn:
+      "Cardamom is a clumping plant that thrives under shade (50–70% canopy cover), in low-to-mid elevations (200–700 m above sea level), with 2,500–4,000 mm annual rainfall. Plants begin fruiting 2–3 years after planting and remain productive for 10–15 years. Pods are harvested when fully mature but not yet split — over-ripe pods crack open and lose quality. Post-harvest: sun-dried to ≤12% moisture (4–7 days), sorted by size and pod integrity, then vacuum-packed or filled in food-grade PP bags.",
+    varietyDetails: [
+      {
+        name: "Kapulaga Pod Utuh Kering",
+        nameEn: "Whole Dried Pods",
+        desc: "Pod utuh putih krem yang sudah dijemur ke moisture ≤12%. Format paling premium — preservasi aroma maksimal. Pasar utama: industri jamu, ekspor Timur Tengah.",
+        descEn:
+          "Whole, cream-white pods sun-dried to ≤12% moisture. The premium format — maximum aroma retention. Primary market: jamu industry, Middle East export.",
+      },
+      {
+        name: "Biji Kapulaga (Seeds Only)",
+        nameEn: "Cardamom Seeds Only",
+        desc: "Biji-bijian dalam pod yang sudah dipisahkan dari kulit. Lebih ringkas untuk penyimpanan, cocok untuk industri yang butuh dosing presisi.",
+        descEn:
+          "Seeds extracted from pods, husk removed. More compact for storage, ideal for industries requiring precise dosing.",
+      },
+      {
+        name: "Bubuk Kapulaga (Powder)",
+        nameEn: "Cardamom Powder",
+        desc: "Hasil giling biji kapulaga. Praktis untuk industri F&B dan spice blend, namun shelf life lebih pendek dibanding pod utuh.",
+        descEn:
+          "Ground cardamom seeds. Practical for F&B and spice blend industries, though shelf life is shorter than whole pods.",
+      },
+      {
+        name: "Minyak Atsiri Kapulaga",
+        nameEn: "Cardamom Essential Oil",
+        desc: "Hasil distilasi pod/biji. Konsentrat aroma untuk industri parfum, aromaterapi, dan flavor industri F&B premium.",
+        descEn:
+          "Distilled from pods/seeds. Concentrated aromatic for perfumery, aromatherapy, and premium F&B flavoring industries.",
+      },
+    ],
+    marketOutlook:
+      "Pasar kapulaga global tumbuh stabil didorong meningkatnya konsumsi spesialti F&B (kahwa coffee, chai latte, kari premium) di Timur Tengah, Eropa, dan Asia. Indonesia punya keunggulan komparatif sebagai produsen utama Java white cardamom — varietas yang tidak dimiliki produsen lain dalam skala komersial. Peluang nilai tambah: ekstrak essential oil terstandar, single-origin branding (Java cardamom), dan organic certification. Risiko: harga sangat fluktuatif tergantung volume panen tahunan dan permintaan musiman Timur Tengah.",
+    marketOutlookEn:
+      "Global cardamom market grows steadily, driven by rising specialty F&B consumption (kahwa coffee, chai latte, premium curry) in the Middle East, Europe, and Asia. Indonesia holds a comparative advantage as the primary producer of Java white cardamom — a variety no other producer holds at commercial scale. Value-added opportunities: standardized essential oil extracts, single-origin branding (Java cardamom), and organic certification. Risk: prices fluctuate significantly with annual harvest volume and seasonal Middle Eastern demand.",
+    origin: {
+      regions: "Jawa Barat (Sukabumi, Garut, Cianjur), Jawa Tengah, Lampung",
+      regionsEn: "West Java (Sukabumi, Garut, Cianjur), Central Java, Lampung",
+      altitude: "200–700 m above sea level (mdpl), under 50–70% shade",
+      harvestSeason: "Puncak panen September–November; tersedia sepanjang tahun untuk format kering",
+      harvestSeasonEn: "Peak harvest September–November; dried formats available year-round",
+    },
+    exportSpec: {
+      fobPorts: STD_FOB_PORTS,
+      containerCapacity:
+        "20ft container: ~12 tons (whole pods) / ~14 tons (seeds) / ~10 tons (powder, vacuum-packed) | 40ft HC: ~18 tons",
+      leadTime: "21–30 days from PO confirmation to FOB shipment (subject to harvest cycle)",
+      paymentTerms:
+        "T/T 30% advance + 70% before shipment | L/C at sight (preferred for first orders)",
+      documentation: [
+        ...STD_DOCUMENTATION,
+        "Essential Oil Content Certificate (when applicable)",
+      ],
+      certifications: STD_CERTIFICATIONS,
+    },
+  },
+  {
+    slug: "kemukus",
+    name: "Kemukus (Java Pepper)",
+    en: "Cubeb / Java Tailed Pepper",
+    icon: "🫐",
+    scientificName: "Piper cubeba",
+    bg: "#ecfeff",
+    border: "#a5f3fc",
+    tc: "#164e63",
+    tag: "#0891b2",
+    desc: "Kemukus (Piper cubeba) — 'tailed pepper' endemik Jawa, salah satu rempah niche premium Indonesia. Historically dikenal di Eropa abad pertengahan, kini dicari industri jamu, parfum, dan craft spirits/gin distilleries.",
+    descEn:
+      "Cubeb pepper (Piper cubeba) — the 'tailed pepper' endemic to Java, one of Indonesia's premium niche spices. Historically prized in medieval Europe, now sought after by herbal medicine, perfumery, and craft spirits/gin distilleries.",
+    specs: [
+      { label: "Moisture", value: "≤12%", note: "Dry whole berries" },
+      { label: "Foreign Matter", value: "<1%", note: "Sorted clean grade" },
+      { label: "Tail Intact", value: ">90%", note: "Premium grade marker" },
+      { label: "MOQ", value: "100 kg", note: "Minimum order" },
+    ],
+    variants: [
+      "Kemukus Berry Utuh Kering",
+      "Kemukus Powder (Cracked)",
+      "Minyak Atsiri Kemukus",
+      "Kemukus Sortasi Premium Grade",
+    ],
+    markets: [
+      "Industri jamu & herbal Indonesia",
+      "Craft gin & spirits distilleries (Eropa, Jepang)",
+      "Industri parfum & aromaterapi",
+      "Pasar specialty spice (US, Eropa)",
+    ],
+    marketsEn: [
+      "Indonesian jamu & herbal medicine industry",
+      "Craft gin & spirits distilleries (Europe, Japan)",
+      "Perfumery & aromatherapy industry",
+      "Specialty spice market (US, Europe)",
+    ],
+    exportReady: true,
+    about:
+      "Kemukus (Piper cubeba), juga dikenal sebagai cubeb atau Java tailed pepper, adalah rempah endemik Pulau Jawa yang punya sejarah perdagangan global yang panjang. Berbeda dari lada hitam biasa, kemukus memiliki ciri khas 'ekor' (tail) berupa tangkai pendek yang menempel di setiap berry — fitur yang langsung mengidentifikasinya. Aroma dan rasanya kompleks: pedas seperti lada, tetapi dengan jejak kamper, kayu, dan sedikit floral. Pada abad pertengahan, kemukus diperdagangkan ke Eropa sebagai bumbu mewah dan obat. Saat ini, kemukus mengalami kebangkitan kecil sebagai bahan craft spirits (gin), parfum niche, dan pasar specialty spice.",
+    aboutEn:
+      "Kemukus (Piper cubeba), also known as cubeb or Java tailed pepper, is a spice endemic to Java with a long history in global trade. Unlike regular black pepper, cubeb features a distinctive 'tail' — a short stem attached to each berry — which immediately identifies it. Its aroma and flavor are complex: peppery like black pepper but with notes of camphor, wood, and subtle floral hints. In medieval times, cubeb was traded to Europe as a luxury spice and medicine. Today, cubeb is enjoying a small renaissance as a craft spirits (gin) ingredient, niche perfumery component, and specialty spice market darling.",
+    benefits: [
+      "Bahan jamu tradisional Indonesia (especially male vitality formulations)",
+      "Botanical untuk craft gin distilleries (signature spice)",
+      "Bahan parfum & aromaterapi (woody-spicy notes)",
+      "Specialty culinary spice — restoran fine dining global",
+      "Bahan baku obat tradisional di Eropa & Timur Tengah (historis)",
+    ],
+    benefitsEn: [
+      "Traditional Indonesian jamu ingredient (especially male vitality formulations)",
+      "Botanical for craft gin distilleries (signature spice note)",
+      "Perfumery & aromatherapy ingredient (woody-spicy notes)",
+      "Specialty culinary spice for global fine dining restaurants",
+      "Historical traditional medicine ingredient in Europe & Middle East",
+    ],
+    cultivation:
+      "Kemukus adalah tanaman merambat (vine) dari famili Piperaceae yang tumbuh di hutan tropis dataran rendah-menengah (200–700 mdpl) di Jawa. Seperti lada, dia membutuhkan tiang panjat hidup atau mati. Berbeda dari lada hitam, kemukus dipanen ketika buah sudah dewasa namun belum matang penuh, kemudian dijemur dengan tail (ekor)-nya yang menjadi ciri khas. Volume produksi sangat terbatas karena kemukus tidak banyak dibudidayakan secara komersial — sebagian besar masih dipanen dari pertanaman semi-liar. Pasca panen: pengeringan ke moisture ≤12%, sortasi untuk memastikan tail tetap utuh (sebagai marker grade premium), dan pengemasan vacuum.",
+    cultivationEn:
+      "Cubeb is a climbing vine from the Piperaceae family that grows in low-to-mid elevation tropical forests (200–700 m above sea level) in Java. Like pepper, it requires living or dead support poles. Unlike black pepper, cubeb is harvested when fruits are fully developed but not yet fully ripe, then sun-dried with its distinctive tails intact. Production volume is very limited because cubeb is not widely commercially cultivated — most still comes from semi-wild plantations. Post-harvest: drying to ≤12% moisture, sorting to preserve intact tails (a premium grade marker), and vacuum packaging.",
+    varietyDetails: [
+      {
+        name: "Kemukus Berry Utuh Kering",
+        nameEn: "Whole Dried Cubeb Berries",
+        desc: "Berry utuh dengan tail (ekor) intact ≥90%. Format premium untuk craft spirits dan specialty spice market — visual identitas kemukus terjaga.",
+        descEn:
+          "Whole berries with tails intact at ≥90%. Premium format for craft spirits and specialty spice market — preserves cubeb's visual identity.",
+      },
+      {
+        name: "Kemukus Powder (Cracked)",
+        nameEn: "Cubeb Powder",
+        desc: "Hasil giling kasar atau halus. Praktis untuk industri jamu, spice blend, dan flavoring industri F&B premium.",
+        descEn:
+          "Coarse or fine ground cubeb. Practical for jamu industry, spice blends, and premium F&B flavoring applications.",
+      },
+      {
+        name: "Minyak Atsiri Kemukus",
+        nameEn: "Cubeb Essential Oil",
+        desc: "Hasil distilasi berry kemukus. Aroma woody-camphor-spicy yang khas — bahan parfum niche & flavor industri craft beverage.",
+        descEn:
+          "Steam-distilled from cubeb berries. Distinctive woody-camphor-spicy aroma — ingredient for niche perfumery and craft beverage flavoring.",
+      },
+      {
+        name: "Sortasi Premium Grade",
+        nameEn: "Premium Grade Sorted",
+        desc: "Berry yang lolos sortasi ketat: ukuran seragam, tail intact, warna konsisten, foreign matter <1%. Untuk buyer industri spirits & specialty.",
+        descEn:
+          "Strictly sorted berries: uniform size, intact tails, consistent color, foreign matter <1%. For spirits industry & specialty buyers.",
+      },
+    ],
+    marketOutlook:
+      "Kemukus adalah komoditas niche premium dengan permintaan stabil tetapi terbatas dari segmen specialty: industri jamu nasional, craft gin distilleries di Eropa & Jepang, dan parfum niche house. Harga relatif tinggi karena supply terbatas dan budidaya komersial yang minim. Peluang nilai tambah: branding 'Java cubeb' sebagai protected origin (mirip Muntok White Pepper), ekstrak essential oil untuk industri parfum/spirits, dan kerjasama langsung dengan craft distilleries Eropa yang mencari botanicals exotic. Risiko: pasar yang kecil — fokus pada B2B niche, bukan mass market.",
+    marketOutlookEn:
+      "Cubeb is a premium niche commodity with stable but limited demand from specialty segments: Indonesian jamu industry, craft gin distilleries in Europe & Japan, and niche perfumery houses. Prices are relatively high due to limited supply and minimal commercial cultivation. Value-added opportunities: 'Java cubeb' protected origin branding (similar to Muntok White Pepper), essential oil extracts for perfumery/spirits, and direct partnerships with European craft distilleries seeking exotic botanicals. Risk: small market — B2B niche focus rather than mass market.",
+    origin: {
+      regions: "Jawa Barat, Jawa Tengah, Jawa Timur (sentra utama, semi-liar di hutan)",
+      regionsEn: "West Java, Central Java, East Java (primary regions, semi-wild forest cultivation)",
+      altitude: "200–700 m above sea level (mdpl)",
+      harvestSeason: "Puncak panen Juli–September; supply terbatas, sering by-allocation",
+      harvestSeasonEn: "Peak harvest July–September; supply is limited, often by-allocation basis",
+    },
+    exportSpec: {
+      fobPorts: STD_FOB_PORTS,
+      containerCapacity:
+        "20ft container: ~12 tons (whole berries) / ~10 tons (powder) | Smaller LCL shipments common for niche buyers",
+      leadTime: "30–45 days from PO confirmation (subject to harvest cycle & sortasi)",
+      paymentTerms:
+        "T/T 50% advance + 50% before shipment | L/C at sight (preferred for first orders)",
+      documentation: [
+        ...STD_DOCUMENTATION,
+        "Cubebine Content Report (when applicable)",
+        "Botanical Authentication Certificate",
+      ],
+      certifications: STD_CERTIFICATIONS,
+    },
+  },
+  {
     slug: "kopi",
     name: "Kopi & Kakao",
     en: "Coffee & Cacao",

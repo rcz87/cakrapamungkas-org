@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowRight,
@@ -130,6 +131,23 @@ export default async function CommodityDetailPage({
           <p className="text-base text-white/60 leading-relaxed max-w-3xl">
             {k.descEn}
           </p>
+        </div>
+      </section>
+
+      {/* Featured product image */}
+      <section className="bg-gray-100">
+        <div
+          className="relative mx-auto w-full overflow-hidden"
+          style={{ maxWidth: "1067px", aspectRatio: "16 / 9" }}
+        >
+          <Image
+            src={`/images/komoditas/${k.slug}-hero.webp`}
+            alt={`${k.name} (${k.en}) — ${k.scientificName ?? ""} Indonesian export quality`}
+            fill
+            className="object-contain"
+            priority
+            sizes="(max-width: 1067px) 100vw, 1067px"
+          />
         </div>
       </section>
 
