@@ -75,10 +75,10 @@ export default function ArtikelPage() {
       {/* Featured Image */}
       <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
         <Image
-          src="/images/desa-petani.png"
-          alt="Desa Petani Indonesia - Pertanian Tradisional Modern"
+          src="/images/arsitektur-pertanian-hero.webp"
+          alt="Arsitektur Pertanian Indonesia - Petani Milenial dengan Tablet, Drone Spraying di Sawah Terasering Subak Bali"
           fill
-          className="object-contain"
+          className="object-cover"
           priority
         />
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
@@ -72,6 +73,17 @@ export default function ProgramPemerintah2026ArtikelPage() {
           </div>
         </div>
       </header>
+
+      {/* Featured Image */}
+      <div className="relative h-[400px] lg:h-[600px] bg-gray-100">
+        <Image
+          src="/images/program-pemerintah-hero.webp"
+          alt="Program Pemerintah 2026 untuk Pertanian - Penyerahan Pupuk Subsidi dan Alsintan kepada Petani"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">

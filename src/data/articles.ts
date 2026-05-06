@@ -45,7 +45,7 @@ export const articles: Article[] = [
     excerpt:
       "Analisis mendalam tentang evolusi sektor pertanian Indonesia dari era Neolitikum hingga adopsi teknologi Agritech 4.0. Membahas signifikansi makroekonomi, produktivitas tenaga kerja, kearifan lokal seperti sistem Subak Bali.",
     readTime: "45 min",
-    image: "/images/desa-petani.png",
+    image: "/images/arsitektur-pertanian-hero.webp",
     datePublished: "2026-02-11",
     featured: true,
   },
@@ -137,7 +137,7 @@ export const articles: Article[] = [
     excerpt:
       "Pelajari tanda-tanda kekurangan unsur hara pada tanaman padi dan cara mengatasinya dengan pemupukan yang tepat.",
     readTime: "6 min",
-    image: "/images/cek-ph-tanah.png",
+    image: "/images/defisiensi-nutrisi-hero.webp",
     datePublished: "2026-02-12",
   },
   {
@@ -148,7 +148,7 @@ export const articles: Article[] = [
     excerpt:
       "Strategi komprehensif mengelola risiko gagal panen, fluktuasi harga pasar, dan tantangan perubahan iklim.",
     readTime: "10 min",
-    image: "/images/desa-petani.png",
+    image: "/images/manajemen-risiko-hero.webp",
     datePublished: "2026-02-12",
   },
   {
@@ -159,7 +159,7 @@ export const articles: Article[] = [
     excerpt:
       "Cara menghitung titik impas usaha tani padi untuk membantu petani mengambil keputusan bisnis yang tepat.",
     readTime: "7 min",
-    image: "/images/desa-petani.png",
+    image: "/images/bep-usaha-tani-hero.webp",
     datePublished: "2026-02-12",
   },
   {
@@ -170,7 +170,7 @@ export const articles: Article[] = [
     excerpt:
       "Rangkuman kebijakan dan program terbaru pemerintah yang mendukung sektor pertanian Indonesia.",
     readTime: "5 min",
-    image: "/images/presiden-dan-mentan.jpg",
+    image: "/images/program-pemerintah-hero.webp",
     datePublished: "2026-02-12",
   },
   {
@@ -181,7 +181,7 @@ export const articles: Article[] = [
     excerpt:
       "Semua yang perlu Anda ketahui tentang AUTP: syarat pendaftaran, premi, klaim, dan manfaat perlindungan.",
     readTime: "6 min",
-    image: "/images/desa-petani.png",
+    image: "/images/autp-hero.webp",
     datePublished: "2026-02-12",
   },
 ];
