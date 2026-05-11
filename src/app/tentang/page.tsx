@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title:
     "Tentang Kami — CV. Cakra Pamungkas Mandiri | Agribisnis Multi-Komoditas",
   description:
-    "Perusahaan agribisnis multi-komoditas di Kebumen, Jawa Tengah. Berdiri 2019, menghubungkan petani lokal ke pasar global dengan rempah, padi, jagung, dan hasil bumi.",
+    "Perusahaan agribisnis multi-komoditas di Kebumen, Jawa Tengah. Berdiri 2016, menghubungkan petani lokal ke pasar global dengan rempah, padi, jagung, dan hasil bumi.",
   alternates: { canonical: "/tentang" },
   openGraph: {
     title: "About Cakra Pamungkas — Indonesian Multi-Commodity Agribusiness",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 const heroStats = [
-  { v: "2019", label: "Est.", sub: "Founded in Kebumen, Java" },
+  { v: "2016", label: "Est.", sub: "Founded in Kebumen, Java" },
   { v: "6+", label: "Commodities", sub: "Padi, jagung, rempah & more" },
   { v: "100+", label: "Farmer Partners", sub: "Petani mitra aktif" },
   { v: "3 Prov.", label: "Distribution", sub: "Jawa, Sumatra & beyond" },
@@ -61,9 +61,9 @@ const values = [
 
 const timeline = [
   {
-    year: "2019",
+    year: "2016",
     title: "Pendirian",
-    desc: "CV. Cakra Pamungkas Mandiri berdiri di Kebumen, Jawa Tengah. Fokus awal: jasa maklon penggilingan gabah.",
+    desc: "CV. Cakra Pamungkas Mandiri resmi disahkan Kemenkumham (AHU-0050199-AH.01.16) dan mulai beroperasi di Kebumen, Jawa Tengah. Fokus awal: jasa maklon penggilingan gabah.",
   },
   {
     year: "2021",
@@ -118,8 +118,9 @@ const legalItems = [
   },
   {
     Icon: ScrollText,
-    title: "Akta Pendirian CV",
-    desc: "Akta notaris yang sah sesuai hukum Republik Indonesia.",
+    title: "SK Kemenkumham (AHU)",
+    desc: "Disahkan Menteri Hukum dan HAM Republik Indonesia, dapat diverifikasi melalui ahu.go.id.",
+    code: "AHU-0050199-AH.01.16 Tahun 2016",
   },
   {
     Icon: Landmark,
