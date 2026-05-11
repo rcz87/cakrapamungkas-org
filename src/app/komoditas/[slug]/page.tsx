@@ -370,7 +370,7 @@ export default async function CommodityDetailPage({
                   <div className="text-[11px] font-bold text-gray-700 mb-0.5">
                     {sp.label}
                   </div>
-                  <div className="text-[10px] text-gray-400 leading-tight">
+                  <div className="text-[10px] text-gray-600 leading-tight">
                     {sp.note}
                   </div>
                 </div>

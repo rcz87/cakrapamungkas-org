@@ -156,7 +156,7 @@ export function KomoditasShowcase() {
               <p className="text-[15px] text-gray-700 leading-relaxed mb-3">
                 {k.desc}
               </p>
-              <p className="text-sm text-gray-400 italic leading-relaxed pb-7 mb-9 border-b border-gray-100">
+              <p className="text-sm text-gray-500 italic leading-relaxed pb-7 mb-9 border-b border-gray-100">
                 {k.descEn}
               </p>
 
@@ -183,7 +183,7 @@ export function KomoditasShowcase() {
                     <div className="text-[11px] font-bold text-gray-700 mb-0.5">
                       {sp.label}
                     </div>
-                    <div className="text-[10px] text-gray-400 leading-tight">
+                    <div className="text-[10px] text-gray-600 leading-tight">
                       {sp.note}
                     </div>
                   </div>

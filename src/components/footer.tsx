@@ -29,9 +29,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
+            <Link
+              href="/"
+              aria-label="Cakra Pamungkas - Beranda"
+              className="flex items-center gap-2 mb-4"
+            >
               <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" />
+                <Leaf className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
               <div>
                 <p className="font-bold text-white text-sm">Cakra Pamungkas</p>

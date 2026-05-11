@@ -23,9 +23,13 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link
+            href="/"
+            aria-label="Cakra Pamungkas - Beranda"
+            className="flex items-center gap-2 group"
+          >
             <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center group-hover:bg-primary-700 transition-colors">
-              <Leaf className="w-6 h-6 text-white" />
+              <Leaf className="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <div className="hidden sm:block">
               <p className="font-bold text-gray-900 text-sm leading-tight">
