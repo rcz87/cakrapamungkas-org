@@ -114,6 +114,7 @@ const legalItems = [
     Icon: FileText,
     title: "Nomor Induk Berusaha (NIB)",
     desc: "Terdaftar resmi dalam sistem OSS pemerintah Indonesia.",
+    code: "1208000552189",
   },
   {
     Icon: ScrollText,
@@ -409,17 +410,22 @@ export default function TentangPage() {
               system.
             </p>
             <div className="flex flex-col gap-3.5">
-              {legalItems.map(({ Icon, title, desc }) => (
+              {legalItems.map(({ Icon, title, desc, code }) => (
                 <div
                   key={title}
                   className="flex gap-4 px-5 py-4 bg-gray-50 rounded-2xl border border-gray-100"
                 >
                   <Icon className="w-6 h-6 text-primary-600 shrink-0" />
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm font-bold text-gray-900 mb-1">
                       {title}
                     </p>
                     <p className="text-xs text-gray-500">{desc}</p>
+                    {code && (
+                      <p className="mt-2 inline-block font-mono text-[11px] font-semibold tracking-wide text-primary-700 bg-white px-2.5 py-1 rounded-md border border-primary-200">
+                        {code}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
