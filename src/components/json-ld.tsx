@@ -186,27 +186,6 @@ export function ProductJsonLd({ commodity: k }: { commodity: Commodity }) {
       productGroupID: k.slug,
       variesBy: k.variants,
     },
-    ...(k.exportReady && {
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        priceCurrency: "USD",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "USD",
-          eligibleQuantity: {
-            "@type": "QuantitativeValue",
-            value: k.specs.find((s) => s.label.toLowerCase().includes("moq"))?.value || "On Request",
-          },
-        },
-        seller: {
-          "@type": "Organization",
-          name: "CV. Cakra Pamungkas Mandiri",
-          url: BASE_URL,
-        },
-        url: `${BASE_URL}/komoditas/${k.slug}`,
-      },
-    }),
   };
 
   return (
