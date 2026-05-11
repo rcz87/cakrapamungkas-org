@@ -125,6 +125,7 @@ const legalItems = [
     Icon: Landmark,
     title: "NPWP Perusahaan",
     desc: "Terdaftar sebagai wajib pajak badan yang patuh.",
+    code: "42.443.100.5-523.000",
   },
 ];
 
