@@ -16,9 +16,9 @@ export const articles: Article[] = [
     category: "Herbal",
     categoryColor: "bg-yellow-100 text-yellow-700",
     title:
-      "Temu Lawak: Emas Kuning Nusantara yang Punya Nilai Kesehatan dan Ekonomi",
+      "Curcuma Xanthorrhiza Rhizoma (Temu Lawak): Emas Kuning Nusantara dengan Nilai Kesehatan dan Ekonomi",
     excerpt:
-      "Rimpang herbal asli Indonesia dengan klaim BPOM untuk memelihara fungsi hati & memperbaiki nafsu makan. Pelajari kandungan, cara olah, dan peluang bisnis temu lawak.",
+      "Curcuma xanthorrhiza rhizoma — rimpang herbal asli Indonesia dengan klaim BPOM untuk memelihara fungsi hati & memperbaiki nafsu makan. Pelajari kandungan, cara olah, dan peluang bisnisnya.",
     readTime: "10 min",
     image: "/images/temu-lawak-hero.jpg",
     datePublished: "2026-05-11",

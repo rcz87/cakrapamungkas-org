@@ -7,9 +7,21 @@ import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
   title:
-    "Temu Lawak: Emas Kuning Nusantara untuk Kesehatan dan Ekonomi | Cakra Pamungkas",
+    "Curcuma Xanthorrhiza Rhizoma (Temu Lawak): Emas Kuning Nusantara | Cakra Pamungkas",
   description:
-    "Temu lawak adalah rimpang herbal asli Indonesia yang dikenal untuk membantu memelihara fungsi hati dan memperbaiki nafsu makan. Pelajari manfaat, kandungan, cara pengolahan, dan peluang bisnis temu lawak.",
+    "Curcuma xanthorrhiza rhizoma (temu lawak) — rimpang herbal asli Indonesia. Klaim BPOM untuk memelihara fungsi hati & nafsu makan. Manfaat, kandungan, pengolahan, peluang bisnis untuk pasar lokal & global.",
+  keywords: [
+    "Curcuma Xanthorrhiza",
+    "Curcuma Xanthorrhiza Rhizoma",
+    "Temu Lawak",
+    "Javanese Turmeric",
+    "Indonesian Herbal",
+    "Jamu",
+    "Xanthorrhizol",
+    "Curcuminoid",
+    "Herbal Indonesia",
+    "Simplisia",
+  ],
 };
 
 export default function TemuLawakArtikelPage() {
@@ -58,13 +70,17 @@ export default function TemuLawakArtikelPage() {
               </span>
             </div>
 
+            <p className="text-yellow-300 italic text-sm sm:text-base font-medium tracking-wide mb-3">
+              Curcuma Xanthorrhiza Rhizoma
+            </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
               Temu Lawak: Emas Kuning Nusantara yang Punya Nilai Kesehatan dan
               Ekonomi
             </h1>
             <p className="text-xl text-yellow-100 leading-relaxed mb-6">
-              Rimpang herbal asli Indonesia: bahan jamu, minuman fungsional, dan
-              bahan baku industri kesehatan bernilai tinggi.
+              Rimpang herbal asli Indonesia (<em>Javanese Turmeric</em>):
+              bahan jamu, minuman fungsional, dan bahan baku industri kesehatan
+              bernilai tinggi.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-yellow-200">
