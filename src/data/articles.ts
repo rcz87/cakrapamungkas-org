@@ -12,6 +12,19 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "temu-lawak",
+    category: "Herbal",
+    categoryColor: "bg-yellow-100 text-yellow-700",
+    title:
+      "Temu Lawak: Emas Kuning Nusantara yang Punya Nilai Kesehatan dan Ekonomi",
+    excerpt:
+      "Rimpang herbal asli Indonesia dengan klaim BPOM untuk memelihara fungsi hati & memperbaiki nafsu makan. Pelajari kandungan, cara olah, dan peluang bisnis temu lawak.",
+    readTime: "10 min",
+    image: "/images/temu-lawak-hero.jpg",
+    datePublished: "2026-05-11",
+    featured: true,
+  },
+  {
     slug: "hilirisasi-rempah-nusantara",
     category: "Hilirisasi",
     categoryColor: "bg-amber-100 text-amber-700",
