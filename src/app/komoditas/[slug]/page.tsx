@@ -21,7 +21,7 @@ import {
   commodities,
   getCommoditiesBySlug,
 } from "@/data/commodities";
-import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 const WA_NUMBER = "6285228003820";
 
@@ -117,7 +117,6 @@ export default async function CommodityDetailPage({
           { name: k.name, href: `/komoditas/${k.slug}` },
         ]}
       />
-      <ProductJsonLd commodity={k} />
 
       {/* Hero — dark themed by commodity color */}
       <section
