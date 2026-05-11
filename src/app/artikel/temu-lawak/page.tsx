@@ -363,12 +363,12 @@ export default function TemuLawakArtikelPage() {
             </h2>
 
             <figure className="my-8">
-              <div className="relative w-full h-[400px] lg:h-[500px] bg-gray-100 rounded-lg overflow-hidden">
+              <div className="relative w-full h-[500px] lg:h-[700px] bg-yellow-50 rounded-lg overflow-hidden">
                 <Image
                   src="/images/temu-lawak-irisan.jpg"
                   alt="Irisan rimpang temu lawak segar berwarna kuning emas khas - bahan baku simplisia herbal"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <figcaption className="text-center text-sm text-gray-600 italic mt-3">
@@ -469,12 +469,12 @@ export default function TemuLawakArtikelPage() {
             </h2>
 
             <figure className="my-8">
-              <div className="relative w-full h-[400px] lg:h-[500px] bg-gray-100 rounded-lg overflow-hidden">
+              <div className="relative w-full h-[500px] lg:h-[700px] bg-yellow-50 rounded-lg overflow-hidden">
                 <Image
                   src="/images/temu-lawak-produksi.jpg"
                   alt="Pekerja kampung melakukan sortasi temu lawak di pelataran rumah produksi - ekonomi rakyat berbasis herbal Nusantara"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <figcaption className="text-center text-sm text-gray-600 italic mt-3">
