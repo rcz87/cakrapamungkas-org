@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -88,9 +89,10 @@ const team = [
     desc: "Visionary behind Cakra Pamungkas. Experienced in agribusiness management, technology integration, and building farmer ecosystems.",
   },
   {
-    name: "Sapto",
+    name: "Amin Sugito",
     role: "Operations Manager",
     desc: "Oversees daily milling operations, quality control, and farmer partnership management.",
+    image: "/images/team/amin-sugito.jpg",
   },
   {
     name: "Stalyyna",
@@ -364,9 +366,19 @@ export default function TentangPage() {
                 key={m.name}
                 className="bg-white rounded-3xl p-8 border border-gray-100 text-center shadow-sm hover:shadow-lg transition-shadow"
               >
-                <div className="w-[72px] h-[72px] mx-auto mb-5 rounded-full bg-gradient-to-br from-primary-600 to-emerald-600 shadow-lg shadow-primary-600/30 flex items-center justify-center text-3xl">
-                  👤
-                </div>
+                {m.image ? (
+                  <Image
+                    src={m.image}
+                    alt={m.name}
+                    width={144}
+                    height={144}
+                    className="w-[72px] h-[72px] mx-auto mb-5 rounded-full object-cover shadow-lg shadow-primary-600/30 ring-2 ring-primary-600/20"
+                  />
+                ) : (
+                  <div className="w-[72px] h-[72px] mx-auto mb-5 rounded-full bg-gradient-to-br from-primary-600 to-emerald-600 shadow-lg shadow-primary-600/30 flex items-center justify-center text-3xl">
+                    👤
+                  </div>
+                )}
                 <h3 className="text-lg font-extrabold text-gray-900 mb-1 tracking-tight">
                   {m.name}
                 </h3>
