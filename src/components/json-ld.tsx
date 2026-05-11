@@ -1,5 +1,6 @@
 import type { Article } from "@/data/articles";
 import type { FaqItem } from "@/data/article-faqs";
+import type { Commodity } from "@/data/commodities";
 
 const BASE_URL = "https://cakrapamungkas.org";
 
@@ -115,6 +116,97 @@ export function FaqJsonLd({ faqs }: { faqs: FaqItem[] }) {
         text: faq.answer,
       },
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
+    />
+  );
+}
+
+/** Product JSON-LD for commodity catalog pages */
+export function ProductJsonLd({ commodity: k }: { commodity: Commodity }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${k.name} (${k.en})`,
+    alternateName: k.scientificName || k.en,
+    description: k.descEn || k.desc,
+    image: [`${BASE_URL}/images/komoditas/${k.slug}-hero.webp`],
+    brand: {
+      "@type": "Organization",
+      name: "CV. Cakra Pamungkas Mandiri",
+      url: BASE_URL,
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "CV. Cakra Pamungkas Mandiri",
+      url: BASE_URL,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kebumen",
+        addressRegion: "Jawa Tengah",
+        addressCountry: "ID",
+      },
+    },
+    category: "Agricultural Commodity / Spice / Herb",
+    countryOfOrigin: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    additionalProperty: [
+      ...(k.scientificName
+        ? [{
+            "@type": "PropertyValue",
+            name: "Scientific Name",
+            value: k.scientificName,
+          }]
+        : []),
+      {
+        "@type": "PropertyValue",
+        name: "Origin Regions",
+        value: k.origin.regionsEn,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Harvest Season",
+        value: k.origin.harvestSeasonEn,
+      },
+      ...k.specs.map((sp) => ({
+        "@type": "PropertyValue",
+        name: sp.label,
+        value: sp.value,
+      })),
+    ],
+    isVariantOf: {
+      "@type": "ProductGroup",
+      name: k.name,
+      productGroupID: k.slug,
+      variesBy: k.variants,
+    },
+    ...(k.exportReady && {
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "USD",
+          eligibleQuantity: {
+            "@type": "QuantitativeValue",
+            value: k.specs.find((s) => s.label.toLowerCase().includes("moq"))?.value || "On Request",
+          },
+        },
+        seller: {
+          "@type": "Organization",
+          name: "CV. Cakra Pamungkas Mandiri",
+          url: BASE_URL,
+        },
+        url: `${BASE_URL}/komoditas/${k.slug}`,
+      },
+    }),
   };
 
   return (

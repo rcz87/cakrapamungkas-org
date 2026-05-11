@@ -21,7 +21,7 @@ import {
   commodities,
   getCommoditiesBySlug,
 } from "@/data/commodities";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/json-ld";
 
 const WA_NUMBER = "6285228003820";
 
@@ -37,14 +37,56 @@ export async function generateMetadata({
   const { slug } = await params;
   const k = getCommoditiesBySlug(slug);
   if (!k) return { title: "Komoditas tidak ditemukan" };
+
+  const title = `${k.name} (${k.en}) — Indonesian ${k.en} for Export | Cakra Pamungkas`;
+  const ogTitle = `${k.en} · ${k.name} — Premium Indonesian Export`;
+  const description = k.descEn;
+  const url = `https://cakrapamungkas.org/komoditas/${k.slug}`;
+  const heroImage = `https://cakrapamungkas.org/images/komoditas/${k.slug}-hero.webp`;
+
+  const keywords = [
+    k.en,
+    k.name,
+    ...(k.scientificName ? [k.scientificName] : []),
+    `${k.en} export Indonesia`,
+    `${k.en} supplier`,
+    `Indonesian ${k.en}`,
+    `${k.name} ekspor`,
+    `${k.name} grosir`,
+    ...k.variants.slice(0, 3),
+    "Indonesia commodity export",
+    "Central Java spices",
+    "FOB Tanjung Emas",
+    "Cakra Pamungkas",
+  ];
+
   return {
-    title: `${k.name} (${k.en}) — Indonesian ${k.en} for Export | Cakra Pamungkas`,
-    description: k.aboutEn.slice(0, 200),
+    title,
+    description,
+    keywords,
     alternates: { canonical: `/komoditas/${k.slug}` },
     openGraph: {
-      title: `${k.en} · ${k.name} — Premium Indonesian Export`,
-      description: k.aboutEn.slice(0, 200),
+      title: ogTitle,
+      description,
+      url,
+      siteName: "CV. Cakra Pamungkas Mandiri",
+      locale: "id_ID",
+      alternateLocale: ["en_US"],
       type: "article",
+      images: [
+        {
+          url: heroImage,
+          width: 1200,
+          height: 675,
+          alt: `${k.name} (${k.en}) — ${k.scientificName ?? ""} Indonesian export quality`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [heroImage],
     },
   };
 }
@@ -75,6 +117,7 @@ export default async function CommodityDetailPage({
           { name: k.name, href: `/komoditas/${k.slug}` },
         ]}
       />
+      <ProductJsonLd commodity={k} />
 
       {/* Hero — dark themed by commodity color */}
       <section
