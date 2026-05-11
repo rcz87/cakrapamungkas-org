@@ -179,13 +179,12 @@ export function ProductJsonLd({ commodity: k }: { commodity: Commodity }) {
         name: sp.label,
         value: sp.value,
       })),
+      {
+        "@type": "PropertyValue",
+        name: "Available Formats",
+        value: k.variants.join(", "),
+      },
     ],
-    isVariantOf: {
-      "@type": "ProductGroup",
-      name: k.name,
-      productGroupID: k.slug,
-      variesBy: k.variants,
-    },
   };
 
   return (
