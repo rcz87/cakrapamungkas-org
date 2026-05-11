@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MessageCircle, Sprout, Package } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
 import { articleFaqs } from "@/data/article-faqs";
@@ -745,6 +745,104 @@ export default function TemuLawakArtikelPage() {
                 </a>
               </li>
             </ol>
+
+            {/* CTA Order */}
+            <section className="mt-16 not-prose">
+              <div className="rounded-2xl bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 border-2 border-yellow-200 p-6 sm:p-10 shadow-sm">
+                <div className="text-center mb-8">
+                  <span className="inline-block px-3 py-1 bg-yellow-600 text-white text-xs font-bold tracking-wider rounded-full mb-4">
+                    HUBUNGI KAMI
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                    Tertarik Order Temu Lawak?
+                  </h2>
+                  <p className="text-gray-700 max-w-2xl mx-auto">
+                    Kami menyediakan temu lawak <strong>basah</strong> (rimpang
+                    segar) dan <strong>kering</strong> (simplisia / irisan)
+                    untuk kebutuhan jamu, minuman herbal, kuliner, dan industri.
+                    Tersedia juga untuk partai besar &amp; inquiry ekspor.
+                  </p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                  {/* Basah */}
+                  <a
+                    href={`https://wa.me/6285228003820?text=${encodeURIComponent(
+                      "Halo, saya tertarik order Temu Lawak BASAH (rimpang segar). Mohon info harga, minimum order, dan ketersediaan stok. Terima kasih."
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-white rounded-xl p-6 border-2 border-yellow-200 hover:border-yellow-500 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-yellow-100 text-yellow-700 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                        <Sprout className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs font-bold text-yellow-700 uppercase tracking-wider mb-1">
+                          Order
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">
+                          Temu Lawak Basah
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-3">
+                          Rimpang segar baru panen. Cocok untuk pabrik jamu,
+                          pengolah simplisia, dan pasar tradisional.
+                        </p>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 group-hover:text-green-700">
+                          <MessageCircle className="w-4 h-4" />
+                          Order via WhatsApp
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Kering */}
+                  <a
+                    href={`https://wa.me/6285228003820?text=${encodeURIComponent(
+                      "Halo, saya tertarik order Temu Lawak KERING (simplisia / irisan kering). Mohon info harga, kadar air, minimum order, dan ketersediaan stok. Terima kasih."
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-white rounded-xl p-6 border-2 border-amber-200 hover:border-amber-500 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="shrink-0 w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <Package className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs font-bold text-amber-700 uppercase tracking-wider mb-1">
+                          Order
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">
+                          Temu Lawak Kering
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-3">
+                          Simplisia / irisan kering, kadar air terkontrol. Siap
+                          untuk industri herbal, ekstrak, kapsul, dan ekspor.
+                        </p>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 group-hover:text-green-700">
+                          <MessageCircle className="w-4 h-4" />
+                          Order via WhatsApp
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-yellow-200 text-center">
+                  <p className="text-sm text-gray-600">
+                    Atau email langsung ke{" "}
+                    <a
+                      href="mailto:info@cakrapamungkas.org?subject=Inquiry%20Temu%20Lawak%20(Curcuma%20Xanthorrhiza)"
+                      className="font-semibold text-yellow-700 hover:text-yellow-800 underline"
+                    >
+                      info@cakrapamungkas.org
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </section>
 
             <div className="mt-12 pt-8 border-t border-gray-200">
               <Link
