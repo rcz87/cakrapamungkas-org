@@ -830,15 +830,29 @@ export default function TemuLawakArtikelPage() {
                   </a>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-yellow-200 text-center">
-                  <p className="text-sm text-gray-600">
-                    Atau email langsung ke{" "}
-                    <a
-                      href="mailto:info@cakrapamungkas.org?subject=Inquiry%20Temu%20Lawak%20(Curcuma%20Xanthorrhiza)"
-                      className="font-semibold text-yellow-700 hover:text-yellow-800 underline"
+                <div className="mt-6 pt-6 border-t border-yellow-200">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3 sm:gap-6 text-sm">
+                    <Link
+                      href="/komoditas/kunyit"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-yellow-700 text-white font-semibold rounded-lg hover:bg-yellow-800 transition-colors"
                     >
-                      info@cakrapamungkas.org
-                    </a>
+                      <Package className="w-4 h-4" />
+                      Lihat Katalog Ekspor Lengkap
+                      <ArrowLeft className="w-4 h-4 rotate-180" />
+                    </Link>
+                    <span className="text-gray-600 text-center">
+                      atau email{" "}
+                      <a
+                        href="mailto:info@cakrapamungkas.org?subject=Inquiry%20Temu%20Lawak%20(Curcuma%20Xanthorrhiza)"
+                        className="font-semibold text-yellow-700 hover:text-yellow-800 underline"
+                      >
+                        info@cakrapamungkas.org
+                      </a>
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-500 text-center mt-3">
+                    Katalog ekspor: spesifikasi pharma-grade, kandungan
+                    kurkumin, FOB ports, MOQ, dan dokumentasi lengkap.
                   </p>
                 </div>
               </div>
