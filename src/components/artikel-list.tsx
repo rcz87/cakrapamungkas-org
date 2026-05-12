@@ -7,7 +7,7 @@ import { ArrowRight, Clock, Search } from "lucide-react";
 import type { Article } from "@/data/articles";
 import { getArticleHref } from "@/data/articles";
 
-const PER_PAGE = 6;
+const PER_PAGE = 100;
 
 const categoryFilters = [
   { id: "semua", label: "Semua", matches: () => true },

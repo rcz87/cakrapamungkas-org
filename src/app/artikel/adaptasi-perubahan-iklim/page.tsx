@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/adaptasi-perubahan-iklim" },
   title: "Adaptasi Perubahan Iklim: Varietas Tahan Cuaca Ekstrem | Cakra Pamungkas",
   description:
     "Strategi adaptasi perubahan iklim untuk pertanian Indonesia. Panduan lengkap varietas tahan kekeringan & banjir, teknologi prediksi cuaca satelit, asuransi pertanian, dan praktik berkelanjutan.",
@@ -957,6 +959,7 @@ export default function AdaptasiPerubahanIklimArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="adaptasi-perubahan-iklim" />
     </>
   );
 }

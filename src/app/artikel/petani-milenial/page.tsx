@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/petani-milenial" },
   title: "Petani Milenial: Omzet Miliaran dari Agribisnis Modern | Cakra Pamungkas",
   description:
     "Lebih dari 300.000 petani milenial Indonesia membuktikan bahwa pertanian bisa menghasilkan omzet miliaran. Pelajari strategi, model bisnis, dan tips memulai agribisnis modern.",
@@ -953,6 +955,7 @@ export default function PetaniMilenialArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="petani-milenial" />
     </>
   );
 }

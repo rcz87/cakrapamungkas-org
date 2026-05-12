@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, TrendingUp, Target } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/transformasi-agraria-2026" },
   title: "Transformasi Agraria 2026: Strategi Besar Kedaulatan Pangan | Cakra Pamungkas",
   description:
     "Analisis strategis kebijakan Kementerian Pertanian 2026 melalui 5 Pilar (Poin A-E) untuk menciptakan Break of Structure dalam ekosistem pangan nasional Indonesia.",
@@ -422,6 +424,7 @@ export default function TransformasiAgrariaPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="transformasi-agraria-2026" />
     </>
   );
 }

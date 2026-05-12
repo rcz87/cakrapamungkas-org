@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/program-pemerintah-2026" },
   title: "Update Program Pemerintah 2026 untuk Pertanian | Cakra Pamungkas",
   description:
     "Panduan lengkap program pemerintah 2026 untuk sektor pertanian: subsidi pupuk, asuransi pertanian AUTP, KUR Pertanian, bantuan alsintan, infrastruktur irigasi, dan program petani muda.",
@@ -1008,6 +1010,7 @@ export default function ProgramPemerintah2026ArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="program-pemerintah-2026" />
     </>
   );
 }

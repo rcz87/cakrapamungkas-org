@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/asuransi-usaha-tani-padi" },
   title: "Panduan Lengkap Asuransi Usaha Tani Padi (AUTP) | Cakra Pamungkas",
   description:
     "Panduan lengkap Asuransi Usaha Tani Padi (AUTP): syarat pendaftaran, premi Rp36.000/ha dengan subsidi 80%, risiko yang ditanggung, proses klaim, dan cara mendaftar melalui Poktan, PPL, dan Jasindo.",
@@ -1004,6 +1006,7 @@ export default function AUTPArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="asuransi-usaha-tani-padi" />
     </>
   );
 }

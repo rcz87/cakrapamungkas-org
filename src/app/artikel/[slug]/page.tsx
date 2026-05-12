@@ -5,6 +5,7 @@ import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { getDynamicArticleBySlug } from "@/lib/articles-db";
 import { ArticleContent } from "./article-content";
 import { BreadcrumbJsonLd, ArticleJsonLd } from "@/components/json-ld";
+import { RelatedArticles } from "@/components/related-articles";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${article.title} | CV. Cakra Pamungkas Mandiri`,
     description: article.excerpt,
+    alternates: { canonical: `/artikel/${slug}` },
   };
 }
 
@@ -89,6 +91,8 @@ export default async function DynamicArticlePage({ params }: Props) {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <ArticleContent content={article.content} />
       </article>
+
+      <RelatedArticles currentSlug={article.slug} />
     </>
   );
 }

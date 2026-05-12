@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/hilirisasi-rempah-nusantara" },
   title:
     "Hilirisasi Rempah Nusantara: Peluang Besar Ekonomi Lokal | Cakra Pamungkas",
   description:
@@ -653,6 +655,7 @@ export default function HilirisasiRempahNusantaraArtikelPage() {
           </div>
         </div>
       </article>
+      <RelatedArticles currentSlug="hilirisasi-rempah-nusantara" />
     </>
   );
 }

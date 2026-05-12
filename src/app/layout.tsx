@@ -5,6 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cakrapamungkas.org"),
+  alternates: { canonical: "/" },
   title: "CV. Cakra Pamungkas Mandiri | Agribisnis Multi-Komoditas Indonesia",
   description:
     "Pusat agribisnis multi-komoditas — jahe, kunyit, lada, kopi, porang, padi, jagung. Jasa maklon, pengolahan rempah, dan ekspor langsung dari Jawa Tengah ke pasar global.",

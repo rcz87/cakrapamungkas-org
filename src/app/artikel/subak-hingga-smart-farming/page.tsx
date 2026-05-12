@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/subak-hingga-smart-farming" },
   title: "Dari Subak hingga Smart Farming: Evolusi Pertanian Nusantara | Cakra Pamungkas",
   description:
     "Menelusuri kearifan lokal sistem irigasi Subak Bali dan transformasinya di era digital. Eksplorasi mendalam perjalanan pertanian Indonesia dari kearifan kuno menuju inovasi masa depan.",
@@ -421,6 +423,7 @@ export default function SubakSmartFarmingPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="subak-hingga-smart-farming" />
     </>
   );
 }

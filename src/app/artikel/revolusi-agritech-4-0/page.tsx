@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/revolusi-agritech-4-0" },
   title: "Revolusi Agritech 4.0: Drone, IoT & AI dalam Pertanian Indonesia | Cakra Pamungkas",
   description:
     "Teknologi pintar meningkatkan efisiensi produksi hingga 30%. Panduan lengkap drone sprayer, sensor IoT, AI monitoring, dan smart farming untuk petani modern Indonesia.",
@@ -551,6 +553,7 @@ export default function AgritechArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="revolusi-agritech-4-0" />
     </>
   );
 }

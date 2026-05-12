@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, MessageCircle, Sprout, Package } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/temu-lawak" },
   title:
     "Curcuma Xanthorrhiza Rhizoma (Temu Lawak): Emas Kuning Nusantara | Cakra Pamungkas",
   description:
@@ -870,6 +872,7 @@ export default function TemuLawakArtikelPage() {
           </div>
         </div>
       </article>
+      <RelatedArticles currentSlug="temu-lawak" />
     </>
   );
 }

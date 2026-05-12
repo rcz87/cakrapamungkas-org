@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/break-even-point-usaha-tani" },
   title: "Perhitungan Break Even Point Usaha Tani Padi | Cakra Pamungkas",
   description:
     "Panduan lengkap perhitungan Break Even Point (BEP) usaha tani padi. Pelajari komponen biaya tetap, biaya variabel, rumus BEP, contoh kalkulasi 1 hektar, dan strategi menurunkan titik impas untuk meningkatkan keuntungan petani.",
@@ -1093,6 +1095,7 @@ export default function BreakEvenPointUsahaTaniPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="break-even-point-usaha-tani" />
     </>
   );
 }

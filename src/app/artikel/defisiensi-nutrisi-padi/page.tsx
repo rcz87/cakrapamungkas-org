@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/defisiensi-nutrisi-padi" },
   title: "Cara Mengenali Gejala Defisiensi Nutrisi pada Padi | Cakra Pamungkas",
   description:
     "Panduan lengkap mengenali gejala kekurangan unsur hara pada tanaman padi. Pelajari tanda defisiensi nitrogen, fosfor, kalium, dan mikronutrien beserta solusi pemupukan yang tepat.",
@@ -1022,6 +1024,7 @@ export default function DefisiensiNutrisiPadiPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="defisiensi-nutrisi-padi" />
     </>
   );
 }

@@ -18,7 +18,16 @@ import {
 } from 'lucide-react';
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
+
+export const metadata = {
+  alternates: { canonical: "/artikel/analisis-strategis-kementan-2026" },
+  title:
+    "Analisis Strategis Kementan 2026: Transformasi Struktural Kedaulatan Pangan | Cakra Pamungkas",
+  description:
+    "Analisis mendalam program kerja Kementerian Pertanian 2026 dengan pagu anggaran Rp40,14 T. Membahas arsitektur fiskal, Brigade Pangan 100.000 milenial, target produksi 34,77 juta ton beras.",
+};
 
 export default function TransformasiPangan2026Page() {
   const article = getArticleBySlug("analisis-strategis-kementan-2026");
@@ -338,6 +347,7 @@ export default function TransformasiPangan2026Page() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="analisis-strategis-kementan-2026" />
     </>
   );
 }

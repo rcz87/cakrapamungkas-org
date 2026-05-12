@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/arsitektur-pertanian-indonesia" },
   title: "Arsitektur Pertanian Indonesia: Transformasi Tradisi & Visi Kedaulatan Pangan | Cakra Pamungkas",
   description:
     "Analisis mendalam evolusi sektor pertanian Indonesia dari era Neolitikum hingga Agritech 4.0. Membahas makroekonomi, Subak Bali, dan swasembada pangan 2024-2025.",
@@ -342,6 +344,7 @@ export default function ArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="arsitektur-pertanian-indonesia" />
     </>
   );
 }

@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/program-swasembada-2025" },
   title: "Program Swasembada 2025: Target & Strategi Pemerintah | Cakra Pamungkas",
   description:
     "Analisis mendalam program swasembada pangan 2025 dengan anggaran Rp139,4 triliun, target 3 juta hektar sawah baru, strategi hilirisasi komoditas, dan tantangan ketahanan pangan Indonesia.",
@@ -1189,6 +1191,7 @@ export default function SwasembadaArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="program-swasembada-2025" />
     </>
   );
 }

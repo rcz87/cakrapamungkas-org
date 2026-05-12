@@ -16,6 +16,7 @@ import Link from "next/link";
 import { PadiDocFadeIn } from "@/components/padidoc-animations";
 
 export const metadata = {
+  alternates: { canonical: "/padidoc" },
   title: "PadiDoc - Sistem Manajemen Penggilingan Padi | CV. Cakra Pamungkas Mandiri",
   description:
     "PadiDoc adalah aplikasi manajemen penggilingan padi modern. Kelola pembelian, produksi, penjualan, dan stok dengan mudah. Coba demo gratis sekarang!",

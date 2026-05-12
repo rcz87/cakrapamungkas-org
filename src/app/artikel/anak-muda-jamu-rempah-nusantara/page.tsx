@@ -3,8 +3,10 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, Instagram, Sprout } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/anak-muda-jamu-rempah-nusantara" },
   title:
     "Anak Muda, Jamu, dan Perlawanan Sunyi terhadap Lupa | Cakra Pamungkas",
   description:
@@ -464,6 +466,7 @@ export default function AnakMudaJamuArtikelPage() {
           </div>
         </div>
       </article>
+      <RelatedArticles currentSlug="anak-muda-jamu-rempah-nusantara" />
     </>
   );
 }

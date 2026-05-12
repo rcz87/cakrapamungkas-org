@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/manajemen-risiko-agribisnis" },
   title: "Manajemen Risiko dalam Agribisnis Modern | Cakra Pamungkas",
   description:
     "Panduan lengkap manajemen risiko agribisnis: strategi mitigasi gagal panen, fluktuasi harga, diversifikasi usaha, asuransi pertanian, dan pemanfaatan teknologi untuk pengelolaan risiko.",
@@ -1142,6 +1144,7 @@ export default function ManajemenRisikoAgribisnisPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="manajemen-risiko-agribisnis" />
     </>
   );
 }

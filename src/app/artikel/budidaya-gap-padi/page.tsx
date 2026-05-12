@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/budidaya-gap-padi" },
   title: "Teknologi Budidaya GAP untuk Padi Berkualitas | Cakra Pamungkas",
   description:
     "Panduan lengkap Good Agricultural Practices (GAP) untuk budidaya padi berkualitas tinggi. Mulai dari pemilihan varietas unggul, sistem tanam jajar legowo, manajemen pupuk NPK, hingga penanganan pasca panen.",
@@ -1216,6 +1218,7 @@ export default function BudidayaGapPadiArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="budidaya-gap-padi" />
     </>
   );
 }

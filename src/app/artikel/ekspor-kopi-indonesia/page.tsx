@@ -3,9 +3,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getArticleBySlug } from "@/data/articles";
+import { RelatedArticles } from "@/components/related-articles";
 import { articleFaqs } from "@/data/article-faqs";
 
 export const metadata = {
+  alternates: { canonical: "/artikel/ekspor-kopi-indonesia" },
   title: "Ekspor Kopi Indonesia: US$1,62 Miliar di Pasar Global | Cakra Pamungkas",
   description:
     "Indonesia sebagai produsen kopi terbesar ke-4 dunia mencatatkan ekspor US$1,62 miliar. Panduan lengkap jenis kopi, asal daerah, pasar spesialti, strategi branding, dan peluang petani kopi Indonesia di pasar global.",
@@ -936,6 +938,7 @@ export default function EksporKopiIndonesiaArtikelPage() {
         </div>
       </div>
     </article>
+      <RelatedArticles currentSlug="ekspor-kopi-indonesia" />
     </>
   );
 }
