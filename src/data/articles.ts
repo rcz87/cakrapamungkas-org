@@ -12,6 +12,19 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "anak-muda-jamu-rempah-nusantara",
+    category: "Herbal",
+    categoryColor: "bg-yellow-100 text-yellow-700",
+    title:
+      "Anak Muda, Jamu, dan Perlawanan Sunyi terhadap Lupa",
+    excerpt:
+      "Ketika rempah Nusantara tidak sekadar dijual, tapi dihidupkan kembali. Cerita anak muda yang menjaga jahe, kunyit, dan temulawak tetap relevan di tengah gempuran kopi franchise dan minuman instan.",
+    readTime: "7 min",
+    image: "/images/artikel/6059706376985972407.jpg",
+    datePublished: "2026-05-12",
+    featured: true,
+  },
+  {
     slug: "temu-lawak",
     category: "Herbal",
     categoryColor: "bg-yellow-100 text-yellow-700",
