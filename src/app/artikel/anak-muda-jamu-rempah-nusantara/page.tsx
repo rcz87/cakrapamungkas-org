@@ -106,7 +106,7 @@ export default function AnakMudaJamuArtikelPage() {
             src="/images/artikel/6059706376985972407.jpg"
             alt="Tampak depan kedai Pojok Herbal — papan nama @pojokherbal.id dengan jam buka, anak muda berbincang santai di dalam kedai yang dipenuhi rak rempah dan etalase produk herbal"
             fill
-            className="object-cover"
+            className="object-cover object-bottom"
             priority
           />
         </div>
